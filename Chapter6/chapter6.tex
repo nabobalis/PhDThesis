@@ -1,0 +1,160 @@
+\graphicspath{{Chapter6/Figs/}}
+
+\chapter{Conclusion}
+\label{chapter6}
+    
+    \vspace*{\fill}\par
+    \pagebreak
+
+\section{Overview of the thesis}
+    
+	In this Thesis, the results of two-dimensional image analysis of sunspots and magnetic pores in the lower solar atmosphere is detailed.
+    These results are compared to theoretically derived results and indicate the ubiquitous presence of slow MHD sausage waves in magnetic structures that inhabit the solar surface.
+    In Chapter 2, the method used to measure the cross-sectional area and total intensity of the magnetic structures is analysed.
+    This is in order to understand what effect this method has on the results of the signal analysis, which is important to reduce bias.
+    In Chapter 3, this method is applied to several magnetic structures.
+    The results indicate the presence of slow MHD sausage waves.
+    This comes from the phase relations found using the signal analysis methods covered in Chapter 2.
+    In Chapter 4, the previous method is applied further, on two magnetic pores.
+    The method was extended by extracting the amplitude of the observed oscillations.
+    This allowed the usage of magneto-seismology in order to calculate several properties of the waves as well as information on the background properties of these magnetic flux tubes.
+    In Chapter 5, the focus shifted from analysing the cross-sectional to the analysis of a Running Penumbral Wave event in a magnetic pore.
+    RPWs are typically observed in sunspot penumbras, however it was observed emanating from an magnetic pore.
+    This analysis showed that RPWs are most likely an upwardly propagating wave.
+    These events are able to deliver a small amount of energy into the local corona.
+       
+\section{Summary of Results}
+    
+    In Chapter 2, after the summary of signal analysis methods, there was an investigation on the principle method that is used to contour magnetic structures.
+    This was undertaken in order to understand if the method adds a bias to the results. 
+    To do this, high quality ground-based data was used from the Dunn Solar Telescope (DST), using two instruments that are installed, the \textit{Rapid Oscillations in the Solar Atmosphere} (ROSA) and the \textit{Interferometric Bidimensional Spectrometer} (IBIS).
+    There are two datasets, one for each instrument, with the telescope pointed at a magnetic pore and a sunspot for ROSA and IBIS respectively (see Figure \ref{fig:data_overview}).
+    Since both sunspots and magnetic pores are analysed within this thesis, it was important to study the method on both types of magnetic structures.
+    To start, both structures were contoured using a range of sigma multipliers, 3, 3.5, 4 and 4.5 and 2, 2.5, 3, 3.5 for the sunspot and magnetic pore respectively.
+    The standard deviation values used came from a background box of quiet Sun, i.e., a region of the photosphere that contains no magnetic features.
+    The reason for this difference in sigma multipliers is due to the lack of a good quiet Sun region within the IBIS dataset.
+    Figure \ref{fig:method_overview} shows this clearly with the histograms shown on the right column.
+    This had the result of increasing the sigma multipliers.
+    Analysing the cross-sectional area signals using the wavelet transform revealed the range of periods within these magnetic structures.
+    The range of periods found did not vary with the sigma value used, but what did vary was the strength of the detected periods (see Figure \ref{fig:sunspot_wavelet} and Figure \ref{fig:pore_wavelet}).
+    Thus, it is important to contour the magnetic structures by taking into account the structures's intensity distribution, as this makes choosing a sigma multiplier an easier and more robust choice than choosing a random percentage of the background intensity. 
+    Further, this implies that for the current range of ground-based solar telescopes, that the limiting factor for cross-sectional area oscillations is the resolution.
+    This resolution has been fixed for the past couple of years and until Daniel K. Inouye Solar Telescope (DKIST) data becomes available, the range of sigma multipliers can vary without fear of biasing the results. 
+    Finally, since the phase relations are used to identified waves modes using Table \ref{tab:phase}.
+    The wavelet transform offers a good insight into the phase difference between two signals.
+    This was also checked with regards to the different sigma multipliers.
+    It was found that there was no major effect as one varies sigma as it would be expected.
+    There were small regions that were different due to the cross-sectional signals varying but nothing that changed the results.
+    
+    In Chapter 3, the method detailed previously in Chapter 2 is applied to three magnetic structures.
+    These are two sunspots and one magnetic pore (seen in Figure \ref{images}).
+    The data used here came from the Dutch Open Telescope (DOT) and the Swedish Vacuum Solar Telescope (SVST). 
+    These were detailed in Chapter 2 and also within Chapter 3.
+    While these telescopes are quite old and now out of service, they offer good quality data.
+    By contouring these magnetic structures, using a sigma multiplier of 2.5, a range of periods were observed.   
+    Using both the wavelet transform and the Empirical Mode Decomposition (EMD), which can be seen in Figure \ref{1999sunspot},\ref{1999IMF},\ref{2005sunspot} and \ref{20005IMF}, the range of periods found ranged from 2 minutes and up to 40 minutes. 
+    Many of these cross-sectional area periods overlap with line-of-sight (LOS) oscillations found in sunspots before.
+    However, the link between them has not been established.
+    From the signal analysis, the phase difference between the cross-sectional area and total intensity were mostly zero degrees.
+    With the phase relations from Table. \ref{tab:phase}, it is possible to identify these oscillations.
+    This indicates that these oscillations are slow MHD sausage waves.
+    This implies that there is a prevalent amount of these waves in the magnetic structures in the photosphere.
+    On a side note, there were small regions of out-of-phase but more interestingly, 45 degrees.
+    There is no theory that explains this phase difference, but whether this exists or is a signature of noise is unknown at this time.
+    Finally, whether the oscillations are propagating or are standing is an open question, since it is not possible to know this by using just the cross-sectional area and total intensity phase relations.    
+    It should be noted that the periods of the observed oscillations, when the period ratios are calculated assuming the largest period is the fundamental, the period ratios give anecdotal evidence for standing harmonics.
+    Further investigation is required to clarify this point.
+    
+    In Chapter 4, two further magnetic pores are studied.
+    This time, using more data from the DOT coupled with DST/ROSA which has an increased resolution than the previously used datasets (see Figure \ref{overview}).
+    Taking the method discussed in Chapter 2 and used in Chapter 3, both magnetic pores again show oscillations within their cross-sectional area signals (see Fig \ref{DOT_wls} and \ref{ROSA_wls}).     
+    Due to the shorter nature of these datasets, the periods found are shorter, they range from 2 minutes to 20 minutes.
+    The phase relations once again indicate that these oscillations are slow MHD sausage waves.
+    However, the results within this chapter were taken further.
+    Using linear ideal MHD theory, it is possible to derive equations that will allow the calculation of the radial displacement speed of the oscillation as well as the magnetic field change of the structure due to the oscillation.
+    To achieve this, the amplitude of the oscillations was required and the Fast Fourier Transform (FFT) was used to provide this.
+    The radial displacement speeds were calculated to be within the range of 0.3 km s$^{-1}$ to 3 km s$^{-1}$. 
+    Further, the magnetic field change was calculated to be from 5\% up 30\%. 
+    These results are stated within Table \ref{tab:ampl}.
+    The magnetic field change for the magnetic pore observed with ROSA is much larger than the magnetic pore observed in DOT.
+    The reason is that the amplitude of the oscillations is of the same order for both magnetic pores despite that the ROSA magnetic pore has a much smaller cross-sectional area.
+    Therefore, with the MHD wave type known, it is possible to estimate the phase speed for this wave type within a typical magnetic flux tube.
+    This allows the calculation of the wavelength for the observed oscillations (see Table \ref{tab:wavelength}).
+    The calculated wavelengths add more evidence to the anecdotal evidence shown in Chapter 3.
+    There is a picture emerging that these oscillations could be standing harmonics supported within these magnetic flux tubes. 
+    If the assumption that these are standing harmonics is taken, using magneto-seismology it is possible to estimate the expansion factor of the flux tubes.
+    This is the ratio of the radius at the base of the flux tube to the radius at the top of the flux tube.
+    In this case, it is from the photosphere to the transition region.
+    Table \ref{harm_table} lists the period ratios of the observed oscillations for the two magnetic pores.
+    This forms the base to calculate the expansion factor.
+    The expansion factor is dependent on the plasma-$\beta$ at the base of the flux tube and while it is not possible to know this value, it can be assumed to be around 1 for flux tubes that are within the photosphere.
+    The results of this can be seen within Figure \ref{fig:harm}, which gives a factor that ranges from 4-8 for the magnetic structures analysed within this thesis.
+    These numbers are not too dissimilar to the expansion factors for flux tubes used within MHD wave simulations.
+    
+    In Chapter 5, the focus shifts from the analysis of the cross-sectional area of magnetic structures to Running Penumbral Waves (RPWs).
+    RPWs have been observed in sunspots since the 1970's as intensity fronts propagating radially outwards from the outer umbra into the penumbra.
+    Excellent seeing data from the Swedish Solar Telescope (SST) using the \textit{CRisp Imaging SpectroPolarimeter} (CRISP) instrument was combined with co-aligned and co-temporal data from the \textit{Atmospheric Imaging Assembly} (AIA) instrument onboard the Solar Dynamics Observatory (SDO) satellite (see Figure \ref{chap5:overview}).
+    The result was the first direct imaging of RPWs in a magnetic pore in the H$\alpha$ line core.
+    The whitelight images show no penumbral structure in the photosphere for the observed magnetic pore.
+    Further, the repeat period as well as the horizontal speed is typical of RPWs that have been observed before within sunspots.
+    The RPWs can be seen to emanate from the magnetic pore radially outwards, however, it is not concentric as RPWs that are commonly observed within sunspots.
+    These results came from slit analysis around the magnetic pore (see Figure \ref{chap5:overview} and \ref{fft_slit}).
+    The RPWS are confined to a small region, which is a quiet part of the chromosphere.
+    The waves do not appear to propagate in the region with large static fibrils and regions with dynamic fibrils.
+    The answer from a magnetic field extrapolation (Figure \ref{mag_field}) which suggests that the field where the RPWs are observed is more radial (i.e., horizontal to the surface) than other parts of the magnetic field.
+    This fact coupled with previous research that indicates that RPWs are in fact Upwardly Propagating Waves (UPWs), is the final step in confirming this.     
+    Further, the UPWs were observed with SDO/AIA lines that sample the transition region and low corona, which suggests that UPWs are reaching the higher parts of the solar atmosphere.
+    Mode identification for RPWs has been a difficult topic. 
+    Previous studies and most theoretical understanding of RPWs implies that they are slow magneto-acoustic waves.
+    However, in the case presented within Chapter 5, we suggest that the RPWs/UPWs are actually fast magneto-acoustic waves, since the wave appears as dark and light fronts, which is a change in intensity which we conclude is a change in density implying a compressive nature to this waves.
+    A time lag analysis between the H$\alpha$ slit and the SDO/AIA slits gives us a result of less than 12 seconds, i.e., the lag is less than the cadence of SDO/AIA.
+    So the best assumption that can be made is that the lag is at that cadence (12 seconds). 
+    This gives the low phase speed estimate, but the result suggests that the UPW phase speed is greater than the sound and Alfv\'en speed (assuming typical chromospheric physical values) which means it is a fast wave. 
+    However, this is the first report that of a RPW/UPW as a fast mode.
+    With the wave mode identified, the next was the calculation of the energy of the observed waves.
+    The energy is calculated to be around 150 W m$^{-2}$, which is enough to heat the quiet Sun corona but not an active region corona.
+    This value has been found by another study for cross-sectional area oscillations in the low chromosphere.
+    So overall, these waves have a small but important contribution to corona heating.
+    
+\section{Future Work and Questions}
+    
+    This is always a tricky subject.
+    With any body of work, there are always unanswered questions or gaps in knowledge that ideally should be filled.
+    As such, this thesis does not offer a full view of MHD sausage waves in sunspots and magnetic pores.
+    
+    Firstly, in Chapter 2, the method used to contour the magnetic structures was analysed.
+    However, it was limited to low lying photospheric wavelengths.
+    This would be expanded to cover other wavelengths which sample up into the chromosphere. 
+    Studying how the cross-sectional area oscillations change as a function of height would be an important next stage for this research.
+    In order to map how the amplitudes change with height, if the phase difference varies and if detected periods at one height exist within another height.
+    However, as one moves upwards in the solar atmosphere, the boundary between a magnetic structure and the background atmosphere becomes harder to distinguish, so the analysis in Chapter 2 would need to be refined with multiple heights to investigate any pitfalls with layered datasets.
+    Further to this, the current range of ground-based and space-based solar data has approximately the same resolution and this limit will be around for another two years. 
+    This is a problem since the results are inherently dependant on this as this fixes the lower limit of any observations, especially when it comes to detecting perturbations.
+    With DKIST, as well as Solar-C, this limit will be reduced.
+    Thus, attempting this analysis on solar data from the next generation of solar telescopes would be a future extension of this work. 
+    Finally, in Chapter 4, the phase speed of the MHD wave was calculated from typical background properties.
+    Thus, the results that came from that are determined by those properties. 
+    Further work would ideally employ magneto-seismology in order to calculate the phase speed of the detected oscillations. 
+    Normally, this is possible using multiple heights since a time lag could be calculated with this method, as the height between wavelengths is known approximately.
+    However, research \citep{2015A&A...579A..73M} have been published that makes it possible to do this with only the amplitude of the oscillations.
+    This would be a further extension to the work in Chapter 3 and 4.
+    
+    Secondly, Chapter 2 detailed the signal analysis methods employed within this thesis.
+    While these methods were useful and achieved the overall goals for each chapter, the field of signal analysis is ever evolving.
+    For example, the wavelet transform has had numerous papers published which extend the algorithm to account for power bias at lower periods \citep{liu2007rectification,veleda2012cross} as well as being able to discern if the signal is standing or propagating \citep{2008SoPh..248..395S}.
+    The Empirical Mode Decomposition has been extended, adding a step to the method where it does an ensemble averages \citep{wu2009ensemble}, better methods to deal with the edge effects with the spline fit \citep{zeng2004simple} as well as improved stopping criterion \citep{huang2008review}.
+    It is important that the methods used to analyse signals and extract phase relations and amplitudes be made robuster in order to be certain in the period, phase and amplitudes of any oscillations found.
+    If magneto-seismology requires these quantities to calculate the background properties of flux tubes, it is vital that any signal analysis method used is as robust as possible. 
+    
+    Finally, the observed UPWs within the magnetic pore is an interesting avenue of wave research.
+    Here, there are many questions that need to be answered.
+    To start, this observation indicated that the UPW events were fast sausage modes needs to be squared with the current literature.
+    Either the interpretation is correct and UPWs can be either fast or slow waves or the analysis is incorrect.
+    Further ground-based observations of magnetic pores would need to be conducted in order to understand UPWs within these structures.
+    The author is only aware that RPWs have been only observed in sunspots , is the difference in wave mode due to a difference between sunspots and magnetic pores? 
+    Does the presence of the penumbra cause this or would it be that the plasma-$\beta$ varies in a pore differently such that mode conversion leads to a fast magnetic-acoustic wave instead of a slow magnetic-acoustic wave?
+    In Chapter 5, the region where the waves were observed was a small region of quiet chromosphere.
+    Does the surrounding chromospheric atmosphere dictate if UPWs can be observed?
+    Generally, symmetrical sunspots display concentric and clear RPWs, is that due to the magnetic field topology of the sunspot being much stronger than a magnetic pore, thus the observation of UPWs allows us to infer the magnetic field topology around sunspots and magnetic pores?
+    Finally, do UPWs have a common source with the LOS oscillations and cross-sectional area oscillations observed in these magnetic structures, or are they the same wave that can be observed in several different ways?
+    Solar physics has a long way to go and so does the research presented within this Thesis.
