@@ -1,0 +1,61 @@
+
+\subsection{Measuring the horizontal phase speed}
+
+	In order to measure the horizontal phase speed of the observed waves, the data extracted from the slits placed around the pore is analysed with a canny filter algorithm that is designed to detect edges in images.
+	Once the edges of the wavefronts are identified, the regions of interest are then computed through a Progressive Probabilistic Hough Transform\citep{Galamhos1999}.
+	This method is an expansion of the original Hough Transform which is used to detect straight lines in images\citep{duda1998}.
+	A method designed to explore the available parameter space for straight lines and returns the beginning and end of any line segment.
+	Once the line segments are returned, the gradient can be calculated and followed by a quick conversion into units of km s$^{-1}$.
+	This enables us to accurately calculate the speed of the wave front throughout all of the available slits, and to see how the speed changes with time.
+	These algorithms, as well as the contrast-limited adaptive histogram equalization algorithm, are provided by the Python image processing package, Scikit-Image (see http://scikit-image.org/).
+	\textbf{[Needed?]}
+
+	The MHD wave theory applicable for the observed waves in magnetic pores is an application of the theory derived by, e.g., \citet{1982SoPh...75....3S,1983SoPh...88..179E}.
+	Previous applications of the theory	have employed the thin tube approximation to study wave propagation.
+	However, as we will demonstrate later, this is not valid for the waves we observe and we examine the finite tube equations here.
+	We	note that, for reasons of clarity, in the following discussion the theory does not take into account gravitational effects on wave propagation.
+	However, the influence of gravity maybe important for wave propagation in magnetic pores, especially at the photospheric level where the predicted scale height is comparable to the wavelengths of observed oscillations.
+
+	The MHD modes allowed to propagate in an intense flux tube in the photosphere fall into three distinct bands, namely fast surface modes, slow body modes and slow surface modes.
+	The phase speed for modes in both the slow bands, in the long wavelength limit (i.e thin-flux tube), is the tube speed, defined as
+	\begin{equation}
+		c_T=\frac{c_sv_A}{(c_s^2+v_A^2)^{1/2}},
+		\label{eq:tube}
+	\end{equation}
+	where $c_s$ is the sound speed and $v_A$ is the Alfv\'{e}n speed.
+	For typical conditions in magnetic pores the magnitude of the speeds are $c_T<c_s<v_A$.
+
+	%\section{Stuff}
+%
+%	Over the past decades, many oscillatory phenomena have been observed within a wide range of magnetic waveguides in the solar atmosphere \citep{banerjee,wang2011standing,2012ApJ745L18A,2012LRSP92A}.
+%	Sunspots and pores are just two of these many structures, and they are known to display solar \textit{global} oscillations.
+%	See a recent review by, e.g., \cite{pinter2011effects}.
+%	The commonly studied oscillatory periods in sunspots are three and five minutes.
+%	These oscillations are seen in intensity, line-of-sight (LOS) velocity, and LOS magnetic field.
+%	The source of the five-minute oscillation is a result of forcing by the five-minute (\textit{p}-mode) global solar oscillation \citep{marsh2008p}, which forms the basis of helioseismology \citep{thompson2006magnetohelioseismology,pinter2011effects}.
+%	The five-minute oscillations are typically seen in simple molecular and non-ionized metal lines, which form low in the umbral photosphere and are moderately suppressed not only in the penumbra, but also in the chromospheric atmosphere above the umbra \citep{OASO}.
+%	The cause of the three-minute oscillations is still unknown, but there are two main streams of theories.
+%	They could either be standing acoustic waves that are linked to the resonant modes of the sunspot cavity, or they could be low-$\beta$ slow magneto-acoustic-gravity waves guided along the ambient magnetic field \citep{OASO}.
+%	The three-minute oscillations are seen in plasma elements that form higher up and in the low chromosphere, and these are also moderately suppressed in the penumbra \citep{ORWS}.
+%
+%	When applied to a cylindrical magnetic flux tube, magnetohydrodynamic (MHD) theory reveals that a variety of waves can be supported, four of which are often reported in various structures in the solar atmosphere.
+%	Slow sausage (longitudinal) \citep{2009SSRv..149...65D,wang2011standing}, fast kink \citep{2009A&A...497..265A,2009SSRv..149....3A}, fast sausage \citep{mcateer2003observational}, and Alfv\'en (torsional) waves \citep{jess}, each affects the flux tube in a specific way.
+%	The sausage modes are of interest here, because the sausage mode is a compressible, symmetric perturbation around the axis of a flux tube that causes density perturbations that can be identified in intensity images \citep{fujimura}.
+%	Furthermore, because the wave will either compress or expand the flux tube, the magnetic field will also show signs of oscillations.
+%	This mode may come in two forms in terms of phase speed classification: a slow mode (often also called the longitudinal mode), which generally has a phase speed close to the characteristic tube speed; and fast mode, which has a phase speed close to the external sound speed, assuming a region that has a plasma-$\beta > 1$ \citep{2003ASSL..294.....G,rbook}.
+%	A main difference between the two modes is the phase relationship between appropriate MHD quantities, which allows them to be identified.
+%	In this case, the fast sausage mode has an out-of-phase relationship between the area and intensity, while the slow sausage mode has an in-phase relationship.
+%	The technique that was applied to obtaining these phase relationships are covered by, say \cite{goedbloed}, \cite{fujimura}, \cite{moreels2013phase}, and \cite{michal2013}.
+%
+%	Sausage modes have been observed in solar pores.
+%	\citet{doretala} observed a pore for 11 hours and reported periodicities in the range of 20-70 minutes.
+%	These oscillations were consequently interpreted as linear low-frequency slow sausage waves. \citet{morton} used the Rapid Oscillations in the Solar Atmosphere (ROSA) instrument to also identify linear sausage oscillations in a magnetic pore.
+%	However, determining whether the oscillations were slow or fast proved to be difficult.
+%	\citet{2012NatCo...3E1315M}, found the presence of fast sausage and kink waves higher in the solar atmosphere with enough wave energy to heat the chromosphere and corona.
+%
+%	The source and driving mechanism(s) of these MHD sausage modes have been very difficult to identify.
+%	Numerical simulations of a flux tube rooted in the photosphere, which is buffeted by a wide range of coherent sub-photospheric drivers, is one method for identifying the potential source of MHD sausage waves.
+%	These drivers can either be horizontal or vertical, single, or paired or else a power spectrum, with varying phase differences \citep[see e.g.][]{malins,khomenko,fedun2,fedun1,vigeesh2012three}.
+%	One example of a horizontal driver is the absorption of the global solar \textit{p}-mode oscillation by a sunspot \citep{1992ApJ...384..348G}.
+%	More recently, \citet{mathew} has also studied this absorption and found a structured ring-like absorption pattern in Doppler power close to the umbral-penumbral boundary.
+%	This effect was strongest where the transverse magnetic field was at its greatest, and this region allows fast waves to be converted into slow magneto-acoustic waves, which are a potential source of MHD waves in sunspots and other similar magnetic structures.
