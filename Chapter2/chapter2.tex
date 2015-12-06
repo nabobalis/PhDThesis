@@ -1,12 +1,12 @@
 \graphicspath{{Chapter2/Figs/}}
 
-\chapter{Data Collection and Analysis}
+\chapter{Data collection and analysis overview}
 \label{chapter2}
 	
 	\vspace*{\fill}\par
     \pagebreak
 	 
-\section{Overview}
+\section{Introduction}
 
 	The current solar observation scene has never been more ideal.
 	There is near constant space-based monitoring of the Sun but also a myriad of ground-based solar telescopes in existence.
@@ -28,12 +28,12 @@
     Within this thesis, three methods are employed which are the fast Fourier transform (FFT), Wavelet Transform (WT) and Empirical Mode Decomposition (EMD).  
     These methods will be discussed later in this chapter once the instrumentation is detailed.
 	
-\section{Data Sources}
+\section{Sources of solar data}
 
 	The work detailed within this thesis uses data from five telescopes: Swedish Solar Telescope (SST), Solar Dynamics Observatory (SDO), Dunn Solar Telescope (DST), Dutch Open Telescope (DOT) and the Swedish Solar Telescope (SVST).
     They are outlined below.
     
-\subsection{Swedish Solar Telescope}
+\subsection{Swedish Solar Telescope (SST)}
 
 	The Swedish Solar Telescope is a one metre vacuum solar telescope located at the Roque de los Muchachos Observatory on La Palma in the Canary Islands.
 	The SST was the replacement for the Swedish Vacuum Solar Telescope which used to occupy the same site and will be talked about later in this Chapter.
@@ -120,7 +120,7 @@
     This effects the average formation height for H$\alpha$ by making it higher and thus the intensity is lower.
     So, fibrils can be used to trace out regions of enhanced chromospheric mass density. 
     
-\subsection{Solar Dynamics Observatory}
+\subsection{Solar Dynamics Observatory (SDO)}
 
 	Solar Dynamics Observatory (SDO) is one of the latest space-based telescopes launched by National Aeronautics and Space Administration (NASA) \citep{2012SoPh..275...17L}.
 	It can be considered as the replacement for the Solar and Heliospheric Observatory (SOHO) \citep{domingo1995soho} and the Transition Region and Coronal Explorer (TRACE) \citep{TRACE}.
@@ -149,7 +149,7 @@
         \label{fig:SDO}
     \end{sidewaysfigure}
     
-\subsection{Other Ground Telescopes}
+\subsection{Other ground telescopes}
 
 	Data from three other ground-based telescopes are used within this thesis.
 	This is a brief summary and more detail is given within the chapters where the data from these telescopes and instruments are used.
@@ -179,7 +179,7 @@
     It consists of two Fabry-Perot interferometers that operates in the red wing (550-860 nm) and allows in-depth line scans for specific wavelengths as well as measuring polarized light in spectropolarimetric mode.
     See \cite{jess1} and \cite{cavallini2006ibis} for a full overview of ROSA and IBIS respectively.
        
-\section{Data Analysis}
+\section{Signal analysis}
 
 	Once the process of data acquisition is finished and the reduction is undertaken using methods that are specific for that telescope/instrument, analysis of the data can begin.
     The method used will vary depending on the overall science goal or aim.
@@ -194,7 +194,7 @@
     Finally, signal analysis is required to calculate the periods within the obtained signals as well as the phase difference between these two signals.
     The methods used are the Fast Fourier Transform (FFT), wavelets and Empirical Mode Decomposition (EMD) and are discussed now.
      
-\subsection{FFT}
+\subsection{Fast Fourier Transform (FFT)}
 
 	The first method is the Fast Fourier Transform (FFT).
 	Its name is a reference to the fact that the FFT is very fast computational algorithm of the Discrete Fourier Transform (DFT).
@@ -240,7 +240,7 @@
     This can be used to filter parts of the frequency spectrum that contain information that is unnecessary or return a new signal to see the behaviour at specific frequencies.
     It is commonly used method in signal analysis and is used within Chapter 5.
     	
-\subsection{Wavelet Transform}
+\subsection{Wavelet transform}
 
 	The second method employed is called the Wavelet Transform.
 	A wavelet is a function that is constrained in time and frequency space i.e., localised within these specific domains.
@@ -271,7 +271,7 @@
     This fact allows the wavelet transform to be used to measure the phase difference of the cross-sectional area and total intensity signals, which is the main method used to find the phase difference within this thesis.
     See \cite{WAUO} for an overview of the wavelet transform and its applications.
     
-\subsection{Empirical Mode Decomposition}
+\subsection{Empirical Mode Decomposition (EMD)}
 
 	Finally, we have Empirical Mode Decomposition (EMD).
 	As the name suggests, this method is not based off a mathematical theorem or transformation.
@@ -312,7 +312,7 @@
     To counter-act this effect, several methods have been suggested to lessen this issue and it will generally involve adding extra extrema points on both sides to constrict the spline fit.
     See \cite{huang} or \cite{terradas} for an overview of this method.
     
-\section{Area Analysis}
+\section{Area analysis}
 
 	The core work presented in this thesis is analysing the cross-sectional area of magnetic pores and sunspots.
 	So it is important to be able to confidently measure the cross-sectional area.
@@ -333,7 +333,7 @@
 	The chromosphere lines used traditionally (\ion{Ca}{II} and H$\alpha$ line core) make resolving the fine boundaries of a sunspot or a magnetic pore very difficult.
     This is an area for future investigation.
     
-    \subsection{Data Source}
+    \subsection{Data}
     
     The data for this investigation comes from two instruments on the DST: IBIS and ROSA.
     
