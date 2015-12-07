@@ -379,8 +379,8 @@
     One of the most repetitive parts in any solar physics thesis is what is about to follow.
     There are several equations that form the core of MHD and are solved in many different magnetic configurations. 
     The ultimate aim is to understand how these configurations will evolve in time or how they react to external factors.
-    Further, they are solved to find out what kind of waves these configurations can support as well as how they disturb the equilibrium. 
-    The MHD equations include many physical effects, however, we have taken the ideal assumption; adiabatic, inviscid, radiation, no thermal conduction and no resistivity.
+    Further, they are solved to find out what kind of waves these configurations can support and how these waves perturb the system. 
+    The MHD equations include many physical effects, however, we have taken the ideal assumption; adiabatic, inviscid, non-radiative, no thermal conduction and no resistivity.
     This is ideal MHD and the resulting equations are,
     \begin{align}                                                         
         \dfrac{\partial \rho }{\partial t} + \nabla \cdot (\rho \boldsymbol{\mathrm{v}}) =       
@@ -397,7 +397,7 @@
         \boldsymbol{\mathrm{E}} = - \boldsymbol{\mathrm{v}} \times \boldsymbol{\mathrm{B}},\tag{Ohm's Law}\\
         \boldsymbol{\mathrm{j}} = \nabla \times \boldsymbol{\mathrm{B}}/ \mu.\tag{Electric Current}                          
     \end{align}
-    Here $\rho$ is the density, $\boldsymbol{\mathrm{v}}$ is the velocity, $\frac{\mathrm{D}}{\mathrm{D}t}$ is the convective derivative $\left(\frac{\partial}{\partial t} + (\boldsymbol{\mathrm{v}}\cdot\nabla)\right)$, $p$ is the pressure, $\gamma$ is the ratio of specific heats ($5/3$), $\boldsymbol{\mathrm{B}}$ is the magnetic field, $\mathrm{k_B}$ is Boltzmann's constant, $\mathrm{m}$ is the mass, $\mathrm{T}$ is the temperature, $\boldsymbol{\mathrm{E}}$ is the electric field, $\boldsymbol{\mathrm{j}}$ is the current density and $\mu$ is the vacuum permeability. 
+    Here $\rho$ is the density, $\boldsymbol{\mathrm{v}}$ is the velocity, $\frac{\mathrm{D}}{\mathrm{D}t}$ is the convective derivative $\left(\frac{\partial}{\partial t} + (\boldsymbol{\mathrm{v}}\cdot\nabla)\right)$, $p$ is the pressure, $\gamma$ is the ratio of specific heats ($5/3$ for an ideal mono-atomic gas), $\boldsymbol{\mathrm{B}}$ is the magnetic field, $\mathrm{k_B}$ is Boltzmann's constant, $\mathrm{m}$ is the mass, $\mathrm{T}$ is the temperature, $\boldsymbol{\mathrm{E}}$ is the electric field, $\boldsymbol{\mathrm{j}}$ is the current density and $\mu$ is the vacuum permeability. 
 
     There are actually eight partial differential equations for eight variables.
     Both $\boldsymbol{\mathrm{v}}$ and $\boldsymbol{\mathrm{B}}$ have three components each and we have the density and temperature.
@@ -409,10 +409,10 @@
         \rho &= \rho_0 + {\rho_1}(\boldsymbol{r},t).\\              
     \end{align*}
     Here, subscripts are used to separate out the background ($\mathrm{B}_0$) and perturbation ($\mathrm{B}_1$) quantities.
-    There is assumed to be no background flow and that all perturbations are much smaller than the background value (e.g., $\mathrm{B}_0 \gg \mathrm{B}_1$).      
-    This leads to the linearised ideal MHD equations,
+    There is assumed to be no background flow and that all perturbations are much smaller than the background value (\textit{e.g.,} $\mathrm{B}_0 \gg \mathrm{B}_1$).      
+    This leads to the linearised ideal MHD equations (see Appendix 1 for a derivation),
     \begin{align}                                                         
-    \dfrac{\partial \rho_1 }{\partial t} + (\boldsymbol{\mathrm{v}}_1 \cdot \nabla)\rho_0 + + \rho_0 (\nabla \cdot \boldsymbol{\mathrm{v}}_1) =       
+    \dfrac{\partial \rho_1 }{\partial t} + (\boldsymbol{\mathrm{v}}_1 \cdot \nabla)\rho_0 + \rho_0 (\nabla \cdot \boldsymbol{\mathrm{v}}_1) =       
     0,\tag{Mass Conservation}\\                                  
     \rho_0 \dfrac{\partial \boldsymbol{\mathrm{v}}_1}{\partial t} =
     -\nabla p_1 + \dfrac{1}{\mu}(\nabla \times \boldsymbol{\mathrm{B}}_1) \times \boldsymbol{\mathrm{B}}_0 + \rho_1 \boldsymbol{\mathrm{g}},\tag{Equation of Motion}\\
@@ -420,7 +420,7 @@
     \dfrac{\partial \boldsymbol{\mathrm{B}}_1}{\partial t} = \nabla \times (\boldsymbol{\mathrm{v}}_1 \times \boldsymbol{\mathrm{B}}_0),\tag{Induction Equation}\\
     \nabla \cdot \boldsymbol{\mathrm{B}}_1 = 0, \tag{Solenoid Equation}               
     \end{align}
-    where we can define the first characteristic speed in MHD; the sound speed, $c_s^2 = {\gamma p_0}/{\rho_0}$.
+    where we can define the first characteristic speed in MHD, the sound speed, $c_s^2 = {\gamma p_0}/{\rho_0}$.
     There is another important characteristic speed and that is the Alfv\'{e}n speed, $c_A^2 = {\mathrm{B}_0^2}/{\sqrt{\rho_0}}$.
     These equations need to then be applied to an equilibrium and, since the focus is sunspots and magnetic pores, a cylindrical flux tube is the ideal choice.
     
@@ -433,7 +433,7 @@
     It is important to note that in thin flux tubes, there are two other characteristic wave speeds.
     One is a subsonic, sub-Alfv\'{e}nic speed, $c_T$ (defined later on), and the other is the ``mean'' Alfv\'{e}n speed, $c_k$.
 
-    The model is as follows; a cylindrical magnetic flux tube of radius $a$ with its own density ($\rho_0$), pressure ($p_0$) and magnetic field ($\mathrm{B}_0\textbf{\^{z}}$) is embedded in a magnetic environment with a similar profile ($\mathrm{B}_e \textbf{\^{z}}$, $\rho_e$ and $p_e$ ).   
+    The model is as follows, a cylindrical magnetic flux tube of radius $a$ with its own density ($\rho_0$), pressure ($p_0$) and magnetic field ($\mathrm{B}_0\textbf{\^{z}}$) is embedded in a magnetic environment with a similar profile ($\mathrm{B}_e \textbf{\^{z}}$, $\rho_e$ and $p_e$).   
     The density and pressure are uniform throughout the medium.
     The top image of Figure \ref{fig:fluxtube} is a schematic drawing of this model. 
         
@@ -457,7 +457,7 @@
     
     This is the starting point for deriving the dispersion relation for MHD waves in a magnetic flux tube.
     It is assumed that this system is in equilibrium.
-    Perturbations to the equilibrium conditions then add extra terms to the ideal MHD equations (i.e., the equations above).
+    Perturbations to the equilibrium conditions then add extra terms to the ideal MHD equations (the equations above).
     By introducing the Fourier decomposition of the perturbations, they show that the amplitude term is the Bessel equation.
     When bound on the axis of the cylinder ($r=0$), two solutions exist for either the body or surface wave.
     In the external atmosphere, the assumption of no propagation of energy away from or towards the cylinder allows the solution for the amplitude to be found for the external atmosphere.
@@ -469,18 +469,19 @@
         \rho_0 (k^2 c_A^2 - \omega)m_e \dfrac{K_n^\prime(m_e a)}{K_n(m_e a)} &= \rho_e (k^2 c_{Ae}^2 - \omega)n_0 \dfrac{I_n^\prime(n_0 a)}{I_n(n_0 a)} \tag{Body, m$_0^2 = -n_0 < 0$} 
     \end{align}
     where, $K_n$ and $I_n$ are Bessel functions of order n, $K_n^\prime$ and $I_n^\prime$ are the derivatives of the Bessel functions, $m_0$ and $m_e$ are the internal and external wavenumber, defined as, $$\dfrac{(k^2 c_{s}^2 - \omega^2)(k^2 c_{A}^2 - \omega^2)}{(c_{s}^2 + c_{A}^2)(k^2 c_{T}^2 - \omega^2)},$$ and $c_{T}$ is the tube speed, $$c_{T} = \dfrac{c_s^2 c_A^2}{c_s^2 + c_A^2}.$$
-    Finally, these dispersion relations are solved under photospheric conditions and the solutions are plotted at the bottom of Figure \ref{fig:fluxtube}.
+    Finally, these dispersion relations are solved under photospheric conditions (plasma-$\beta << 1$, such that, $c_A > c_{se} > c_k > c_{Ae} $) and the solutions are plotted at the bottom of Figure \ref{fig:fluxtube}.
         
     These dispersion relations are important as they detail the way in which waves propagate through numerous flux tube sizes.
     It shows the limits of the wave solutions indicating in what regimes they cannot exist.
     Surface waves are dispersive as their phase speed depends on the wavenumber.
-    There are slow body waves which are both sausage, kink and fluting modes; these modes have a phase speed between the tube and sound speeds.
+    There are slow body waves which are both sausage, kink and fluting modes and these modes have a phase speed between the tube and sound speeds.
     Slow surface waves have phase speeds close to the tube speed. 
     There is also a surface wave with a phase speed close to the kink speed and another surface wave near the sound speed.
     If one can measure the phase speed of an observed wave and the $ka$ of the flux tube, one can also likely identify the observed waves.
+    This has been attempted by \cite{2015A&A...579A..73M}.
     
-    One factor that has been neglected is the mode number ($n$), its value governs the way in which the wave disturbs the flux tube.
-    This gives us the name; sausage ($n=0$), kink ($n=1$) and fluting ($n>1$).
+    One factor that has been neglected is the mode number ($n$), its value governs the way in which the wave perturbs the flux tube.
+    This gives us the name: sausage ($n=0$), kink ($n=1$) and fluting ($n>1$).
     These different wave modes cause characteristic physical effects which can be used to identify each different wave mode.
     
     Figure \ref{fig:tube} shows the physical changes to the flux tube, caused by each different wave.
