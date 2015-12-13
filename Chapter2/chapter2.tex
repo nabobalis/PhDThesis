@@ -9,12 +9,12 @@
 \section{Introduction}
 
 	The current solar observation scene has never been more ideal.
-	There is near constant space-based monitoring of the Sun but also a myriad of ground-based solar telescopes in existence.
+	There is currently constant space-based monitoring of the Sun but also a myriad of high-quality ground-based solar telescopes in existence.
     This is coupled with a few small space-based telescopes and sounding rocket experiments.
 	Further within the next decade, the largest ground-based solar telescope will open called the Daniel K. Inouye Solar Telescope (DKIST, formerly the Advanced Technology Solar Telescope, ATST) and several highly-advanced satellites will be launched (two of which will move in to very close orbits to the Sun).
 	This is an important era for solar physics going forward.
 	
-	Within this Thesis, numerous sources of solar data were used.
+	Within this thesis, numerous sources of solar data were used.
 	Two telescopes will be the primary focus of this chapter: the Swedish Solar Telescope (SST) and Solar Dynamics Observatory (SDO).
 	While other ground-based telescopes have their data utilized here, I was able to spend 10 days at the SST and thus it gets a larger focus here.
 	These two telescopes offer some of the highest quality data available to a solar physicist.
@@ -23,10 +23,11 @@
 	Once these are taken care of, the method of analysis will need to be considered and it will vary depending on the overall aims.
 	Here, the aim was to measure two properties of the observed magnetic waveguides.
     These are the cross-sectional area and total intensity through time.
-    Once these two properties have been measured, extracting any periods within these signals and the phase difference between them is required.
+    Once these two properties have been measured, deducing any periods within these signals and calculating the phase difference between them is required.
     There have been numerous methods created that aim to analyse signals and measure these properties.
     Within this thesis, three methods are employed which are the fast Fourier transform (FFT), Wavelet Transform (WT) and Empirical Mode Decomposition (EMD).  
     These methods will be discussed later in this chapter once the instrumentation is detailed.
+    Finally, there is a brief analysis into the method used to measure the cross-sectional area for two example magnetic flux tubes.
 	
 \section{Sources of solar data}
 
@@ -40,23 +41,25 @@
 	The SST has a $1.1$ m lens, of which only $1$ m is usable, which is connected to a several storey vacuum tower. 
     The light collected travels down the vacuum tower into a corrector system and then to the optics bench. 
     The usage of a vacuum tower means that the collected light does not pass through any air.
-    This reduces any distortion that comes from the air being heated by the beam of light which improves image quality. 
+    This reduces any distortion that comes from the air being heated by the beam of light.
+    This improves the overall image quality. 
     The scale of the SST can be seen in Figure \ref{fig:SST}.
+    It shows the building that houses the SST and the tower that contains the vacuum tower can be seen.
     
 	\begin{sidewaysfigure}
         \centering
         \includegraphics[width=0.75\textwidth]{SST.jpg}
         \caption{
             An image of the Swedish Solar Telescope taken from a ledge near the caldera on the island of La Palma that is part of the Canary Islands.
-            The Primary mirror housing can be seen at the top of the image, while the tower that conceals the vacuum tower can be seen beneath it.
+            The primary mirror housing can be seen at the top of the image, while the tower that conceals the vacuum tower can be seen beneath it.
             Copyright goes to the author.
            }
            \label{fig:SST}
    \end{sidewaysfigure}
          
-    Further to this, the SST is equipped with an adaptive optics (A.O.) system. 
-	A.O. is a term used for a process that will adjust the optics of the instrument in order to reduce the effects of turbulence from the Earth's atmosphere. 
-	At a basic level, the A.O. at the SST has a sensor that monitors the wavefront of the incoming light wave and analyses how the wavefront is distorted. 
+    Further to this, the SST is equipped with an adaptive optics (AO) system. 
+	AO is a term used for a process that will adjust the optics of the instrument in order to reduce the effects of turbulence from the Earth's atmosphere. 
+	At a basic level, the AO at the SST has a sensor that monitors the wavefront of the incoming light wave and analyses how the wavefront is distorted. 
 	This distortion is counteracted by deforming a lens, by using a voltage since the lens is made of a piezoelectric material. 
 	This is not the same method used by larger and newer optical telescopes used for astrophysics that have a deformable primary mirror in conjugation with a powerful laser.
 	
@@ -65,14 +68,16 @@
     See \cite{2011A&A...535A..14K} for a full overview of this instrument.
     
 	CRISP is a tunable dual Fabry-Perot filter system.
-    The wavelength range is in the red wing (510-860 nm) and the light firstly goes through a selectable filter dependent on the aims of the observation objectives.
-    This allows many wavelengths to be chosen with one instrument, which is required in order to observe the large height variance of the solar atmosphere.
+    The wavelength range is in the red wing (510-860 nm) and the light firstly goes through a selectable pre-filter dependent on the goals of the current observational sequence.
+    This allows many wavelengths to be chosen with one instrument, which is required in order to observe the height variation of the solar atmosphere.
 	The Fabry-Perot is made from a pair of partly reflective mirrors that are separated by a small distance.
     By varying the distance between the two mirrors, a specific wavelength can escape the mirror system and go to the cameras.
     With the ability to vary the distance between the mirrors, the Fabry-Perot system is able to investigate the line profile, of many elements.
-	Table \ref{crisp} has approximately a third of the available wavelengths on CRISP. 
-	The selection here is the more commonly used wavelengths that often appear in published papers.
-	
+	Table \ref{crisp} has approximately a third of the wavelengths available with CRISP. 
+	The selection of wavelengths here is the more commonly used filters that often appear in published papers.
+	For example, the Fe I 630.26 nm line is used to observe the photosphere and clear granulation can be seen.
+	More importantly, this wavelength is used to measure the photospheric magnetic field.
+	    
 	\begin{table}
          \begin{center}
          \begin{tabular}{|c|c|c|c|}
@@ -87,28 +92,23 @@
              \hline
         \end{tabular}
         \caption{
-                Summary of the more commonly used wavelengths that are observable with CRISP.
+                Summary of the more common wavelengths that are selectable with CRISP.
                 Each filter has a name, wavelength at the line-core and the Full Width at Half Maximum (FWHM) and an average formation height of the line-core, which are soured from \cite{jess1}. 
                 }
         \label{crisp}
         \end{center}
      \end{table}
-	
-    Further to this, the light beam at the SST is spilt into two parts when CRISP is in use.
-	The red wing goes to CRISP, while the blue part goes to a series of broad band cameras.
-	These wavelengths are G-band and Ca K which sample the photosphere.
-	These do offer some of the highest resolution images of the solar photosphere to date and are only used when the seeing is excellent. 
-    
+	   
     An important wavelength is $656.3$nm and is commonly referred to as H$\alpha$.
-    It is when an electron drops energy level from the third shell to the second in a Hydrogen atom.
-    This transition is the easiest method to observe the chromosphere and occurs approximately $1.5$ Mm from the base of the photosphere.
-    Understanding the chromosphere has become a topic of heavy interest as the ``coronal heating problem'' shifted from the corona to the chromosphere over the past decade \citep{Aschwanden2007}. 
+    It is when an electron drops one energy level from the third shell to the second in a Hydrogen atom.
+    This transition is the easiest method to observe the chromosphere and forms approximately $1.5$ Mm from the base of the photosphere.
+    Understanding the chromosphere has become a topic of heavy interest as the ``Coronal Heating Problem'' shifted from the corona to the chromosphere over the past decade \citep{Aschwanden2007}. 
     Since the line core of H$\alpha$ samples the chromosphere, understanding how this line is formed within the solar atmosphere has become a very important topic. 
     
     However, H$\alpha$ line formation is a difficult topic.
     The line is highly complex, most likely it is dependant on numerous physical effects such as ionization or non-LTE effects. 
-    Currently, the standard understanding of H$\alpha$ comes from radiative MHD simulations, for example by \cite{Leenaarts2007} or \cite{Leenaarts2012}.
-    From these sources, we can summarize a few properties and observations of the H$\alpha$ line core.
+    Currently, the standard understanding of H$\alpha$ comes from radiative MHD simulations done, for example by \cite{Leenaarts2007} and \cite{Leenaarts2012}.
+    From these  two sources, we can summarize a few properties and observations of the H$\alpha$ line core.
     
     Current research suggests that structures that appear darker, such as fibrils, in the line-core are formed higher compared to other features.
     Further, the opacity of H$\alpha$ that is formed in the upper chromosphere is temperature insensitive.
@@ -118,7 +118,17 @@
     These fibrils are aligned with the local magnetic field direction.
     Further, fibrils are located in regions where the local density is larger compared to the background chromosphere. 
     This effects the average formation height for H$\alpha$ by making it higher and thus the intensity is lower.
-    So, fibrils can be used to trace out regions of enhanced chromospheric mass density. 
+    Thus, fibrils can be used to trace out regions of enhanced chromospheric mass density. 
+    
+    Finally, the light beam at the SST is spilt into two parts when CRISP is in use.
+    The red wing goes to CRISP, while the blue part goes to a series of broadband cameras.
+    These wavelengths are G-band and Ca K which sample the photosphere.
+    These offer some of the highest resolution images of the solar photosphere to date and are only used when the seeing is excellent. 
+    Examples of the data from these cameras can be seen on the SST website (\url{http://www.solarphysics.kva.se/})
+    
+    One small comment on the data reduction step.
+    The method used to reduce SST data is called Multi-Object Multi-Frame Blind Deconvolution (MOMFBD), which is a complex and computationally demanding method to improve the quality of the data without affecting the cadence of the observation data. 
+    See \cite{Noort2005} for a full breakdown of these reduction method. 
     
 \subsection{Solar Dynamics Observatory (SDO)}
 
@@ -133,14 +143,14 @@
 	AIA is a multi-wavelength instrument and is able to take images of the solar surface to the outer reaches of the solar atmosphere.
     This has offered an unprecedented view of the many layers of the solar atmosphere at the same time.
     This view can be seen in Figure \ref{fig:SDO}, which shows the full wavelength range of AIA as well as an HMI image.
-    The figure showcases almost every wavelength that can be observed using AIA, from the low temperature lines such as $170$ nm to the hotter lines that reveal the corona like $13.1$ nm. 
-    Further, there is a LOS magnetogram from HMI.
-
+    The figure showcases almost every wavelength that is available on AIA, from the low temperature lines such as $170$ nm that sample the photosphere, to the hotter lines that display the complex structure within the corona such as $13.1$ nm. 
+    From HMI, there is a LOS magnetogram that showcases the magnetic field within the photosphere.
+    
    	\begin{sidewaysfigure}
         \centering
         \includegraphics[width=\textwidth]{SDO.pdf}
         \caption{
-                The field of view of the Solar Dynamics Observatory (SDO).
+                The field of view of the Solar Dynamics Observatory (SDO) satellite.
                 Each image shows a different wavelength that is captured by two of the instruments on SDO, the Atmospheric Imaging Assembly (AIA) and Helioseismic and Magnetic Imager (HMI).
                 The images are taken on the 17$^\mathrm{th}$ of April 2015 focusing on AR 12326.
                 The columns on the side go downwards in increasing temperature response.
@@ -151,41 +161,45 @@
     
 \subsection{Other ground telescopes}
 
-	Data from three other ground-based telescopes are used within this thesis.
-	This is a brief summary and more detail is given within the chapters where the data from these telescopes and instruments are used.
+	Data from three other ground-based telescopes is used within this thesis.
+	What follows is a brief summary of each one and more details are given within the chapters where the data from these telescopes are used.
     
-	Firstly, the Swedish Vacuum Solar Telescope (SVST) which was the predecessor to the current SST.
-	It had a 47.5 cm mirror with several wavelength narrow band filters with no A.O.
-    The narrow band filters were not too dissimilar to the wavelengths in Table. \ref{crisp}.
+	First, the Swedish Vacuum Solar Telescope (SVST) which was the predecessor to the current SST.
+	It had a 47.5 cm mirror with several wavelength narrowband filters with no AO.
+    The narrowband filters were not too dissimilar to the wavelengths in Table. \ref{crisp}.
     See \cite{1991AdSpR..11..129S} for a full overview of the SVST.
 
-	Secondly, the Dutch Open Telescope (DOT) is an open-air solar telescope that is retired. 
+	Second, the Dutch Open Telescope (DOT) is an open-air solar telescope that is now retired. 
 	The DOT is located next to the SST on La Palma.
-    It had a very compact design that is quite different to the SST.
-    It had a mirror that is slightly smaller than the previous SVST, at only 45 cm.
+    It has a very compact design that is quite different to the SST.
+    It has a mirror that is slightly smaller than the previous SVST, at only 45 cm.
     The full instrumental setup consisted of 6 cameras each with a different narrow band filter.
-	With no A.O., it used a more unconventional method to lessen seeing effects.
+	With no AO, it used a more unconventional method to lessen seeing effects.
 	The telescope was on a mount several meters high, which was open to the atmosphere.
     As such, the strong winds blew across the mirror reducing seeing effects from temperature gradients that are caused by the ground, which reduced image distortion.
     Further, it used high frequency cameras that allowed speckle reconstruction.
+    Speckle reconstruction is a method to reducing the effect of Earth's atmosphere on the images obtained.
+    But using high-speed camera able to capture many frames in one second, the frames are combined in order to form a model of the distortion from the atmosphere. 
+    This effect however, reducing the cadence of the observation.
     See \cite{rutten} for a full overview of the DOT.
     
 	Finally, the Richard B. Dunn Solar Telescope, located at Sacramento Peak in New Mexico and is run by the National Solar Observatory (NSO).
     It has a 76 cm mirror and is a vacuum telescope similar to the SST but its design is unique.
+    The tower itself moves, unlike the SST where it is just the telescope mount, it is on a ring of liquid mercury and it allows it to rotate to track the Sun throughout the day. 
     It has several instruments but the focus here is on two of them: \textit{Rapid Oscillations in the Solar Atmosphere} (ROSA) and \textit{Interferometric Bidimensional Spectrometer} (IBIS).
     ROSA is a synchronised  6 camera system similar in principle to the system on the DOT. 
-    It captures images at high frequency rates and uses narrow band wavelength filters that sample the photosphere and chromosphere.
+    It captures images at high frequency rates and uses narrowband wavelength filters that sample the photosphere and chromosphere.
     Much like the DOT, it uses speckle reconstruction to improve the quality of the images, while IBIS is similar to CRISP at the SST.
     It consists of two Fabry-Perot interferometers that operates in the red wing (550-860 nm) and allows in-depth line scans for specific wavelengths as well as measuring polarized light in spectropolarimetric mode.
     See \cite{jess1} and \cite{cavallini2006ibis} for a full overview of ROSA and IBIS respectively.
        
 \section{Signal analysis}
 
-	Once the process of data acquisition is finished and the reduction is undertaken using methods that are specific for that telescope/instrument, analysis of the data can begin.
+	Once the process of data acquisition is finished and the reduction is undertaken using methods that are specific for that telescope or instrument, analysis of the data can begin.
     The method used will vary depending on the overall science goal or aim.
     For example, statistical studies require crunching through large quantities of data in order to categorize the general properties of the phenomenon that is under investigation. 
 	Other studies will focus on single events, either due to the lack of a large selection of data or if the event under investigation is rare.
-	The analysis undertaken within this thesis is focused on measuring properties of waves in several sunspots and magnetic pores as well as a single RPW event.  
+	The analysis undertaken within this thesis is focused on measuring the properties of waves in several sunspots and magnetic pores and later a single dataset studying RPWs.  
    	
 	From Chapter 1, to observe MHD sausage waves in cylindrical structures, the phase relations between specific observational quantities such as cross-sectional area and total intensity are required.
     While further phase relations are available, the two quantities used were the ones only possible with the ground-based data available at the time, so the focus has been on the cross-sectional area and total intensity perturbations. 
@@ -349,7 +363,7 @@
     The DST was centred on a small magnetic pore cluster in AR 11683.
     The observation run was on the 6$^{\mathrm{th}}$ of March 2013 at 19:27 UT till 20:02 UT with a cadence of 2.11 seconds.
     The full FOV was 115\arcsecs by 115\arcsecs with a pixel size of 0.12\arcsecs.
-    The narrow band filter means that only the line core was sampled and this corresponds to the low photosphere for G-band.
+    The narrowband filter means that only the line core was sampled and this corresponds to the low photosphere for G-band.
     See \cite{0004-637X-806-1-132} for the reduction methods for this ROSA data.
     
     Both magnetic structures can be seen in Figure \ref{fig:data_overview}.
@@ -365,7 +379,7 @@
                 It is in the blue wing of the H$\alpha$ line profile which samples the photosphere and not the chromosphere that the line core samples.
                 The sunspot is in AR 11579 and was taken on the 30$^{\mathrm{th}}$ of September 2012 at 15:00 UT until 15:16 UT.
                 The right figure is of a cropped FOV for ROSA.
-                It is the G-band narrow band filter which samples the lower photosphere.
+                It is the G-band narrowband filter which samples the lower photosphere.
                 The focus is on a small magnetic pore cluster, in AR 11683 and was taken on the 6$^{\mathrm{th}}$ of March 2013 at 19:27 UT till 20:02 UT.
                 The magnetic pore investigated here is the larger one at the top.
                 }
