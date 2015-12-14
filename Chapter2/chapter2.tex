@@ -185,9 +185,9 @@
     
 	Finally, the Richard B. Dunn Solar Telescope, located at Sacramento Peak in New Mexico and is run by the National Solar Observatory (NSO).
     It has a 76 cm mirror and is a vacuum telescope similar to the SST but its design is unique.
-    The tower itself moves, unlike the SST where it is just the telescope mount, it is on a ring of liquid mercury and it allows it to rotate to track the Sun throughout the day. 
-    It has several instruments but the focus here is on two of them: \textit{Rapid Oscillations in the Solar Atmosphere} (ROSA) and \textit{Interferometric Bidimensional Spectrometer} (IBIS).
-    ROSA is a synchronised  6 camera system similar in principle to the system on the DOT. 
+    The tower itself moves, unlike the SST where it is just the telescope mount, it seated on a ring of liquid mercury and it allows it to rotate to track the Sun throughout the day. 
+    It has many instruments but the focus here is on two of them: \textit{Rapid Oscillations in the Solar Atmosphere} (ROSA) and \textit{Interferometric Bidimensional Spectrometer} (IBIS).
+    ROSA is a synchronised 6 camera system similar in principle to the system on the DOT. 
     It captures images at high frequency rates and uses narrowband wavelength filters that sample the photosphere and chromosphere.
     Much like the DOT, it uses speckle reconstruction to improve the quality of the images, while IBIS is similar to CRISP at the SST.
     It consists of two Fabry-Perot interferometers that operates in the red wing (550-860 nm) and allows in-depth line scans for specific wavelengths as well as measuring polarized light in spectropolarimetric mode.
@@ -195,18 +195,17 @@
        
 \section{Signal analysis}
 
-	Once the process of data acquisition is finished and the reduction is undertaken using methods that are specific for that telescope or instrument, analysis of the data can begin.
+	Once the process of data acquisition is finished and the data has been reduced using methods that are specific for that telescope or instrument, analysis of the data can begin.
     The method used will vary depending on the overall science goal or aim.
     For example, statistical studies require crunching through large quantities of data in order to categorize the general properties of the phenomenon that is under investigation. 
 	Other studies will focus on single events, either due to the lack of a large selection of data or if the event under investigation is rare.
-	The analysis undertaken within this thesis is focused on measuring the properties of waves in several sunspots and magnetic pores and later a single dataset studying RPWs.  
+	The analysis undertaken within this thesis is focused on measuring the properties of waves in several sunspots and magnetic pores and later a single dataset studying RPWs.
    	
-	From Chapter 1, to observe MHD sausage waves in cylindrical structures, the phase relations between specific observational quantities such as cross-sectional area and total intensity are required.
-    While further phase relations are available, the two quantities used were the ones only possible with the ground-based data available at the time, so the focus has been on the cross-sectional area and total intensity perturbations. 
-    Once these signals have been extracted from the datasets used, the periods and phase of these signals must be found.
-    The method used to extract these signals will be detailed below.
-    Finally, signal analysis is required to calculate the periods within the obtained signals as well as the phase difference between these two signals.
-    The methods used are the Fast Fourier Transform (FFT), wavelets and Empirical Mode Decomposition (EMD) and are discussed now.
+	From Chapter 1, it is clear that to observe MHD sausage waves in cylindrical structures, the phase relations between specific observational quantities such as the cross-sectional area and total intensity are required.
+    While further phase relations are available, the two quantities used were the ones only possible with the ground-based data available at the time.
+    As a result, the focus has been on the cross-sectional area and total intensity perturbations. 
+    Once these signals have been measured from the datasets used, the periods and phase difference of these signals must be found.
+    The methods used are the Fast Fourier Transform (FFT), wavelets and Empirical Mode Decomposition (EMD) and are discussed below.
      
 \subsection{Fast Fourier Transform (FFT)}
 
@@ -214,30 +213,29 @@
 	Its name is a reference to the fact that the FFT is very fast computational algorithm of the Discrete Fourier Transform (DFT).
     It was first introduced by \cite{cooley1965algorithm}.
 	The Fourier Transform is a mathematical method to decompose a signal which is assumed to be periodic into its constituent frequencies.
-	Generally, it is common to have a real-valued signal input into the FFT and the output is a complex number.
+	Generally, it is common to have a real-valued signal input into the FFT and the resulting output is a complex number.
 	The absolute value of this output is the amount (or power if squared) of each frequency in the original signal and the complex part is the phase shift of the sinusoidal function at that frequency.
     
     An example of this can be seen in Figure \ref{fig:signal_overview}.
-    The top left image is of an artificial signal, of the form, $$\sin\left(2\pi \frac{x}{5}\right) + \cos\left(2\pi \frac{x}{10}\right) + 5\times\mathrm{random\ noise}$$ with the noise that is Gaussian distributed.
+    The top left image is of an artificial signal, of the form, $$\sin\left(2\pi \frac{x}{5}\right) + \cos\left(2\pi \frac{x}{10}\right) + 5\times\mathrm{random\ noise},$$ where the noise is Gaussian distributed.
     The top right image is the output after this signal is passed into the FFT.
-    It is a frequency spectrum, where we have power as a function of frequency.
-    The largest two peaks that can be seen correspond to the frequencies of the artificial signal.
-    The small peaks will correspond to the noise that was added to the signal.
+    It is a power spectrum, where we have power as a function of frequency.
+    The two peaks that can be seen correspond to the two frequencies of the artificial signal.
+    The small peaks that are littered in the power spectrum correspond to the uniform noise that was added to the signal.
     
    	\begin{sidewaysfigure}
            \centering
            \includegraphics[width=0.85\textwidth]{signal_overview.pdf}
            \caption{
-                   An example of signal analysis of the three main methods used in this thesis. 
+                   An example of the signal analysis methods used in this thesis. 
                    The upper left plot is of an artificial signal with noise.
-                   The upper right plot is a frequency spectrum from the FFT.
+                   The upper right plot is a power spectrum from the FFT.
                    The largest two peaks shows the frequencies within the artificial signal.
                    The bottom left plot is a wavelet power spectrum.
                    It expands on the FFT by offering a 2D view of the frequency spectrum with time.
-                   So it is possible to see what period is within the signal but also at what time it occurred at and for how long.
+                   So it is possible to see what period is within the signal but also at what time it is located at and its duration.
                    The bottom right plot shows an IMF output from a EMD algorithm.
-                   The IMF shows one of the periods from the artificial signal used.
-                   This plot shows the first frequency of the artificial signal.
+                   The IMF contains one of the periods from the artificial signal used and this corresponds to the smaller frequency within the artificial signal.
                    }
               \label{fig:signal_overview}
      \end{sidewaysfigure}
