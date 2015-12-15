@@ -342,19 +342,19 @@
     
 \section{Area analysis}
 
-	The core work presented in this thesis is analysing the cross-sectional area of magnetic pores and sunspots.
-	So it is important to be able to confidently measure the cross-sectional area.
-    The base idea is to contour the structure and use that as a measure of its cross-sectional area.
+	The core idea behind the work presented in this thesis is analysing the cross-sectional area of magnetic pores and sunspots.
+	So it is vital to be able to confidently measure the cross-sectional area.
+    The base idea is to threshold the structure and use that as a measure of its cross-sectional area.
     The issue is how various methods have been used in published research.
-    While many never state exactly how they contoured a sunspot or a magnetic pore.
-	\cite{morton2011} used a $2.5\sigma$ threshold of the mean background intensity for G-band data.
-    Sigma (or $\sigma$) refers to the standard deviation of the background intensity.
+    While many never state exactly how they contoured a sunspot or a magnetic pore, partially due to not caring explicitly about the cross-sectional area.
+    Previously, \cite{morton2011} used a $2.5\sigma$ threshold of the mean background intensity for G-band data, here, sigma ($\sigma$) refers to the standard deviation of the background intensity.
+    The number before sigma will be called the sigma multiplier throughout this section.
 	More recently, \cite{0004-637X-806-1-132} used $2.2\sigma$ of the mean background intensity for their data.
-    This was to account for the change in contrast between several different wavelength filters.
-    Since their aim was to measure the cross-sectional area of a pore from the photosphere to the lower chromosphere.
+    This was to account for the change in contrast between several different wavelength filters as this was the first multi-height analysis.
+    Their aim was to measure the cross-sectional area of a magnetic pore from the photosphere to the lower chromosphere which is challenging topic.
 	
 	What will occur here, is an analysis on what effect changing the value of sigma has on the resultant cross-sectional area signal.
-    The value of sigma can appear to be arbitrary and there is an assumption that the intensity of the background photosphere is a normal distribution and as such sigma can be used to contour these magnetic structures.
+    The value of sigma can appear to be arbitrary and there is an assumption that the intensity of the background photosphere has a normal distribution and as such, sigma can be used to contour these magnetic structures.
     To be more precise, whether different sigma values will give different periods after signal analysis or if the value of sigma once set within a certain range does not change the output is of interest, especially since the current selection of ground-based solar telescopes have resolutions similar to each other and this could be the limiting factor in detecting these oscillations.
     
 	This analysis is only for ground-based data and for elemental lines that sample the photosphere directly.
@@ -377,7 +377,7 @@
     The DST was centred on a small magnetic pore cluster in AR 11683.
     The observation run was on the 6$^{\mathrm{th}}$ of March 2013 at 19:27 UT till 20:02 UT with a cadence of 2.11 seconds.
     The full FOV was 115\arcsecs by 115\arcsecs with a pixel size of 0.12\arcsecs.
-    The narrowband filter means that only the line core was sampled and this corresponds to the low photosphere for G-band.
+    The narrowband filter means that only the line core was sampled and for G-band (430.5 nm) this corresponds to the low photosphere.
     See \cite{0004-637X-806-1-132} for the reduction methods for this ROSA data.
     
     Both magnetic structures can be seen in Figure \ref{fig:data_overview}.
