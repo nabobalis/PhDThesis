@@ -299,44 +299,46 @@
     
 \subsection{Empirical Mode Decomposition (EMD)}
 
-	Finally, we have Empirical Mode Decomposition (EMD).
-	As the name suggests, this method is not based off a mathematical theorem or transformation.
-    The algorithm will output several signals, the residual and Intrinsic Mode Functions (IMFs).
+	Finally, we have the Empirical Mode Decomposition (EMD).
+	As the name suggests, this method is not based off a mathematical theorem or transformation in the way that the FFT or wavelets.
+    The algorithm will output resultant several signals, called the residual and Intrinsic Mode Functions (IMFs).
     The residual is the left over signal from the algorithm and tends to contain any slow varying background trend.
-    An IMF will generally be a simple oscillatory mode, ideally it should be only one of the frequencies within the original signal.
+    An IMF will generally be a simple oscillatory mode, ideally it should contain one of the frequencies within the original signal.
     There are two requirements in order to be considered as an IMF.
     Firstly, the number of extrema and zero crossings must either be equal or differ by one.
     Secondly, the mean value of the envelope defined by the local maxima and the envelope defined by the local minima equals zero.
+    This means that the output from the EMD is constrained, which results in non-arbitrary signals.
     
-    The steps of the algorithm are as follows.
+    The steps of the algorithm are as follows,
     \begin{enumerate}
         \item The minima and maxima of the input signal are found.
         \item A spline fit of the minima and maxima points is computed.
         \item The resulting minima and maxima curves create an envelope that encompass the signal.
-        \item This envelope is subtracted from the input signal and this process is repeated again until a specific criterion is met. This is termed sifting.
+        \item This envelope is subtracted from the input signal and this process is repeated again. This is termed sifting.
+        \item The sifting stops once the stopping criterion is satisfied.
         \item The resulting signal is called an IMF and is subtracted from the original signal. The leftover signal is termed the residual.
-        \item This process repeats itself again on the residual signal until a set number of IMFs are obtained leaving nothing but the final residual signal.
+        \item This process repeats itself again on the residual signal until a set number of IMFs are obtained or the residual signal contains too few extrema to spline fit.
     \end{enumerate}
-    There are two comments to be made here.
-    Firstly, the stopping criterion for the sifting varies and there are two common ones.
-    The first one is, if the standard deviation of the sifted signals is lower than a given limit, the process stops.
-    The second one is called the S number which, if the same signal is returned by the sifting process more than S times, causes the process to stop.
+    
+    There are two comments to be made here about the algorithm.
+    The first is about the stopping criterion, as their are two commonly used definitions.
+    The first one is if the standard deviation of the sifted signals is lower than a given limit, which is typically less than 0.3, the process stops.
+    The second one is called the S number which, if the same signal is returned by the sifting process more than S times, this causes the process to stop.
     Secondly, the overall algorithm has no method of deciding when enough IMFs have been found, so the number picked is arbitrary, but generally the algorithm will stop before this limit is reached.
-    As the residual becomes linear with each IMF removal, the fitting algorithm will stop naturally since there are no more extrema points.
+    This is because as the residual becomes linear with each IMF removal, the fitting algorithm will stop naturally since there is not enough extrema points to spline fit.
+    
     The resulting set of IMFs, contain the periods within the original signal, while the residual should contain any background trend.
     Much like the FFT, you can reverse the method as the sum of all of the IMFs and residual will return the original input signal.
-
-    The EMD allows, much like the cross wavelet, the ability to find the phase difference between two signals containing the same periods.
-    With a direct comparison of the IMFs of one signal to another, you can measure the phase difference between them.
-    For example, this was carried out by \cite{morton2011}.
+    The EMD allows much like the cross-wavelet, the ability to find the phase difference between two signals containing the same periods.
+    With a direct comparison of the IMFs of one signal to another, you can measure the phase difference between them and was carried out by \cite{morton2011}.
     The EMD algorithm is also very good at separating noise from a signal, which is what the first IMF generally contains.
    
     The drawbacks for the EMD are most focused on the method, since it has no mathematical foundation like the FFT or wavelet.
     The most important issue for the EMD is the spline fit that creates the envelopes.
     The envelope fit with each iteration, starts to become very large at the edges since there is nothing to constrain it.
     As such, when these are subtracted from the signal, the resulting IMFs display large swings at the start and end, so these edge effects will easily affect the output.
-    To counter-act this effect, several methods have been suggested to lessen this issue and it will generally involve adding extra extrema points on both sides to constrict the spline fit.
-    See \cite{huang} or \cite{terradas} for an overview of this method.
+    To counter-act this effect, several methods have been suggested to lessen this issue and it will generally involve adding extra extrema points on both sides to constrict the spline fit \citep{zeng2004simple}.
+    See \cite{huang} for an detailed overview of the EMD and  \cite{terradas} for a solar physics context of this method.
     
 \section{Area analysis}
 
