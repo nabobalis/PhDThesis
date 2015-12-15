@@ -240,8 +240,10 @@
               \label{fig:signal_overview}
      \end{sidewaysfigure}
 	
-	All signal analysis methods have downsides.
-    Firstly, the input signal having a finite length introduces artefacts, however, this is not unique to the FFT and all signal analysis algorithms suffer from this issue. 
+	The nature of signal analysis means that each individual method has both positives and negatives.
+	Generally, the type of signal or the overall aim will determine the method used.
+	To start, input signals have a finite length which is the case for the Fourier Transform. 
+	This fact means that artefacts are introduced as a result, however, this is not unique to the FFT and most signal analysis algorithms suffer from this issue. 
 	The FFT has an effect known as frequency leakage.
     It is where, if the input signal is non-periodic or the input signal has no closed form transform, there is smearing in the frequency spectrum.
     This means that the power is not confined to the correct frequency and spreads, so other frequencies close to the strongest frequencies will be masked if the difference in power between two frequencies is large.
