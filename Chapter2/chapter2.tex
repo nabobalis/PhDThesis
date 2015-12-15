@@ -245,24 +245,35 @@
 	To start, input signals have a finite length which is the case for the Fourier Transform. 
 	This fact means that artefacts are introduced as a result, however, this is not unique to the FFT and most signal analysis algorithms suffer from this issue. 
 	The FFT has an effect known as frequency leakage.
-    It is where, if the input signal is non-periodic or the input signal has no closed form transform, there is smearing in the frequency spectrum.
-    This means that the power is not confined to the correct frequency and spreads, so other frequencies close to the strongest frequencies will be masked if the difference in power between two frequencies is large.
+    It is where, if the input signal is non-periodic or the input signal has no closed form transform, there is smearing in the power spectrum.
+    This means that the power is not confined to the correct frequency and spreads, so if there is an other frequency close to the strong frequencies, will be masked if the frequency difference between two frequencies is small.
 	This can be overcome by using a window function on the original signal which alters the outcome of the FFT in order to reduce these effects.	
     Finally, another important part of the FFT is the output can be reversed.
     It is possible to recover the original signal using the Inverse FFT (IFFT).
-    This fact means that one can create a frequency window and apply it to the frequency spectrum.
+    This fact means that one can create a frequency window and apply it to the power spectrum.
     This can be used to filter parts of the frequency spectrum that contain information that is unnecessary or return a new signal to see the behaviour at specific frequencies.
     It is commonly used method in signal analysis and is used within Chapter 5.
-    	
+    Finally, the significance of the FFT power spectrum is an important factor, since it is vital to establish if the periods are above a noise level.
+    While there are numerous methods to achieve this, a brief overview of just two.
+    The first method is described by \cite{1982ApJ...263..835S} and \cite{1986ApJ...302..757H}.
+    It relies on normalising the power spectrum and assumes that the noise in the data is truly random. 
+    This means that the probability of the noise at any given frequency being above a power value, $z$, is exponentially distributed, scaling as $\exp(-z)$.
+    This defines the ``false-alarm probability'' which at a given power is equal to, $1 - (1 - \exp(-z))^{N_i}$,where $N_i$ is the number of frequencies contributing to the power spectrum.
+        
+    The second method is a Monte-Carlo method known as Fisher Randomization.
+    Given a signal, the FFT of the data is calculated and the power of the highest peak is determined.
+    Then the original signal is then randomly permuted and the FFT is re-calculated. If the highest peak in the new FFT is higher than that of the original, `1' is added to the count.
+    The process is repeated the desired number of times and the false alarm probability is returned at the end and it is simply the count divided by the number of permutations \citealt{1985AJ.....90.2317L}. 
+    
 \subsection{Wavelet transform}
 
 	The second method employed is called the Wavelet Transform.
 	A wavelet is a function that is constrained in time and frequency space i.e., localised within these specific domains.
 	The base function used is called the mother wavelet and variations of this function are called daughters.
-	This factor is important, as the FFT will, when given a 1D signal, output a 1D frequency spectrum.
+	This factor is important, as the FFT will, when given a 1D signal, output a 1D power spectrum.
 	The wavelet algorithm will return a 2D spectrum where the extra dimension is time.
-	This means you can also know what frequency is within the signal but also at what time in the signal that frequency exists and for how long.
-	This is a more powerful method due to this fact, but also, each mother wavelet have different properties, so depending on the goal of the signal analysis, by changing the mother wavelet, different information can be extracted. 
+	This means you can also know what frequency is within the signal but also at what time in the signal that frequency exists and its duration.
+	This is a more powerful method due to this fact, but also, each mother wavelet have different properties so depending on the goal of the signal analysis, by changing the mother wavelet different information can be extracted. 
 	For example, the wavelet chosen within this thesis is the Morlet Wavelet.
 	It is defined as,
 	\begin{equation}
@@ -270,7 +281,7 @@
 	\end{equation}
     which can be summarized as a plane wave modulated by a Gaussian.
 	It has good frequency resolution but it comes at a cost of its time resolution, while another wavelet called the Paul wavelet has a poorer frequency resolution but it has an increased time resolution.
-	This allows the method to be highly variable.
+	This allows the wavelet transform to be manipulable to the users' goal.
     
     The top right image of Figure \ref{fig:signal_overview} shows the output of a wavelet algorithm on the artificial signal.
     The dark regions show an increase in the power, which shows where the periods of the signal are.
@@ -278,12 +289,13 @@
     The contour lines shown are for 95\% significance. 
     Further, much like the FFT, the finite length of a signal creates edge effects for the wavelet.
     This can be seen as the cross-hatched regions, these mark the region where the finite length of the signal affects the wavelet transform.
-    The hatching properties are different for each mother wavelet.
+    This is called the cone of influence (COI) and it is different for each mother wavelet.
     
     Finally, the wavelet transform allows for direct comparison of two signals.
     It is possible to calculate the cross-wavelet of two signals as well as correlation and the phase difference using the wavelet transform.
     This fact allows the wavelet transform to be used to measure the phase difference of the cross-sectional area and total intensity signals, which is the main method used to find the phase difference within this thesis.
-    See \cite{WAUO} for an overview of the wavelet transform and its applications.
+    See \cite{torrence} for an overview of the wavelet transform and its applications.
+    Further, see \cite{2004SoPh..222..203D} and \cite{WAUO} for an overview of wavelets in a solar physics context.
     
 \subsection{Empirical Mode Decomposition (EMD)}
 
