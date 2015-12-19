@@ -78,17 +78,17 @@
         \label{overview}
     \end{figure}
     
-    Two high-resolution datasets are investigated within this article.
-    The first dataset was acquired using the Dutch Open Telescope (DOT) \citep{rutten}, located at La Palma in the Canary Islands. 
+    Two high-resolution data sets are investigated within this article.
+    The first data set was acquired using the Dutch Open Telescope (DOT) \citep{rutten}, located on La Palma in the Canary Islands. 
     The data were taken on $12$th August $2007$ with a G-band ($430.5$ nm) filter which samples the low photosphere and has a formation height of around $250$ km above the solar surface.
     The observation started at $08$:$12$ UTC and lasted for $92$ minutes with a cadence of $15$ seconds with a total field-of-view (FOV) of $60$ Mm by $40.75$ Mm.
     The DOT is able to achieve high spatial ($0.071''$ per pixel) resolution, due to the DOT reduction pipeline.
     It comes at a cost of temporal cadence which is decreased to $30$ seconds as data reduction uses speckle reconstruction \cite[]{1992A&A...261..321K}.
     Note, that the DOT does not have an adaptive optics system.
     
-    The second dataset was obtained on the $22$nd August $2008$ with the Rapid Oscillations in the Solar Atmosphere (ROSA) imaging system situated at the Dunn Solar Telescope (see \citealt{jess1} for details on experimental setup and data reduction techniques).
+    The second data set was obtained on the $22$nd August $2008$ with the Rapid Oscillations in the Solar Atmosphere (ROSA) imaging system situated at the Dunn Solar Telescope (see \citealt{jess1} for details on experimental setup and data reduction techniques).
     Observation started at $15$:$24$ UTC, and data were taken using a $417$ nm bandpass filter with a width of $0.5$ nm.
-    The $417$ nm spectral line corresponds to the blue continuum which samples the lower photosphere and the formation height of the filter wavelength corresponds to around $250$ km above the solar surface.
+    The $417$ nm spectral line corresponds to the blue continuum that samples the lower photosphere and the formation height of the filter wavelength corresponds to around $250$ km above the solar surface.
     It should be noted that this is an average formation height. 
     This is because the contributions to the line are from a wide range of heights and the lines also form at different heights depending on the plasma properties \citep{gband}.
     
@@ -97,19 +97,19 @@
     To ensure alignment between frames, the broadband time series was Fourier co-registered and de-stretched \citep{2007A&A...473..943J}.
     Count rates for intensity are normalised by the ROSA pipeline.
     
-    The methodology of this analysis follows the one also applied by \citet{morton2011} and \cite{Dorotovic2014}.
-    The area of the pore is determined by summing the pixels that have intensity values less than $3\sigma$ of the median background intensity, which is a large quiet-Sun region. 
+    The methodology of this analysis follows the method that was also applied by \citet{morton2011} and \cite{Dorotovic2014}.
+    The area of the pore is determined by summing the pixels that have intensity values that are less than $3\sigma$ of the median background intensity, which is a large quiet-Sun region. 
     This method contours the pore area well, but not perfectly, as the intensity between the pore and the background granulation is not a hard boundary.
     The top row of Figure \ref{overview} shows the magnetic pores at the start of the observation sequence, by DOT and ROSA, respectively. 
     Furthermore, the output from the area analysis is shown in the bottom row for both magnetic pores.
     A strong linear trend can be observed for the DOT pore.
-    The intensity time series was determined by total intensity of all the pixels within the pore.
+    The intensity time series was determined by the total intensity of all the pixels within the pore.
     To search for periodic phenomena in the time series, two data analysis methods were used: wavelets and EMD.
     The wavelet analysis employs an algorithm that is a modified version of the tool developed by \citet{torrence}.
     The standard Morlet wavelet, which is a plane sine wave with the amplitude modulated by a Gaussian function, was chosen due to its high resolution in the frequency domain.
     The EMD code employed here is the one used by \citet{terradas}.
     First, we de-trended each time series by linear regression followed by wavelet analysis to determine the periodicity of the oscillations as a function of time.
-    Secondly, cross-wavelet is applied to calculate the phase difference between the area and intensity series as a function of time.
+    Second, cross-wavelet is applied to calculate the phase difference between the area and intensity series as a function of time.
     Although it is possible to obtain a better visual picture of the phase relation between the two signals by using EMD, the results agreed with the cross-wavelet analysis when checked. 
     
 \section{MHD wave theory}
@@ -118,13 +118,13 @@
     \subsection{The sausage mode}
     \label{Saus}
     
-    We aim to identify MHD sausage modes and as such, it is important to have a theoretical understanding of these modes.
-    Assume, that a magnetic pore is modelled adequately by a cylindrical waveguide with a straight background magnetic field, i.e., $\textbf{B}_0=B_0\hat{\textbf{z}}$.
-    We	note that, for reasons of clarity, in the following discussion the theory does not take into account gravitational effects on wave propagation.
+    We aim to identify MHD sausage modes, so, it is important to have a theoretical understanding of these modes.
+    Assume that a magnetic pore is modelled adequately by a cylindrical waveguide with a straight background magnetic field, i.e., $\textbf{B}_0=B_0\hat{\textbf{z}}$.
+    We	note that, for reasons of clarity, in the following discussion the theory does not take gravitational effects on wave propagation into account.
     However, the influence of gravity may be important for wave propagation in magnetic pores, especially at the photospheric level where the predicted scale height is comparable to the wavelengths of observed oscillations.
     Therefore we should be cautious with the interpretations.
     The velocity perturbation is denoted as $\textbf{v}_1= (v_r,v_{\theta},v_z)$.
-    From the theory of ideal linear MHD waves in cylindrical wave-guides, for the $m=0$ modes (here, $m$ is the azimuthal wave number) i.e., for axis-symmetric perturbations, the equations determining $v_r$ and $v_z$ decouple from the governing equation of $v_{\theta}$.
+    From the theory of ideal linear MHD waves in cylindrical waveguides, for the $m=0$ modes (here, $m$ is the azimuthal wavenumber) i.e., for axisymmetric perturbations, the equations determining $v_r$ and $v_z$ decouple from the governing equation of $v_{\theta}$.
     Hence, we will have magnetoacoustic modes described by $v_r$ and $v_z$ and the torsional Alfv\'en mode is described by $v_{\theta}$.
     We are interested in the slow magnetoacoustic mode in this paper, so we neglect the $v_{\theta}$ component.
     The	same applies to the component of the magnetic field in the $\theta$-direction. 
@@ -162,7 +162,7 @@
         &&\frac{\partial p_1}{\partial t}=c_s^2\frac{\partial\rho_1}{\partial t}=-\rho_0 c_s^2\left(\frac{1}{r}\frac{\partial(rv_r)}{\partial r}+\frac{\partial v_z}{\partial z}\right)
         \label{eq:n4}
     \end{align}
-    Integrating Equation \ref{eq:n4} with respect to $t$ and using Equation \ref{eq:n2} (which is also integrated with respect to $t$) gives
+    Integrating Equation (\ref{eq:n4}) with respect to $t$ and using Equation (\ref{eq:n2}) (which is also integrated with respect to $t$) gives
     \begin{align}
         &&p_1=c_s^2\,\rho_1=-\frac{\omega\rho_0
             c_s^2}{(c_s^2k^2-\omega^2)}\frac{1}{r}\frac{\partial
@@ -170,7 +170,7 @@
         \label{eq:n5}
     \end{align}
     The full derivation can be found in Appendix 1.
-    Comparing Equation \ref{eq:n3} to Equation \ref{eq:n5} it can be noted that the magnetic field, $b_z$, and the pressure (density) are $180$ degrees out of phase.
+    Comparing Equation (\ref{eq:n3}) to Equation (\ref{eq:n5}), it can be noted that the magnetic field, $b_z$, and the pressure (density) are $180$ degrees out of phase.
     This depends on the sign of $c_s^2k^2-\omega^2$, which is assumed to be positive.
     Consideration of Equations \ref{eq:n1}, \ref{eq:n3} and \ref{eq:n5} leads to the conclusion that $v_r$ is $90\degree$ out of phase with $b_z$ and $-90\degree$ out of phase with $p_1$.
     
@@ -181,7 +181,7 @@
     \end{align}
     where $S$ refers to the cross-sectional area of the flux tube.
     We conclude that the perturbation of the area is out of phase with the perturbation of the  z-component of the magnetic field, hence, the area is in phase with the fluctuations of the thermodynamic quantities.
-    Perhaps more importantly, we re-write Equation \ref{eq:flux} as
+    Perhaps more importantly, we re-write Equation (\ref{eq:flux}) as
     \begin{align}
         &&\frac{S_1}{S_0}=-\frac{b_{1z}}{B_0}.
         \label{eq:mag_area}
@@ -193,7 +193,7 @@
     These simplified phase relations were confirmed in a more complicated case by e.g., \cite{Moreels2013} and \cite{Moreels2013b}, who also derived the phase relations for other linear MHD waves. 
     
     By measuring the change in pore area with time, we will also be able to estimate the amplitude of the radial velocity perturbation.
-    The changes in area are related to changes in radius of the flux tube by
+    The changes in area are related to changes in the radius of the flux tube by
     \begin{align}
         &&\frac{S_1}{S_0}=\frac{2r_1}{r_0},
         \label{eq:area_rad}
@@ -205,9 +205,9 @@
         \label{eq:rad_vel}
     \end{align}
   
-  	Note, the term ``sausage mode'' was introduced for waves in magnetic tubes with a circular cross-section.
+  	Note the term ``sausage mode'' was introduced for waves in magnetic tubes with a circular cross-section.
   	The main property of these waves that distinguishes them from other wave modes is that they change the cross-sectional area.
-  	The cross sectional area of observed pores are typically non-circular.
+  	The cross sectional areas of observed pores are typically non-circular.
   	However, it seems to be reasonable to use the term sausage mode for any wave mode that changes the cross-sectional area.
   	Several preceding papers have looked into non-circular, e.g., elliptic shapes, and found the effects to be marginal on the MHD waves within these tubes (see \citealt{2009A&A...494..295E} and \citealt{2011A&A...527A..53M}).
   	  
@@ -216,7 +216,7 @@
     
     The period of a standing wave in a uniform and homogeneous flux tube is given by $P \approx 2L/nc_{ph}$, where $L$ is the tube length, $n$ is a integer determining the wave mode harmonics and $c_{ph}$ is the phase speed of the wave.
     This ratio is for ideal homogeneous tubes, however, this is not the case for the solar atmosphere from the photosphere to the transition region.
-    \citet{luna-cardozo} modelled the effect of density stratification and expansion with height of the flux tube on the ratio of the fundamental and first overtone periods for a vertical flux tube sandwiched between the photosphere and transition region.
+    \citet{luna-cardozo} modelled the effect of density stratification and expansion with the height of the flux tube on the ratio of the fundamental and first overtone periods for a vertical flux tube sandwiched between the photosphere and transition region.
     Their analysis studied the slow standing MHD sausage mode and assumed a thin flux tube with a small radial expansion with height. 
     They investigated two cases; case one is where the flux tube undergoes weak magnetic expansion with constant density, finding,  
     \begin{align}
@@ -232,15 +232,15 @@
     \end{align} 
 	where $\kappa_{1}$ is the square root of the ratio of the density at the top of the flux tube to the density at the footpoint ($\kappa_{1} = (\rho_{apex}/\rho_{footpoint})^{0.5}$).
     Here, Equation (\ref{den_strat}) is Equation (40) from \cite{luna-cardozo}.
-    Here, the upper end of the flux tube may well be the transition region while the footpoint is in the photosphere.
-    It should be noted that the form of Equation (\ref{den_strat}) depends on the longitudinal density profile; here,a density profile where the tube speed increased linearly with height was used.
+    The upper end of the flux tube may well be the transition region while the footpoint is in the photosphere.
+    It should be noted that the form of Equation (\ref{den_strat}) depends on the longitudinal density profile; a density profile where the tube speed increased linearly with height was used in this analysis.
  
     This may or may not model a realistic pore and given the uncertainty of the equilibrium quantities this must be kept in mind in order to avoid over-interpretation.
-    Both Equations \ref{mag_strat} and \ref{den_strat} modelling the frequency ratio of standing oscillations indicate that the ratio of the first harmonic to the fundamental will always be less than two for flux tube expansion while the density stratification could increase this value.
+    Both Equations (\ref{mag_strat}) and (\ref{den_strat}) modelling the frequency ratio of standing oscillations indicate that the ratio of the first harmonic to the fundamental will always be less than two for flux tube expansion while the density stratification could increase this value.
     Furthermore, the thin flux tube approximation is used to derive these equations.
     Obviously, in a real flux tube, both the density and magnetic stratification would be present at the same time and would alter the ratio.
     This is not accounted for at the moment.
-    Furthermore, Equations \ref{mag_strat} and \ref{den_strat} are independent of height which may limit the results as it has been suggested that the height to the transition region varies \citep{tian2009solar}.	
+    Finally, Equations (\ref{mag_strat}) and (\ref{den_strat}) are independent of height, which may limit the results, as it has been suggested that the height to the transition region varies \citep{tian2009solar}.	
     
 \section{Results and discussion}
 \label{res}
@@ -271,8 +271,8 @@
         \label{ROSA_wls}
     \end{sidewaysfigure}
     
-    Figures \ref{DOT_wls} and \ref{ROSA_wls} show the results of wavelet analysis of the area and intensity time series for the DOT and DST telescopes, respectively.
-    The original signal is displayed above the wavelet power spectrum, the shaded region marks the cone of influence (COI), where edge effects of the finite length of the data affect the wavelet transform results.
+    Figures \ref{DOT_wls} and \ref{ROSA_wls} show the results of a wavelet analysis of the area and intensity time series for the DOT and DST telescopes, respectively.
+    The original signal is displayed above the wavelet power spectrum and the shaded region marks the cone of influence (COI), where edge effects of the finite length of the data affect the wavelet transform results.
     The contours show the confidence level of 95\%. 
     
     \subsection{DOT pore}
@@ -280,41 +280,41 @@
     There are four distinct periods found in the area time series of the pore; 4.7, 8.5, 20 and 32.6 minutes.
     The last period is outside the COI due to the duration of the time series, so it has been disregarded.
     It should be noted that periods of 8, 14 and 35 minutes have been observed in sunspots by \citet{kobanov}.
-    This is important as pores and sunspots share a number of common features.
-    The intensity wavelet shows 4 periods of oscillations; 4.7, 8.6, 19.7 and 35 minutes.
+    This is important because magnetic pores and sunspots share a number of common features.
+    The intensity wavelet shows 4 periods of oscillations; 4.7, 8.6, 19.7, and 35 minutes.
     These periods are similar, if not the same as the period of the area oscillations, which enables a direct comparison of the two quantities. 
-    There is significant power that is co-temporal which can be observed in both the intensity and area wavelets.
+    There is significant power that is co-temporal, which can be observed in both the intensity and area wavelets.
     
     Using cross-wavelet in conjunction with the EMD allows the verification of the phase difference between the area and intensity signals for each period. 
-    These methods show that the phase difference is very close to 0\degree, \textit{i.e.}, the oscillations are in phase meaning that they are slow sausage MHD waves.	
+    These methods show that the phase difference is very close to 0\degree, i.e., the oscillations are in phase meaning that they are slow sausage MHD waves.	
     Furthermore, the percentage change in intensity is also of the same order as reported in \citet{Balthasar2000} and \citet{PMHDW}.
-    This suggests, we are most likely observing the same oscillatory phenomena as these previous authors.
+    This suggests that, we are most likely observing the same oscillatory phenomena as these authors.
     
     We also have to be certain that any change in area we observe is due to the magnetoacoustic wave rather than a change in the optical depth of the plasma.
     \citet{PMHDW} provide an insight into the expected differences between the phase of magnetic field and intensity oscillations due to waves or the opacity effect.
     They demonstrate that the magnetic field (pore area) should be in phase (out of phase) with the intensity if the oscillations are due to changes in optical depth.
     We note that this is the same relationship expected for the fast magnetoacoustic sausage mode.
-    Hence, the identification of the fast magnetoacoustic mode in pores may prove difficult with only limited datasets.
+    Hence, the identification of the fast magnetoacoustic mode in pores may prove difficult with only limited data sets.
     
-    The application of Equations \ref{eq:area_rad} and \ref{eq:rad_vel} require information about the amplitude of the area perturbation.
+    The application of Equations (\ref{eq:area_rad}) and (\ref{eq:rad_vel}) require information about the amplitude of the area perturbation.
     This can be achieved using either an FFT power spectrum or the IMF's amplitude from the EMD analysis.
     Here, we use EMD for the amplitudes (which are time-average values) and they are $3.87\mathrm{x}10^5$ km$^2$, $3.61\mathrm{x}10^5$ km$^2$ and $5.90\mathrm{x}10^5$ km$^2$ for the oscillations with periods of 4.7, 8.5 and 20 minutes, respectively.
     It was not possible to find the amplitude of the largest period, as it did not appear in the EMD output.
-    The values of area perturbation translate (using Equation \ref{eq:area_rad}) to 37, 34 and 56 km respectively for the amplitude of the radial perturbation.
-    Note that the increase in radius is about $100$ km meaning the perturbation is only of the order of 1 pixel (at the DOT's resolution).
+    The values of the area perturbation translate, using Equation (\ref{eq:area_rad}), to 37, 34, and 56 km, respectively, for the amplitude of the radial perturbation.
+    Note that the increase in radius is about $100$ km, meaning that the perturbation is only of the order of 1 pixel (at the DOT's resolution).
     
-    Using the values above, allows us to calculate the radial velocity perturbation for each period (by means of Equation \ref{eq:rad_vel}).
-    For the periods of 4.7, 8.5 and 20 minutes, we determine the radial velocity perturbation as 0.82, 0.42 and 0.29 km s$^{-1}$, respectively.
-    The obtained radial speeds are very sub-sonic as the sound speed is $\approx$ 10 km s$^{-1}$ in the photosphere.
+    Using the values above allows us to calculate the radial velocity perturbation for each period, by means of Equation (\ref{eq:rad_vel}).
+    For the periods of 4.7, 8.5, and 20 minutes, we determine the radial velocity perturbation as 0.82, 0.42, and 0.29 km s$^{-1}$, respectively.
+    The obtained radial speeds are very sub-sonic, as the sound speed is $\approx$ 10 km s$^{-1}$ in the photosphere.
     They are, however, of order of observed horizontal flows around pores.
     
-    Furthermore, it is also possible to estimate the percentage change in magnetic field expected from the identified linear slow MHD sausage modes.
+    Furthermore, it is also possible to estimate the percentage change in the magnetic field that is expected from the identified linear slow MHD sausage modes.
     The percentage change in pore area, hence magnetic field, is found to be $$\frac{A_1}{A_0} = \frac{b_1}{B_0} \rightarrow 4-7\%.$$
    	For another magnetic pore, the percentage change was found to be similar at 6\% \citep{0004-637X-806-1-132}.
     Let us now assume that the equilibrium magnetic field strength of the pore takes typical values of 1000-2000 G.
     Then, the amplitude of the magnetic field oscillations should be 40-140 G.
-    The lower end of this estimated range of percentage change in magnetic field agrees well with percentage changes in the magnetic field obtained using Stokes profiles by, for example, \citet{Balthasar2000} and \citet{PMHDW}.
-    However, the upper end of the range, i.e. $\sim 140$ G, appears twice as large as any of the previously reported periodic variations in magnetic field. 
+    The lower end of this estimated range of percentage change in the magnetic field agrees well with percentage changes in the magnetic field obtained using Stokes profiles by, for example, \citet{Balthasar2000} and \citet{PMHDW}.
+    However, the upper end of the range, i.e. $\sim 140$ G, appears twice as large as any of the previously reported periodic variations in the magnetic field. 
     This apparent difference could be due to the spatial resolution of the magnetograms averaging out the magnetic field fluctuations.
     A summary of our findings can be found in Table \ref{tab:ampl}.
     
@@ -345,11 +345,11 @@
       	\label{tab:wavelength}      	  
     \end{sidewaystable}
     
-    Now, we estimate the wavelength (wavenumber) for each mode.
-    An important fact needs to be remembered, \textit{i.e}, the velocity perturbation determined is radial, not vertical.
+    Now we estimate the wavelength (wavenumber) for each mode.
+    An important fact needs to be remembered, i.e., the velocity perturbation determined is radial, not vertical.
    	Furthermore, since the waveguide is strongly stratified, we define the wavelength as the distance between the first two nodes, which is the half wavelength of the wave.	
     However, in this regime, the vertical phase speed of the slow sausage MHD wave is the tube speed, which is $c_T\approx4.5$ km s$^{-1}$ using typical values for the photospheric plasma \citep{WPMC,evans}.
-    For the periods of $4.7$, $8.5$ and $20$ minutes we obtain estimates of the wavelength (wavenumber) as $1269$ km ($4.95$ $\mathrm{x}10^{-6}$ m$^{-1}$), $2268$ km ($2.77$ $\mathrm{x}10^{-6}$ m$^{-1}$) and $5319$ km ($1.18$ $\mathrm{x}10^{-6}$ m$^{-1}$), respectively.
+    For the periods of $4.7$, $8.5$ and $20$ minutes we obtain estimates of the wavelength (wavenumber) as $1269$ km ($4.95\mathrm{x}10^{-6}$ m$^{-1}$), $2268$ km ($2.77\mathrm{x}10^{-6}$ m$^{-1}$) and $5319$ km ($1.18\mathrm{x}10^{-6}$ m$^{-1}$), respectively.
     Note that these wavelengths are larger than the scale height in the photosphere ($\approx 160$ km)  or the lower chromosphere.
     For the observed pore, it had an average radius, $a=1.5$ Mm, where $ka= 8, 5, 2$.
     See Table \ref{tab:wavelength} for a summary.
@@ -357,37 +357,37 @@
     \subsection{ROSA pore}
     
     There are four distinct periods found in the area time series of the pore observed by ROSA; 2-3, $5.5$, $10$ and $27$ minutes.
-    All of these reported periods are at least at $95\%$ confidence level (or over).
+    All of these reported periods are at least at the $95\%$ confidence level (or over).
     A few words about two of the periods have to be mentioned.
-    Firstly, the power of the $2$-$3$ minute period is spread broadly and, as such, it is hard to differentiate the exact period.
+    First, the power of the $2$-$3$ minute period is spread broadly, and, as such it is hard to differentiate the exact period.
     Secondly, the $10$-minute period slowly migrates to $13.5$ minutes as the time series comes to its end.
-    The intensity wavelet shows four periods of oscillations; 2-3, 5.5, 10 and 27 minutes.
+    The intensity wavelet shows four periods of oscillations; 2-3, 5.5, 10, and 27 minutes.
     For the pore observed by DOT, the oscillations found in the area and intensity data share similar periods.
     Also, there is another period that is below the $95\%$ confidence level for white noise at 1-2 minutes at the start of the time series.
     This is a similar behaviour as found for the DOT pore.
     
     We found that the phase difference between the area and intensity periods is 0\degree.
     This means, as before, that these oscillations are in phase and are interpreted as signatures of slow sausage MHD waves.
-    While we have chosen not to discuss the out of phase behaviour, there are small regions of 45$\degree$ phase difference that has been previously reported \citep{Dorotovic2014}.
-    This needs to be investigated in the future, as the authors are unaware of which MHD mode would cause this behaviour, however, it has been suggested that is due to noise within the dataset \citep{2015A&A...579A..73M}.
-    As for the DOT pore, the same properties can be obtained for each period observed as within the ROSA pore and is summarized in Table \ref{tab:ampl} and \ref{tab:wavelength}.
+    While we have chosen not to discuss the out of phase behaviour, there are small regions of 45$\degree$ phase difference that have been previously reported \citep{Dorotovic2014}.
+    This needs to be investigated in the future, as the authors are unaware of which MHD mode would cause this behaviour, however, it has been suggested that is due to noise within the data set \citep{2015A&A...579A..73M}.
+    As for the DOT pore, the same properties can be obtained for each period observed as within the ROSA pore, which are summarized in Table \ref{tab:ampl} and \ref{tab:wavelength}.
     
-	The amplitudes for the area oscillations are 2.29 $\mathrm{x}10^5$ km$^2$, 2.45 $\mathrm{x}10^5$ km$^2$ and 3.87 $\mathrm{x}10^5$ km$^2$ for periods of 2-3, 5.5 and 10 minutes, respectively.
-	The $13.5$-minute period is found by the EMD process as well and has an amplitude which is the same as that of the $10$-minute period. 
+	The amplitudes for the area oscillations are $2.29\mathrm{x}10^5$ km$^2$, $2.45\mathrm{x}10^5$ km$^2$, and $3.87\mathrm{x}10^5$ km$^2$ for periods of 2-3, 5.5, and 10 minutes, respectively.
+	The $13.5$-minute period is found by the EMD process as well, and has an amplitude that is the same as that of the $10$-minute period. 
 	Again, it was not possible to find the amplitude of the largest period.
-	These then, lead to the radial perturbation amplitude of 69.1, 74.2 and 117 km and the radial velocity perturbation as 3.03, 1.41 and 1.23 km s$^{-1}$, respectively.
-	The increase in radius is around $100$ km meaning the perturbation is only of the order of 2 pixels (at ROSA's resolution).
+	These then, lead to the radial perturbation amplitude of 69.1, 74.2, and 117 km and a radial velocity perturbation as 3.03, 1.41, and 1.23 km s$^{-1}$, respectively.
+	The increase in radius is around $100$ km meaning that the perturbation is only of the order of 2 pixels (at ROSA's resolution).
 	This means that for each part of the structure, its radius increases by 2 pixels.
 	Once again, the radial velocity perturbations are found to be sub-sonic.
 	
-    The percentage change in the pore's area, and, thus the magnetic field is given by $$\frac{A_1}{A_0} = \frac{b_1}{B_0} \rightarrow 25 - 45\%.$$
+    The percentage change in the pore's area, and thus the magnetic field, is given by $$\frac{A_1}{A_0} = \frac{b_1}{B_0} \rightarrow 25 - 45\%.$$
     From the above relations we conclude that the size of the magnetic field oscillation is in the region of $200$-$400$ G.
     This is a substantial increase when compared to the measurements of the pore detected by DOT, as the amplitudes for these oscillations are of the same order but the cross-sectional area of the pore is an order of magnitude smaller.
     This suggests that the oscillation strength might be independent of the scale of the structure \citep{Dorotovic2014}. 
     
     Once again, we determine the wavelength (wavenumber) for each period, using the tube speed as defined in the previous section.
-    For the periods of $2-3$, $5.5$ and $10$ minutes we obtain estimates of the wavelength (wavenumber) as $540$-$810$ km ($7.76\mathrm{x}10^{-6}$ m$^{-1}$), 1485 km ($3.58\mathrm{x}10^{-6}$ m$^{-1}$) and 2.2 Mm ($2.85\mathrm{x}10^{-6}$ m$^{-1}$), respectively.
-    For the observed pore radius, $a=0.5$ Mm, we obtain values of $ka = 2, 1.8, 1.5$ and $1.5$.
+    For the periods of $2-3$, $5.5$, and $10$ minutes we obtain estimates of the wavelength (wavenumber) as $540$-$810$ km ($7.76\mathrm{x}10^{-6}$ m$^{-1}$), 1485 km ($3.58\mathrm{x}10^{-6}$ m$^{-1}$), and 2.2 Mm ($2.85\mathrm{x}10^{-6}$ m$^{-1}$), respectively.
+    For the observed pore radius, $a=0.5$ Mm, we obtain values of $ka = 2, 1.8, 1.5,$ and $1.5$.
     
     \subsection{Standing oscillations}
     
@@ -409,34 +409,35 @@
     \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{harmonics.pdf}
-        \caption{The range of solutions for Equation \ref{mag_strat}.
-            The threaded areas are where the period ratios are either less than one or greater than 2.
+        \caption{The range of solutions for Equation (\ref{mag_strat}).
+            The threaded areas are where the period ratios are either less than one or greater than two.
             The horizontal line divides the image into a weak ($<2$ kG) and strong ($>2$ kG) field regions for the plasma-$\beta$.
             The blue contour lines indicate observed period ratios for this paper and the values within \cite{Dorotovic2014}.}
         \label{fig:harm}
     \end{figure}		
     
-    With the important understanding that the observed waves are trapped, there is a possibility of them being standing ones.
-    Assuming that the pore can be modelled as a straight homogeneous magnetic flux tube which does not expand with height, the sharp gradients (often modelled as discontinuities) of the temperature/density at the photosphere and at the transition region form a resonant cavity which can support standing waves \citep[see][]{fleck,malins}.  
+    With the important understanding that the observed waves are trapped, there is a possibility of them being standing waves.
+    Assuming that the pore can be modelled as a straight homogeneous magnetic flux tube that does not expand with height, the sharp gradients (often modelled as discontinuities) of the temperature/density at the photosphere and at the transition region form a resonant cavity that can support standing waves \citep[see][]{fleck,malins}.  
     
     Calculating the harmonic periods ($P \approx 2L/nc_{ph}$, where $L$ is the distance between the boundaries ($2$ Mm), $n$ is the harmonic number), a fast MHD oscillation ($c_{p}\approx12$ kms$^{-1}$) would have a fundamental period $\sim$333 s, while the period of a slow MHD wave ($c_{p}\approx5.7$ kms$^{-1}$) would be $\sim$700 s.
    	Other slow MHD sausage waves have been observed with phase speeds similar to this \citep{2015A&A...579A..73M}.
-    The interpretation of the observed waves is that they are slow MHD sausage waves, which in the ideal homogeneous case is the most similar to the observed results, however, it is still different by two minutes.
-    Therefore, the basic assumption of an ideal homogeneous flux tube (constant $L$, constant $c_{ph}$ etc.) is inadequate to explain the results presented in this paper.
+    The interpretation of the observed waves is that they are slow MHD sausage waves, which, in the ideal homogeneous case, is the most similar to the observed results; however, it is still different by two minutes.
+    Therefore, the basic assumption of an ideal homogeneous flux tube (constant $L$, constant $c_{ph}$ etc.) is inadequate for explaining the results presented in this chapter.
+    
     There are several further considerations that need to be taken into account.
     From observations, many magnetic structures are not cylindrical or symmetrical and are often irregular in shape.
-    Further to this, large-scale magnetic structures have been thought to be made up of either a tight collection of small-scale flux tubes or one large monolithic structure \citep[][and references within]{priest1984solar}.
+    Furthermore, large-scale magnetic structures have been thought to be made up of either a tight collection of small-scale flux tubes or one large monolithic structure \citep[][and the references within]{priest1984solar}.
     Also, these magnetic structures extend from the photosphere to the transition region which means that the plasma-$\beta$ will vary by an order of $2$ magnitude, which will change the dynamics of the MHD waves considerably.
-    We have also ignored the effect of gravity (\textit{i.e.,} density stratification) \citep{2006A&A...458..975D,2011ApJ...743..164A}, as well as the equally important fact that flux tubes expand with height (\textit{i.e.,} magnetic stratification) which alters the ratio of the periods, i.e, $P_{1}/P_{2}\neq2$ \citep{luna-cardozo}. 
+    We have also ignored the effect of gravity (i.e., density stratification \citealt{2006A&A...458..975D,2011ApJ...743..164A}), as well as the equally important fact that flux tubes expand with height, i.e., magnetic stratification, which alters the ratio of the periods, i.e, $P_{1}/P_{2}\neq2$ \citep{luna-cardozo}. 
     All of these effects will further affect the wave dynamics inside flux tubes.
     
-	Here, we will ignore periods greater than $10$ minutes as shown above, in the ideal homogeneous case, the largest period possible is $11.6$ minutes for MHD waves (with the above assumptions).
+	Here, we will ignore periods greater than $10$ minutes; as shown above in the ideal homogeneous case, the largest period possible is $11.6$ minutes for MHD waves (with the above assumptions).
 	Here, we will consider two effects: the effect of density stratification and magnetic expansion with height in the radial direction.
-	For the first case; Equation (\ref{den_strat}) is calculated with typical density values from the VAL-III C model \citet{1981ApJS...45..635V} at the apex (transition region) and footpoint (photosphere) of the flux tube.
-	The VAL-III C model is an estimation of a quiet-Sun region and the interior density ratio between photosphere and transition region of a flux tube need not necessarily differ greatly from that of the exterior atmosphere (see Figures 3 and 1 of \citealp{GFME13a} and \citealp{GFE14}, respectively). 
-	The resulting value for the period ratio in this circumstance is 1.44 (density values are 2.727$\mathrm{x}10^{-7}$ and 2.122$\mathrm{x}10^{-13}$ g cm$^{-3}$ for the footpoint and apex respectively).
+	For the first case; Equation (\ref{den_strat}) is calculated with typical density values from the VAL-III C model \citep{1981ApJS...45..635V} at the apex (transition region) and footpoint (photosphere) of the flux tube.
+	The VAL-III C model is an estimation of a quiet-Sun region and the interior density ratio between the photosphere and the transition region of a flux tube need not necessarily differ greatly from that of the exterior atmosphere (see Figures 3 and 1 of \citealp{GFME13a} and \citealp{GFE14}, respectively). 
+	The resulting value for the period ratio in this instance is 1.44 (density values are $2.727\mathrm{x}10^{-7}$ and $2.122\mathrm{x}10^{-13}$ g cm$^{-3}$ for the footpoint and apex, respectively).
 	Using the model given by \citet{Maltby1986}, which models a sunspot umbra, this period ratio is 1.38 (density values are 1.364$\mathrm{x}10^{-6}$ and 9.224$\mathrm{x}10^{-14}$ g cm$^{-3}$ for the footpoint and apex respectively).
-	This does not correspond well to the results in this paper, but only for one previously reported result; a highly-dynamical non-radially uniform sunspot \citep{Dorotovic2014}.
+	This does not correspond well to the results in this paper, but only for one previously reported result; a highly dynamical non-radially uniform sunspot \citep{Dorotovic2014}.
 	The ratio is substantially smaller than what is detected here, which means the first harmonic should be at $\approx 5.9$ minutes.
 	This model does not seem to be applicable to the observational results presented here. 
 	The reason for this, the authors believe, is due to the effect of finite radius.
@@ -445,45 +446,45 @@
 	Hence, the relative increase of the first overtone frequency due to the effect of finite radius is larger than that of the fundamental harmonic.
 	This modifies the period of the first harmonic to be higher, which shifts the period ratio to be larger than values that are obtained theoretically in the thin tube approximation.
     
-    Figure \ref{fig:harm} details the various solutions (\textit{i.e.,} period ratio) for Equation \ref{mag_strat} over a large range of plasma-$\beta$ and expansion ratio ($\Gamma$).
+    Figure \ref{fig:harm} details the various solutions (\textit{i.e.,} period ratio) for Equation (\ref{mag_strat}) over a large range of plasma-$\beta$ and expansion ratio ($\Gamma$).
     It is difficult to estimate how much a flux tube expands with height, therefore, we explore the parameter space widely, taking $\Gamma$ of 0-15.
-    The values for the plasma-$\beta$ is divided into strong ($\geq2$ kG) and weak ($\leq2$ kG) field regions, as the magnetic field of flux tubes hypothesised, will vary from $0.5$ kG to $4$ kG.
+    The values for the plasma-$\beta$ are divided into strong ($\geq2$ kG) and weak ($\leq2$ kG) field regions, as the magnetic field of flux tubes hypothesised, and will vary from $0.5$ kG to $4$ kG.
     The magnetic pores were observed before the launch of NASA's Solar Dynamics Observatory (SDO),
-    so the best magnetic data comes from the Michelson Doppler Imager (MDI) instrument on-board SOHO.
+    so the best magnetic data comes from the Michelson Doppler Imager (MDI) instrument on board SOHO.
     As such, the magnetic field of these pores is hard to know precisely due to their small scale and MDI's large pixel size.
     However, ground-based observations of similar sized pores reveal magnetic fields ranging from $1$ kG to $2.5$ kG.
     The blue contour lines show the parameter space that matches the period ratios reported in this article and the ones in \citet{Dorotovic2014}.
-    For example, if the plasma-$\beta$ is around 1, the expansion factor for the three period ratios reported here are around $4$, $6$ and $9$.
+    For example, if the plasma-$\beta$ is around 1, the expansion factors for the three period ratios reported here are around $4$, $6$, and $9$.
     If we have plasma-$\beta$ $\ll 1$, the expansion ratio starts to increase rapidly. 
     
     Once again, this effect can be dominant when the flux tube expands too much, however, it is unlikely that a flux tube would expand by such a large amount.
-    \citet{1982GApFD21237B}, for example, suggests that when the internal gas pressure exceeds the external gas pressure, the flux tube becomes unstable and this occurs when the flux tube expands greatly with height.
+    \citet{1982GApFD21237B}, for example, suggest that when the internal gas pressure exceeds the external gas pressure, the flux tube becomes unstable and this occurs when the flux tube expands greatly with height.
     
     For the cases presented in this paper, the flux tube has to expand four to six times to have a period ratio that is observed.
-    In a number of numerical simulations that model these types of flux tubes, the magnetic field expands approximately 4-10 times which happens to be not too dissimilar to our findings \citep[see also][]{khomenko,fedun2,fedun1}.
+    In a number of numerical simulations that model these types of flux tubes, the magnetic field expands approximately 4-10 times, which happens to be not too dissimilar to our findings \citep[see also][]{khomenko,fedun2,fedun1}.
     It should be noted that these estimates for expansion are for flux tubes with magnetic fields that have a field strength less than $2$ kG. 
     
     Unfortunately, as of yet, little is known about the source of the oscillations analysed in this paper.
     One possible origin of MHD sausage waves is suggested by e.g. \citet{khomenko} and \citet{fedun2}, where magnetoacoustic wave propagation in small-scale flux tubes was modelled using non-linear MHD simulations.
-    One of the results of their simulations is that five-minute vertical drivers can generate a mixture of slow and fast sausage modes in localised magnetic flux tubes that propagate upwards.
+    One of the results of their simulations is that 5-minute vertical drivers can generate a mixture of slow and fast sausage modes in localised magnetic flux tubes that propagate upward.
     Furthermore, \citet{fedun1} model the effect of photospheric vortex motion on a thin flux tube, finding that vertex motions can excite dominantly slow sausage modes.
-    However, these simulations need to be developed Furthermore, before we may comfortably link them to our assertions.
+    However, these simulations need to be developed further before we may comfortably link them to our assertions.
 
 	Another potential source is from mode conversion that will occur at the lower region of the photosphere within sunspots and magnetic pores.
-	For example, \cite{0004-637X-746-1-68}, modelled a background sunspot-like atmosphere and solving the non-linear ideal MHD equations for this system, found that the fast MHD wave will turn into a slow MHD sausage wave at the Alfv\'en-acoustic equipartition level (which is where the sound speed is equal the Alfv\'en speed) and the reverse is also true.
-	The fast MHD wave to Alfv\'en conversion occurs higher up where there is a steep Alfv\'en speed gradient, as the fast MHD wave will reflect from this boundary.
+	For example, \cite{0004-637X-746-1-68}, modelled a background sunspot-like atmosphere, and solving the non-linear ideal MHD equations for this system, found that the fast MHD wave will turn into a slow MHD sausage wave at the Alfv\'en-acoustic equipartition level (which is where the sound speed is equal the Alfv\'en speed) and the reverse is also true.
+	The fast MHD wave to Alfv\'en conversion occurs higher up, where there is a steep Alfv\'en speed gradient, as the fast MHD wave will reflect from this boundary.
 	Below this level, the MHD waves are fast and above this level, slow MHD waves can be supported.
 	This level occurs at approximately 200 km in their model.
 	The observations used within this paper are thought to form at a height around 250 km.
-	Furthermore, sunspot umbra's are depressed in height and it would likely be the same for magnetic pores.
+	Furthermore, sunspot umbras are depressed in height and it would likely be the same for magnetic pores.
 	These facts can offer an insight into the formation height of G-band since we believe that we are observing a primary slow acoustic mode modified by the magnetic field i.e., the slow MHD sausage wave.
 	    
-    A word of caution: without LOS Doppler data, it is difficult to know whether the oscillations reported are standing or propagating.
+    A word of caution: the absence of line-of-sight (LOS) Doppler data, it is difficult to know whether the oscillations reported are standing or propagating.
     The data available for magnetic pores does not cover higher levels of the solar atmosphere such as the chromosphere or the transition region.
     The data presented here only represents a slice of the flux tube near the photosphere.
     Future work is needed to acquire simultaneous observations of magnetic pores in several wavelengths in order to sample the solar atmosphere at different heights.
-    With detailed spectral images would allow other LOS quantities such as Doppler velocity and magnetic field to be measured.
-    This way, the oscillations could be determined confidently as standing or propagating due to their different phase relations. 
+    Detailed spectral images would allow other LOS quantities such as Doppler velocity and magnetic field to be measured.
+    This way, the oscillations could be determined confidently either as standing or propagating due to their different phase relations. 
     
     \section{Conclusions}
     \label{conc}
@@ -491,9 +492,8 @@
     The use of high-resolution data with short cadence, coupled with two methods of data analysis (wavelets and EMD), has allowed the observation of small-scale wave phenomena in magnetic waveguides situated on the solar surface.
     By studying the area and intensity perturbations of magnetic pores, it enables the investigation of the phase relations between these two quantities with the use of wavelets and EMD.
     The in phase ($0^\circ$ phase difference) behaviour reveals that the oscillations observed are indicative of slow sausage MHD waves. 
-    Furthermore, with the amplitude of oscillations measured, several properties could be estimated; such as the amplitude of the magnetic field perturbation and radial speed of the perturbation.
-    The scale of the magnetic field perturbation that are caused by slow MHD waves are of the order $10$\% and have radial speeds that are sub-sonic when compared to the sound speed at the photosphere.  
-    With the MHD mode of these waves identified, the obtained vertical wavelength indicates that the flux tubes would have a strong reflection at the transition region boundary.
-    Further indicating a chromospheric resonator. 
+    Furthermore, with the amplitude of oscillations measured, several properties could be estimated; such as the amplitude of the magnetic field perturbation and the radial speed of the perturbation.
+    The scale of the magnetic field perturbations that are caused by slow MHD waves is of the order $10$\% and has radial speeds that are sub-sonic when compared to the sound speed at the photosphere.  
+    With the MHD mode of these waves identified, the obtained vertical wavelength indicates that the flux tubes would have a strong reflection at the transition region boundary, further indicating a chromospheric resonator. 
     Finally, the investigation of the period ratio of the oscillations suggests that the fundamental and first harmonic has been observed within these flux tubes.
-    The period ratio observed coupled with magneto-seismology enabled an expansion factor to be calculated that was in very good agreement to values found in numerical models used for MHD wave simulations.
+    The period ratio observed, coupled with magneto-seismology, enabled an expansion factor to be calculated that was in very good agreement with values found in numerical models used for MHD wave simulations.
