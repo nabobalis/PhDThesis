@@ -233,7 +233,7 @@
 	where $\kappa_{1}$ is the square root of the ratio of the density at the top of the flux tube to the density at the footpoint ($\kappa_{1} = (\rho_{apex}/\rho_{footpoint})^{0.5}$).
     Here, Equation (\ref{den_strat}) is Equation (40) from \cite{luna-cardozo}.
     Here, the upper end of the flux tube may well be the transition region while the footpoint is in the photosphere.
-    It should be noted that the form of Equation \ref{den_strat} depends on the longitudinal density profile; here,a density profile where the tube speed increased linearly with height was used.
+    It should be noted that the form of Equation (\ref{den_strat}) depends on the longitudinal density profile; here,a density profile where the tube speed increased linearly with height was used.
  
     This may or may not model a realistic pore and given the uncertainty of the equilibrium quantities this must be kept in mind in order to avoid over-interpretation.
     Both Equations \ref{mag_strat} and \ref{den_strat} modelling the frequency ratio of standing oscillations indicate that the ratio of the first harmonic to the fundamental will always be less than two for flux tube expansion while the density stratification could increase this value.
@@ -326,10 +326,23 @@
             \begin{tabular}[c]{@{}l@{}}Period 2\\ 8.4 mins\end{tabular} & 34 km & 0.42 km s$^{-1}$ & 4.04\% & \begin{tabular}[c]{@{}l@{}}Period 2\\ 5.5 mins\end{tabular} & 74.2 km & 1.41 km s$^{-1}$ & 28.2\% \\
             \begin{tabular}[c]{@{}l@{}}Period 3\\ 19.7 mins\end{tabular} & 56 km & 0.29 km s$^{-1}$ & 6.60\% & \begin{tabular}[c]{@{}l@{}}Period 3\\ 10 mins\end{tabular} & 117 km & 1.23 km s$^{-1}$ & 44.5\% \\
         \end{tabular}
-        \caption{The properties of each observed period for the DOT and ROSA data respectively.
-            $r_{1}$ is the radial perturbation, $v_{r1}$ is the velocity perturbation and $\frac{b_{z1}}{B_{0}}$ is the magnetic field perturbation.
-            These quantities are determined by using Equations \ref{eq:area_rad} and \ref{eq:rad_vel}.}
-        \label{tab:ampl}
+        \caption{
+	        	 The properties of each observed period for the DOT and ROSA data respectively.
+                 $r_{1}$ is the radial perturbation, $v_{r1}$ is the velocity perturbation and $\frac{b_{z1}}{B_{0}}$ is the magnetic field perturbation.
+                 These quantities are determined by using Equations \ref{eq:area_rad} and \ref{eq:rad_vel}
+                 }
+        \label{tab:ampl}         
+      \begin{tabular}{cccc|cccc}
+            	DOT & $\lambda_z$ & $k_z$ & $k_{z}a$ & ROSA & $\lambda_z$ & $k_z$ & $k_{z}a$ \\ \hline \hline
+            	\begin{tabular}[c]{@{}l@{}}Period 1\\ 4.7 mins\end{tabular} & 1269 km & 4.95 $\mathrm{x}10^{-6}$ m$^{-1}$ & 8 & \begin{tabular}[c]{@{}l@{}}Period 1\\ 2-3 mins\end{tabular} & 540-810 km & 7.76-12 $\mathrm{x}10^{-6}$ m$^{-1}$ & 4-6\\
+            	\begin{tabular}[c]{@{}l@{}}Period 2\\ 8.4 mins\end{tabular} & 2268 km & 2.77 $\mathrm{x}10^{-6}$ m$^{-1}$ & 5 & \begin{tabular}[c]{@{}l@{}}Period 2\\ 5.5 mins\end{tabular} & 1485 km & 4.2 $\mathrm{x}10^{-6}$ m$^{-1}$  & 2\\
+            	\begin{tabular}[c]{@{}l@{}}Period 3\\ 19.7 mins\end{tabular} & 5319 km & 1.18 $\mathrm{x}10^{-6}$ m$^{-1}$ & 2 & \begin{tabular}[c]{@{}l@{}}Period 3\\ 10 mins\end{tabular} & 2700 km & 2.33 $\mathrm{x}10^{-6}$ m$^{-1}$ & 1 \\
+         \end{tabular}    
+         \caption{
+		          The wavelength (wavenumber) for each observed period for the DOT and ROSA data respectively.
+               	  Here, $k=2\pi/\lambda$ and $\lambda=v/f$, where $k$ is the wavenumber, $\lambda$ is the wavelength, $v$ is the velocity and $f$ is the frequency.
+               	  }
+      	\label{tab:wavelength}      	  
     \end{sidewaystable}
     
     Now, we estimate the wavelength (wavenumber) for each mode.
@@ -340,20 +353,7 @@
     Note that these wavelengths are larger than the scale height in the photosphere ($\approx 160$ km)  or the lower chromosphere.
     For the observed pore, it had an average radius, $a=1.5$ Mm, where $ka= 8, 5, 2$.
     See Table \ref{tab:wavelength} for a summary.
-    
-    \begin{sidewaystable}
-        \centering
-        \begin{tabular}{cccc|cccc}
-            DOT & $\lambda_z$ & $k_z$ & $k_{z}a$ & ROSA & $\lambda_z$ & $k_z$ & $k_{z}a$ \\ \hline \hline
-            \begin{tabular}[c]{@{}l@{}}Period 1\\ 4.7 mins\end{tabular} & 1269 km & 4.95 $\mathrm{x}10^{-6}$ m$^{-1}$ & 8 & \begin{tabular}[c]{@{}l@{}}Period 1\\ 2-3 mins\end{tabular} & 540-810 km & 7.76-12 $\mathrm{x}10^{-6}$ m$^{-1}$ & 4-6\\
-            \begin{tabular}[c]{@{}l@{}}Period 2\\ 8.4 mins\end{tabular} & 2268 km & 2.77 $\mathrm{x}10^{-6}$ m$^{-1}$ & 5 & \begin{tabular}[c]{@{}l@{}}Period 2\\ 5.5 mins\end{tabular} & 1485 km & 4.2 $\mathrm{x}10^{-6}$ m$^{-1}$  & 2\\
-            \begin{tabular}[c]{@{}l@{}}Period 3\\ 19.7 mins\end{tabular} & 5319 km & 1.18 $\mathrm{x}10^{-6}$ m$^{-1}$ & 2 & \begin{tabular}[c]{@{}l@{}}Period 3\\ 10 mins\end{tabular} & 2700 km & 2.33 $\mathrm{x}10^{-6}$ m$^{-1}$ & 1 \\
-        \end{tabular}
-        \caption{The wavelength (wavenumber) for each observed period for the DOT and ROSA data respectively.
-            Here, $k=2\pi/\lambda$ and $\lambda=v/f$, where $k$ is the wavenumber, $\lambda$ is the wavelength, $v$ is the velocity and $f$ is the frequency.}
-        \label{tab:wavelength}
-    \end{sidewaystable}
-    
+   
     \subsection{ROSA pore}
     
     There are four distinct periods found in the area time series of the pore observed by ROSA; 2-3, $5.5$, $10$ and $27$ minutes.

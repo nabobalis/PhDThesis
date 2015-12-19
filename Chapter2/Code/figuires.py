@@ -268,141 +268,140 @@ for slim, plim in zip(sun_lim_list,pore_lim_list):
 """
 Overview of Method
 """
+idx = 1
+fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(figsize=(12,8),nrows=2, ncols=2)
 
-#idx = 1
-#fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(figsize=(12,8),nrows=2, ncols=2)
-#
-##Sunspot
-#ax1.imshow(sun_bound[idx], origin = 'lower', interpolation = 'nearest', cmap=plt.get_cmap('gray'), extent=sun_cut_extent)
-#ax1.set_xlabel('Distance (Arcseconds)')
-#ax1.set_ylabel('Distance (Arcseconds)')
-#
-#for i,li in enumerate(sun_lim):
-#    ax1.contour(sun_bound[idx] <= li[idx], origin = 'lower', interpolation = 'nearest', colors=color[i], extent=sun_cut_extent, levels=[0,1])
-#
-#ax2.hist([sun_bound[idx].flatten(),sun_cut_box[idx].flatten()],bins=250, color= ['Red', 'Orange'],
-#          label=['Boundary', 'Background'], stacked=True, fill=True, edgecolor = 'none')
-#ax2.set_xlim(1000,5000)
-#
-#for i,li in enumerate(sun_lim):
-#    ax2.axvline(li[idx], color=color[i], linestyle='dashed', linewidth=2)
-#
-#ax2.set_xlabel('Intensity bins (counts)')
-#ax2.set_ylabel('Frequency')
-##ax2.locator_params(axis='x', nbins=6)
-#ax2.legend()
-#
-##Pore
-#ax3.imshow(pore_bound[idx], origin = 'lower', interpolation = 'nearest', cmap=plt.get_cmap('gray'), extent=pore_cut_extent)
-#ax3.set_xlabel('Distance (Arcseconds)')
-#ax3.set_ylabel('Distance (Arcseconds)')
-#
-#for i,li in enumerate(pore_lim):
-#    ax3.contour(pore_bound[idx] <= li[idx], origin = 'lower', interpolation = 'nearest', colors=color[i], extent=pore_cut_extent, levels=[0,1])
-#
-#ax4.hist([pore_bound[idx].flatten(),pore_cut_box[idx].flatten()],bins=250, color= ['Red', 'Orange'],
-#          label=['Boundary', 'Background'], stacked=True, fill=True, edgecolor = 'none')
-#ax4.set_xlim(0.2,2)
-#
-#for i,li in enumerate(pore_lim):
-#    ax4.axvline(li[idx], color=color[i], linestyle='dashed', linewidth=2)
-#
-#ax4.set_xlabel('Intensity bins (counts)')
-#ax4.set_ylabel('Frequency')
-#ax4.legend()
-#
-#fig.tight_layout()
-#plt.savefig('/home/nabobalis/GitRepos/PhDThesis/Chapter2/Figs/method_overview.pdf',dpi=300,bbox_inches='tight')
+#Sunspot
+ax1.imshow(sun_bound[idx], origin = 'lower', interpolation = 'nearest', cmap=plt.get_cmap('gray'), extent=sun_cut_extent)
+ax1.set_xlabel('Distance (Arcseconds)')
+ax1.set_ylabel('Distance (Arcseconds)')
+
+for i,li in enumerate(sun_lim):
+    ax1.contour(sun_bound[idx] <= li[idx], origin = 'lower', interpolation = 'nearest', colors=color[i], extent=sun_cut_extent, levels=[0,1])
+
+ax2.hist([sun_bound[idx].flatten(),sun_cut_box[idx].flatten()],bins=250, color= ['Red', 'Orange'],
+          label=['Boundary', 'Background'], stacked=True, fill=True, edgecolor = 'none')
+ax2.set_xlim(1000,4500)
+ax2.set_ylim(0,10000)
+for i,li in enumerate(sun_lim):
+    ax2.axvline(li[idx], color=color[i], linestyle='dashed', linewidth=2)
+
+ax2.set_xlabel('Intensity bins (counts)')
+ax2.set_ylabel('Number of pixels')
+#ax2.locator_params(axis='x', nbins=6)
+ax2.legend()
+
+#Pore
+ax3.imshow(pore_bound[idx], origin = 'lower', interpolation = 'nearest', cmap=plt.get_cmap('gray'), extent=pore_cut_extent)
+ax3.set_xlabel('Distance (Arcseconds)')
+ax3.set_ylabel('Distance (Arcseconds)')
+
+for i,li in enumerate(pore_lim):
+    ax3.contour(pore_bound[idx] <= li[idx], origin = 'lower', interpolation = 'nearest', colors=color[i], extent=pore_cut_extent, levels=[0,1])
+
+ax4.hist([pore_bound[idx].flatten(),pore_cut_box[idx].flatten()],bins=250, color= ['Red', 'Orange'],
+          label=['Boundary', 'Background'], stacked=True, fill=True, edgecolor = 'none')
+ax4.set_xlim(0.2,1.6)
+ax4.set_ylim(0,2000)
+for i,li in enumerate(pore_lim):
+    ax4.axvline(li[idx], color=color[i], linestyle='dashed', linewidth=2)
+
+ax4.set_xlabel('Intensity bins (counts)')
+ax4.set_ylabel('Number of pixels')
+ax4.legend()
+
+fig.tight_layout()
+plt.savefig('/home/nabobalis/GitRepos/PhDThesis/Chapter2/Figs/method_overview.pdf',dpi=300,bbox_inches='tight')
 
 """
 Wavelet of Signals
 """
 
-#Sunspot
-wave,scales,sig95,idx,t1,coi,period,power = wavel(sun_area[0],sun_dt)
-wave2,scales2,sig952,idx2,t12,coi2,period2,power2 = wavel(sun_area[-1],sun_dt)
-
-fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(figsize=(12,8),nrows=2, ncols=2)
-# First Signal
-ax1.plot(t1, sun_area[0], 'k', linewidth=1.5)
-ax1.set_xlabel('Time (minutes)')
-ax1.set_ylabel('Area (Pixels)')
-extent = [t1.min(),t1.max(),0,max(period)]
-im = NonUniformImage(ax3, interpolation='nearest', extent=extent)
-im.set_cmap('cubehelix_r')
-im.set_data(t1, period[:idx], power[:idx,:])
-ax3.images.append(im)
-ax3.set_ylabel('Period (minutes)')
-ax3.set_xlabel('Time (minutes)')
-ax3.contour(t1, period[:idx], sig95[:idx,:], [-99,1], colors='k', linewidths=2, extent=extent)
-ax3.fill(np.concatenate([t1, t1[-1:]+sun_dt, t1[-1:]+sun_dt,t1[:1]-sun_dt, t1[:1]-sun_dt]),
-        (np.concatenate([coi,[1e-9], period[-1:], period[-1:], [1e-9]])),
-        'k', alpha=0.3,hatch='/', zorder=100, antialiased=True, rasterized=True)
-ax3.set_xlim(t1.min(),t1.max())
-ax3.set_ylim(([min(period), period[idx]]))
-# Second Signal
-ax2.plot(t1, sun_area[-1], 'k', linewidth=1.5)
-ax2.set_xlabel('Time (minutes)')
-ax2.set_ylabel('Area (Pixels)')
-extent = [t1.min(),t1.max(),0,max(period2)]
-im = NonUniformImage(ax4, interpolation='nearest', extent=extent)
-im.set_cmap('cubehelix_r')
-im.set_data(t1, period2[:idx], power2[:idx,:])
-ax4.images.append(im)
-ax4.set_ylabel('Period (minutes)')
-ax4.set_xlabel('Time (minutes)')
-ax4.contour(t1, period2[:idx], sig952[:idx,:], [-99,1], colors='k', linewidths=2, extent=extent)
-ax4.fill(np.concatenate([t1, t1[-1:]+sun_dt, t1[-1:]+sun_dt,t1[:1]-sun_dt, t1[:1]-sun_dt]),
-        (np.concatenate([coi,[1e-9], period[-1:], period[-1:], [1e-9]])),
-        'k', alpha=0.3,hatch='/', zorder=100, antialiased=True, rasterized=True)
-ax4.set_xlim(t1.min(),t1.max())
-ax4.set_ylim(([min(period), period[idx]]))
-
-fig.tight_layout()
-plt.savefig('/home/nabobalis/GitRepos/PhDThesis/Chapter2/Figs/sunspot_wavelet.pdf',dpi=300,bbox_inches='tight')
-
-#Pore
-wave,scales,sig95,idx,t1,coi,period,power = wavel(pore_area[0],pore_dt)
-wave2,scales2,sig952,idx2,t12,coi2,period2,power2 = wavel(pore_area[-1],pore_dt)
-
-fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(figsize=(12,8),nrows=2, ncols=2)
-# First Signal
-ax1.plot(t1, pore_area[0], 'k', linewidth=1.5)
-ax1.set_xlabel('Time (minutes)')
-ax1.set_ylabel('Area (Pixels)')
-extent = [t1.min(),t1.max(),0,max(period)]
-im = NonUniformImage(ax3, interpolation='nearest', extent=extent)
-im.set_cmap('cubehelix_r')
-im.set_data(t1, period[:idx], power[:idx,:])
-ax3.images.append(im)
-ax3.set_ylabel('Period (minutes)')
-ax3.set_xlabel('Time (minutes)')
-ax3.contour(t1, period[:idx], sig95[:idx,:], [-99,1], colors='k', linewidths=2, extent=extent)
-ax3.fill(np.concatenate([t1, t1[-1:]+pore_dt, t1[-1:]+pore_dt,t1[:1]-pore_dt, t1[:1]-pore_dt]),
-        (np.concatenate([coi,[1e-9], period[-1:], period[-1:], [1e-9]])),
-        'k', alpha=0.3,hatch='/', zorder=100, antialiased=True, rasterized=True)
-ax3.set_xlim(t1.min(),t1.max())
-ax3.set_ylim(([min(period), period[idx]]))
-# Second Signal
-ax2.plot(t1, pore_area[-1], 'k', linewidth=1.5)
-ax2.set_xlabel('Time (minutes)')
-ax2.set_ylabel('Area (Pixels)')
-extent = [t1.min(),t1.max(),0,max(period2)]
-im = NonUniformImage(ax4, interpolation='nearest', extent=extent)
-im.set_cmap('cubehelix_r')
-im.set_data(t1, period2[:idx], power2[:idx,:])
-ax4.images.append(im)
-ax4.set_ylabel('Period (minutes)')
-ax4.set_xlabel('Time (minutes)')
-ax4.contour(t1, period2[:idx], sig952[:idx,:], [-99,1], colors='k', linewidths=2, extent=extent)
-ax4.fill(np.concatenate([t1, t1[-1:]+pore_dt, t1[-1:]+pore_dt,t1[:1]-pore_dt, t1[:1]-pore_dt]),
-        (np.concatenate([coi,[1e-9], period[-1:], period[-1:], [1e-9]])),
-        'k', alpha=0.3,hatch='/', zorder=100, antialiased=True, rasterized=True)
-ax4.set_xlim(t1.min(),t1.max())
-ax4.set_ylim(([min(period), period[idx]]))
-
-fig.tight_layout()
-plt.savefig('/home/nabobalis/GitRepos/PhDThesis/Chapter2/Figs/pore_wavelet.pdf',dpi=300,bbox_inches='tight')
+##Sunspot
+#wave,scales,sig95,idx,t1,coi,period,power = wavel(sun_area[0],sun_dt)
+#wave2,scales2,sig952,idx2,t12,coi2,period2,power2 = wavel(sun_area[-1],sun_dt)
+#
+#fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(figsize=(12,8),nrows=2, ncols=2)
+## First Signal
+#ax1.plot(t1, sun_area[0], 'k', linewidth=1.5)
+#ax1.set_xlabel('Time (minutes)')
+#ax1.set_ylabel('Area (Pixels)')
+#extent = [t1.min(),t1.max(),0,max(period)]
+#im = NonUniformImage(ax3, interpolation='nearest', extent=extent)
+#im.set_cmap('cubehelix_r')
+#im.set_data(t1, period[:idx], power[:idx,:])
+#ax3.images.append(im)
+#ax3.set_ylabel('Period (minutes)')
+#ax3.set_xlabel('Time (minutes)')
+#ax3.contour(t1, period[:idx], sig95[:idx,:], [-99,1], colors='k', linewidths=2, extent=extent)
+#ax3.fill(np.concatenate([t1, t1[-1:]+sun_dt, t1[-1:]+sun_dt,t1[:1]-sun_dt, t1[:1]-sun_dt]),
+#        (np.concatenate([coi,[1e-9], period[-1:], period[-1:], [1e-9]])),
+#        'k', alpha=0.3,hatch='/', zorder=100, antialiased=True, rasterized=True)
+#ax3.set_xlim(t1.min(),t1.max())
+#ax3.set_ylim(([min(period), period[idx]]))
+## Second Signal
+#ax2.plot(t1, sun_area[-1], 'k', linewidth=1.5)
+#ax2.set_xlabel('Time (minutes)')
+#ax2.set_ylabel('Area (Pixels)')
+#extent = [t1.min(),t1.max(),0,max(period2)]
+#im = NonUniformImage(ax4, interpolation='nearest', extent=extent)
+#im.set_cmap('cubehelix_r')
+#im.set_data(t1, period2[:idx], power2[:idx,:])
+#ax4.images.append(im)
+#ax4.set_ylabel('Period (minutes)')
+#ax4.set_xlabel('Time (minutes)')
+#ax4.contour(t1, period2[:idx], sig952[:idx,:], [-99,1], colors='k', linewidths=2, extent=extent)
+#ax4.fill(np.concatenate([t1, t1[-1:]+sun_dt, t1[-1:]+sun_dt,t1[:1]-sun_dt, t1[:1]-sun_dt]),
+#        (np.concatenate([coi,[1e-9], period[-1:], period[-1:], [1e-9]])),
+#        'k', alpha=0.3,hatch='/', zorder=100, antialiased=True, rasterized=True)
+#ax4.set_xlim(t1.min(),t1.max())
+#ax4.set_ylim(([min(period), period[idx]]))
+#
+#fig.tight_layout()
+#plt.savefig('/home/nabobalis/GitRepos/PhDThesis/Chapter2/Figs/sunspot_wavelet.pdf',dpi=300,bbox_inches='tight')
+#
+##Pore
+#wave,scales,sig95,idx,t1,coi,period,power = wavel(pore_area[0],pore_dt)
+#wave2,scales2,sig952,idx2,t12,coi2,period2,power2 = wavel(pore_area[-1],pore_dt)
+#
+#fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(figsize=(12,8),nrows=2, ncols=2)
+## First Signal
+#ax1.plot(t1, pore_area[0], 'k', linewidth=1.5)
+#ax1.set_xlabel('Time (minutes)')
+#ax1.set_ylabel('Area (Pixels)')
+#extent = [t1.min(),t1.max(),0,max(period)]
+#im = NonUniformImage(ax3, interpolation='nearest', extent=extent)
+#im.set_cmap('cubehelix_r')
+#im.set_data(t1, period[:idx], power[:idx,:])
+#ax3.images.append(im)
+#ax3.set_ylabel('Period (minutes)')
+#ax3.set_xlabel('Time (minutes)')
+#ax3.contour(t1, period[:idx], sig95[:idx,:], [-99,1], colors='k', linewidths=2, extent=extent)
+#ax3.fill(np.concatenate([t1, t1[-1:]+pore_dt, t1[-1:]+pore_dt,t1[:1]-pore_dt, t1[:1]-pore_dt]),
+#        (np.concatenate([coi,[1e-9], period[-1:], period[-1:], [1e-9]])),
+#        'k', alpha=0.3,hatch='/', zorder=100, antialiased=True, rasterized=True)
+#ax3.set_xlim(t1.min(),t1.max())
+#ax3.set_ylim(([min(period), period[idx]]))
+## Second Signal
+#ax2.plot(t1, pore_area[-1], 'k', linewidth=1.5)
+#ax2.set_xlabel('Time (minutes)')
+#ax2.set_ylabel('Area (Pixels)')
+#extent = [t1.min(),t1.max(),0,max(period2)]
+#im = NonUniformImage(ax4, interpolation='nearest', extent=extent)
+#im.set_cmap('cubehelix_r')
+#im.set_data(t1, period2[:idx], power2[:idx,:])
+#ax4.images.append(im)
+#ax4.set_ylabel('Period (minutes)')
+#ax4.set_xlabel('Time (minutes)')
+#ax4.contour(t1, period2[:idx], sig952[:idx,:], [-99,1], colors='k', linewidths=2, extent=extent)
+#ax4.fill(np.concatenate([t1, t1[-1:]+pore_dt, t1[-1:]+pore_dt,t1[:1]-pore_dt, t1[:1]-pore_dt]),
+#        (np.concatenate([coi,[1e-9], period[-1:], period[-1:], [1e-9]])),
+#        'k', alpha=0.3,hatch='/', zorder=100, antialiased=True, rasterized=True)
+#ax4.set_xlim(t1.min(),t1.max())
+#ax4.set_ylim(([min(period), period[idx]]))
+#
+#fig.tight_layout()
+#plt.savefig('/home/nabobalis/GitRepos/PhDThesis/Chapter2/Figs/pore_wavelet.pdf',dpi=300,bbox_inches='tight')
 
 #for sig1, sig2 in zip(sun_area,sun_inten):
 #    cross_wavelet(sig1, sig2, sun_dt, mother='morlet', plot=True)
