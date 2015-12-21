@@ -2,7 +2,7 @@
 
 \section*{Chapter 4}
 
-In Chapter 4, the set of equations (Equations \ref{eq:mom_r}, \ref{eq:mom_z},\ref{eq:mag_r},\ref{eq:mag_z},\ref{eq:press1} and \ref{eq:den}) are the ideal MHD equations which govern linear magneto-acoustic wave motions and are repeated below,
+In Chapter 4, the set of equations, Equations (\ref{eq:mom_r}), (\ref{eq:mom_z}), (\ref{eq:mag_r}), (\ref{eq:mag_z}), (\ref{eq:press1}), and (\ref{eq:den}), are the ideal MHD equations which describe linear magneto-acoustic wave motions and are repeated below,
 \begin{align}
     &&\rho_0 \frac{\partial v_r}{\partial t}=-\frac{\partial}{\partial r}
     \left(p_1+\frac{B_0b_z}{\mu_0}\right)+\frac{B_0}{\mu_0}\frac{\partial b_r}{\partial z},
@@ -23,26 +23,27 @@ In Chapter 4, the set of equations (Equations \ref{eq:mom_r}, \ref{eq:mom_z},\re
 Here, $p$ is the gas pressure, $\rho$ is the density and $\textbf{b} = (b_r,b_{\theta},b_z)$ is the perturbed magnetic field.
 We have assumed that the plasma motion is adiabatic.
 The subscripts $0$ and $1$ refer to unperturbed and perturbed states, respectively.
-The velocity perturbation is denoted as $\textbf{v}_1= (v_r,v_{\theta},v_z)$.
+The velocity perturbation is denoted as $\textbf{v}_1= (v_r, v_{\theta}, v_z)$.
 
-So by assuming that all the perturbed quantities are a harmonic propagating wave of the form, $v_r=\hat{v_r}\cos(kz-\omega t)$, where $\hat{v_r}$ is the amplitude of the perturbation and is a function of the radius i.e., $A(r)$.
+We will assume that all the perturbed quantities have the form of a harmonic propagating wave, $v_r=\hat{v_r}\cos(kz-\omega t)$, where $\hat{v_r}$ is the amplitude of the perturbation and is a function of the radius, i.e., $A(r)$.
+From this, it is possible to derive Equations (\ref{eq:n0}), (\ref{eq:n1}), (\ref{eq:n2}), (\ref{eq:n3}), (\ref{eq:n4}) and (\ref{eq:n5}).
 
-From Equation \ref{eq:mag_r} or \ref{eq:apen_mag_r}, we can substitute the radial velocity perturbation,
+To start, we can substitute the radial velocity perturbation into Equation (\ref{eq:mag_r}) or (\ref{eq:apen_mag_r}) giving,
 \begin{align}
-&&\omega \hat{b_r} \cancel{\sin(kz-\omega t)} = -B_0k\hat{v_r} \cancel{\sin(kz-\omega t)}\\
-&&\omega \hat{b_r}= -B_0k\hat{v_r},\label{eq:brhat}\\
-&&\omega b_r=-B_0k\hat{v_r}\cos(kz-\omega t),\\
-&&\omega b_r=-B_0k{v_r}
+	&&\omega \hat{b_r} \cancel{\sin(kz-\omega t)} = -B_0k\hat{v_r} \cancel{\sin(kz-\omega t)}\\
+	&&\omega \hat{b_r}= -B_0k\hat{v_r},\label{eq:brhat}\\
+	&&\omega b_r=-B_0k\hat{v_r}\cos(kz-\omega t),\\
+	&&\omega b_r=-B_0k{v_r},
 \end{align}
-which is Equation \ref{eq:n0}.
+which is Equation (\ref{eq:n0}).
 
-From Equation \ref{eq:mom_r} or \ref{eq:apen_mom_r}, we can substitute the radial velocity perturbation, 
+Next we can substitute the radial velocity perturbation into Equation (\ref{eq:mom_r}) or (\ref{eq:apen_mom_r}) giving,
 \begin{align}
     &&\rho_0 \omega \hat{v_r} \sin(kz-\omega t) =-\frac{\partial}{\partial r}
     \left(p_1+\frac{B_0b_z}{\mu_0}\right)+\frac{B_0}{\mu_0}\left(-\hat{b_r}k\sin(kz-\omega t)\right),\\
-    &&\left(\rho_0 \omega \hat{v_r} + \frac{B_0}{\mu_0}\hat{b_r}k \right)\sin(kz-\omega t) =-\frac{\partial}{\partial r}\left(p_1+\frac{B_0b_z}{\mu_0}\right).
+    &&\left(\rho_0 \omega \hat{v_r} + \frac{B_0}{\mu_0}\hat{b_r}k \right)\sin(kz-\omega t) =-\frac{\partial}{\partial r}\left(p_1+\frac{B_0b_z}{\mu_0}\right).\label{eq:apex_stepa}
 \end{align}
-Since $\hat{v_r} = A(r)$ and from Equation \ref{eq:brhat}, we have that $\hat{b_r} = -\dfrac{B_0 k}{\omega}A(r)$,
+As we know that $\hat{v_r} = A(r)$, and using Equation (\ref{eq:brhat}), we know that $\hat{b_r} = -\dfrac{B_0 k}{\omega}A(r)$, thus substituting these into Equation (\ref{eq:apex_stepa}) gives,
 \begin{align}
 &&\left(\rho_0 \omega A(r) - \frac{B_0^2 k^2}{\mu_0 \omega}A(r) \right)\sin(kz-\omega t) =-\frac{\partial}{\partial r}\left(p_1+\frac{B_0b_z}{\mu_0}\right),\\
 &&\rho_0 \left(\frac{B_0^2 k^2}{\mu_0 \omega \rho_0} - \omega \right)A(r)\sin(kz-\omega t) =\frac{\partial}{\partial r}\left(p_1+\frac{B_0b_z}{\mu_0}\right),
@@ -51,56 +52,56 @@ and since $v_A^2 = \dfrac{B_0^2}{\mu_0\rho_0}$,
 \begin{align}
 &&\rho_0 \left(\frac{v_A^2 k^2}{\omega} - \omega \right)A(r)\sin(kz-\omega t) =\frac{\partial}{\partial r}\left(p_1+\frac{B_0b_z}{\mu_0}\right),
 \end{align}
-which is Equation \ref{eq:n1}.
+which is Equation (\ref{eq:n1}).
 
-Equation \ref{eq:mom_z} or \ref{eq:apen_mom_z} is the same as Equation \ref{eq:n2}
+Equation (\ref{eq:mom_z}) or (\ref{eq:apen_mom_z}) is the same as Equation \ref{eq:n2}, so no further work is required.
 
-If we integrate Equation \ref{eq:mag_r} or \ref{eq:apen_mag_r}, with respect time,
+If we integrate Equation (\ref{eq:mag_r}) or (\ref{eq:apen_mag_r}), with respect to time,
 \begin{align}
 &&\frac{\partial b_z}{\partial t}=-B_0\frac{1}{r}\frac{\partial (rv_r)}{\partial r},\\
 && b_z = \int -B_0\frac{1}{r}\frac{\partial (rv_r)}{\partial r} dt,\\
 && b_z =  -\frac{B_0}{r}\int\frac{\partial (rA(r)\cos(kz-\omega t))}{\partial r} dt,\\
 && b_z =  -\frac{B_0}{r}\frac{\partial (rA(r))}{\partial r}\int \cos(kz-\omega t) dt,\\
 && b_z =  -\frac{B_0}{r}\frac{\partial (rA(r))}{\partial r}\left(\frac{-1}{\omega}\right) \sin(kz-\omega t) dt,\\
-&& b_z =  \frac{B_0}{r\omega}\frac{\partial (rA(r))}{\partial r}\sin(kz-\omega t) dt,\\
+&& b_z =  \frac{B_0}{r\omega}\frac{\partial (rA(r))}{\partial r}\sin(kz-\omega t) dt,
 \end{align}
-which is Equation \ref{eq:n3}.
+which is Equation (\ref{eq:n3}).
 
-Next, using Equations \ref{eq:press1} and \ref{eq:den} or Equations \ref{eq:apen_press1} and \ref{eq:apen_den} and multiplying Equation \ref{eq:den} or \ref{eq:apen_den} by $c_s^2$,
+Next, using Equations (\ref{eq:press1}) and (\ref{eq:den}) or Equations (\ref{eq:apen_press1}) and (\ref{eq:apen_den}) and multiplying Equation (\ref{eq:den}) or (\ref{eq:apen_den}) by $c_s^2$, it can be shown that,
 \begin{align}
 &&\frac{\partial p_1}{\partial t}=c_s^2\frac{\partial\rho_1}{\partial t}=-\rho_0 c_s^2\left(\frac{1}{r}\frac{\partial(rv_r)}{\partial r}+\frac{\partial v_z}{\partial z}\right)\label{eq:apen_n4},
 \end{align}
-which is Equation \ref{eq:n4}.
+which is Equation (\ref{eq:n4}).
 
-Finally, integrating Equation \ref{eq:n4} or \ref{eq:apen_n4} with respect to time,
+Finally, integrating Equation (\ref{eq:n4}) or (\ref{eq:apen_n4}) with respect to time,
 \begin{align}
 && p_1 =c_s^2\,\rho_1 = \frac{-\rho_0 c_s^2}{r} \int \frac{\partial(rv_r)}{\partial r} dt - \rho_0 c_s^2 \int \frac{\partial v_z}{\partial z} dt, \\
 && =\frac{-\rho_0 c_s^2}{r} \int \frac{\partial(r(A(r))\cos(kz-\omega t))}{\partial r} dt - \rho_0 c_s^2 \int \frac{\partial v_z}{\partial z} dt, \\
-&& =\frac{-\rho_0 c_s^2}{r} \frac{\partial(r(A(r))}{\partial r} \int \cos(kz-\omega t)) dt - \rho_0 c_s^2 \int \frac{\partial v_z}{\partial z} dt.
+&& =\frac{-\rho_0 c_s^2}{r} \frac{\partial(r(A(r))}{\partial r} \int \cos(kz-\omega t)) dt - \rho_0 c_s^2 \int \frac{\partial v_z}{\partial z} dt.\label{eq:apen_part_2}
 \end{align}
-Integrating Equation \ref{eq:n2} with respect to time gives, $v_z = \int -\frac{1}{\rho} \frac{\partial p_1}{\partial z} dt$, thus, substituting this gives,
+Integrating Equation (\ref{eq:n2}) with respect to time gives, $$v_z = \int -\frac{1}{\rho} \frac{\partial p_1}{\partial z} dt,$$ thus substituting this gives into Equation (\ref{eq:apen_part_2}) gives,
 \begin{align}
 && p_1 = c_s^2\,\rho_1 =\frac{\rho_0 c_s^2}{r\omega}\frac{\partial(r(A(r))}{\partial r} \sin(kz-\omega t) + \frac{\cancel{\rho_0} c_s^2}{\cancel{\rho_0}} \int \frac{\partial}{\partial z} \left(\int \frac{\partial p_1}{\partial z} dt \right) dt,\\
 && = \frac{\rho_0 c_s^2}{r\omega}\frac{\partial(r(A(r))}{\partial r} \sin(kz-\omega t)  + c_s^2 \int\int \frac{\partial^2 p_1}{\partial z^2} dt dt.\label{eq:apen_wow}
 \end{align}
 
-If we let $p_1=\hat{p_1}\mathrm{q}(kz-\omega t)$ and $\rho_1=\hat{\rho_1}\mathrm{q}(kz-\omega t)$, where $\mathrm{q}$ is representative of a harmonic wave i.e., it could be $\cos$ or $\sin$ or some combination such as, $\mathrm{q} = a \sin(kz-\omega t) + b \cos(kz-\omega t)$.
-Thus, the right most term of Equation \ref{eq:apen_wow} will give,
+If we let the pressure and density perturbations to be $p_1=\hat{p_1}\mathrm{q}(kz-\omega t)$ and $\rho_1=\hat{\rho_1}\mathrm{q}(kz-\omega t)$, respectively, where $\mathrm{q}$ is representative of a harmonic wave, i.e., it could be $\cos$, $\sin$ or some combination such as, $\mathrm{q} = a \sin(kz-\omega t) + b \cos(kz-\omega t)$.
+Then the right most term of Equation (\ref{eq:apen_wow}) will become,
 \begin{align}
 &&\int\int \frac{\partial^2 \mathrm{q}}{\partial z^2} dt dt,\\
 &&\frac{\partial^2 q}{\partial z^2} = - k^2 \mathrm{q},\\
 &&\int\int - k^2 \mathrm{q} dt dt = \frac{k^2}{\omega^2}\mathrm{q}.
 \end{align}
-Since,
+This is because of the following facts,
 \begin{align}
 &&\frac{\partial^2 \sin(kz-\omega t)}{\partial z^2} = -k^2\sin(kz-\omega t),\\
 &&\frac{\partial^2 \cos(kz-\omega t)}{\partial z^2} = -k^2\cos(kz-\omega t),\\
 &&\int\int \sin(kz-\omega t) dt dt = -\frac{1}{\omega^2}\sin(kz-\omega t),\\
-&&\int\int \cos(kz-\omega t) dt dt = -\frac{1}{\omega^2}\cos(kz-\omega t),\\
+&&\int\int \cos(kz-\omega t) dt dt = -\frac{1}{\omega^2}\cos(kz-\omega t),
 \end{align}
-or any combination of them.
+or any linear combination.
 
-Finally,
+Then Equation (\ref{eq:apen_wow}) will become,
 \begin{align}
 && \hat{p_1}\mathrm{q} = \frac{\rho_0 c_s^2}{r\omega}\frac{\partial(r(A(r))}{\partial r} \sin(kz-\omega t) + \frac{c_s^2 k^2}{\omega^2}\hat{p_1}\mathrm{q},\\
 && \hat{p_1}\mathrm{q}\left(1 - \frac{c_s^2 k^2}{\omega^2} \right) = \frac{\rho_0 c_s^2}{r\omega}\frac{\partial(r(A(r))}{\partial r} \sin(kz-\omega t),\\
@@ -108,4 +109,4 @@ Finally,
 && p_1 = \frac{\rho_0 c_s^2}{\frac{\omega}{\omega^2}(\omega^2- c_s^2k^2)}\frac{1}{r}\frac{\partial(r(A(r))}{\partial r} \sin(kz-\omega t),\\
 && p_1 = -\frac{\rho_0 c_s^2 \omega}{c_s^2k^2 - \omega^2}\frac{1}{r}\frac{\partial(r(A(r))}{\partial r} \sin(kz-\omega t),
 \end{align}
-which is Equation \ref{eq:n5}.
+which is Equation (\ref{eq:n5}).
