@@ -54,7 +54,7 @@ and since $v_A^2 = \dfrac{B_0^2}{\mu_0\rho_0}$,
 \end{align}
 which is Equation (\ref{eq:n1}).
 
-Equation (\ref{eq:mom_z}) or (\ref{eq:apen_mom_z}) is the same as Equation \ref{eq:n2}, so no further work is required.
+Equation (\ref{eq:mom_z}) or (\ref{eq:apen_mom_z}) is the same as Equation (\ref{eq:n2}), so no further work is required.
 
 If we integrate Equation (\ref{eq:mag_r}) or (\ref{eq:apen_mag_r}), with respect to time,
 \begin{align}
@@ -73,13 +73,13 @@ Next, using Equations (\ref{eq:press1}) and (\ref{eq:den}) or Equations (\ref{eq
 \end{align}
 which is Equation (\ref{eq:n4}).
 
-Finally, integrating Equation (\ref{eq:n4}) or (\ref{eq:apen_n4}) with respect to time,
+Finally, integrating Equation (\ref{eq:n4}) or (\ref{eq:apen_n4}) with respect to time gives,
 \begin{align}
 && p_1 =c_s^2\,\rho_1 = \frac{-\rho_0 c_s^2}{r} \int \frac{\partial(rv_r)}{\partial r} dt - \rho_0 c_s^2 \int \frac{\partial v_z}{\partial z} dt, \\
 && =\frac{-\rho_0 c_s^2}{r} \int \frac{\partial(r(A(r))\cos(kz-\omega t))}{\partial r} dt - \rho_0 c_s^2 \int \frac{\partial v_z}{\partial z} dt, \\
 && =\frac{-\rho_0 c_s^2}{r} \frac{\partial(r(A(r))}{\partial r} \int \cos(kz-\omega t)) dt - \rho_0 c_s^2 \int \frac{\partial v_z}{\partial z} dt.\label{eq:apen_part_2}
 \end{align}
-Integrating Equation (\ref{eq:n2}) with respect to time gives, $$v_z = \int -\frac{1}{\rho} \frac{\partial p_1}{\partial z} dt,$$ thus substituting this gives into Equation (\ref{eq:apen_part_2}) gives,
+Integrating Equation (\ref{eq:n2}) with respect to time gives, $$v_z = \int -\frac{1}{\rho} \frac{\partial p_1}{\partial z} dt,$$ and then substituting this into Equation (\ref{eq:apen_part_2}) gives,
 \begin{align}
 && p_1 = c_s^2\,\rho_1 =\frac{\rho_0 c_s^2}{r\omega}\frac{\partial(r(A(r))}{\partial r} \sin(kz-\omega t) + \frac{\cancel{\rho_0} c_s^2}{\cancel{\rho_0}} \int \frac{\partial}{\partial z} \left(\int \frac{\partial p_1}{\partial z} dt \right) dt,\\
 && = \frac{\rho_0 c_s^2}{r\omega}\frac{\partial(r(A(r))}{\partial r} \sin(kz-\omega t)  + c_s^2 \int\int \frac{\partial^2 p_1}{\partial z^2} dt dt.\label{eq:apen_wow}
@@ -92,16 +92,16 @@ Then the right most term of Equation (\ref{eq:apen_wow}) will become,
 &&\frac{\partial^2 q}{\partial z^2} = - k^2 \mathrm{q},\\
 &&\int\int - k^2 \mathrm{q} dt dt = \frac{k^2}{\omega^2}\mathrm{q}.
 \end{align}
-This is because of the following facts,
+This is because of the following,
 \begin{align}
 &&\frac{\partial^2 \sin(kz-\omega t)}{\partial z^2} = -k^2\sin(kz-\omega t),\\
 &&\frac{\partial^2 \cos(kz-\omega t)}{\partial z^2} = -k^2\cos(kz-\omega t),\\
 &&\int\int \sin(kz-\omega t) dt dt = -\frac{1}{\omega^2}\sin(kz-\omega t),\\
 &&\int\int \cos(kz-\omega t) dt dt = -\frac{1}{\omega^2}\cos(kz-\omega t),
 \end{align}
-or any linear combination.
+or any linear combination of these terms.
 
-Then Equation (\ref{eq:apen_wow}) will become,
+Finally, Equation (\ref{eq:apen_wow}) will become,
 \begin{align}
 && \hat{p_1}\mathrm{q} = \frac{\rho_0 c_s^2}{r\omega}\frac{\partial(r(A(r))}{\partial r} \sin(kz-\omega t) + \frac{c_s^2 k^2}{\omega^2}\hat{p_1}\mathrm{q},\\
 && \hat{p_1}\mathrm{q}\left(1 - \frac{c_s^2 k^2}{\omega^2} \right) = \frac{\rho_0 c_s^2}{r\omega}\frac{\partial(r(A(r))}{\partial r} \sin(kz-\omega t),\\
