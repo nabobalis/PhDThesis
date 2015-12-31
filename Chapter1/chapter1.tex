@@ -82,7 +82,7 @@
     The core is the beating heart of the Sun, the largest fusion reactor this side of Centaurus.
     The core has more than 60\% of the total mass of the Sun and extends roughly to 25\% of the total radius of the Sun.
     It has a density of around 150000 kg m$^{-3}$ and a temperature around 16 MK \citep{0004-637X-699-2-1403}.
-    The fusion reactions occurs due to the high pressure and temperatures that exist in the core, which are enough to force the hydrogen atoms together. 
+    The fusion reactions occur due to the high pressure and temperatures that exist in the core, which are enough to force the hydrogen atoms together. 
     This process, which accounts for the vast majority of the energy generated, creates a range of high energy particles such as photons and neutrinos.
     
 \subsubsection{The radiative zone}
@@ -108,18 +108,21 @@
     The visible effect of convection is the solar granulation pattern that can be seen in white light images of the Sun.  
     The pattern consists of cells that have a rough hexagonal shape. 
     At the top of the convection zone, the temperature drops to 5700 K and the density to 0.0002 kg m$^{-3}$ \citep{gai2000sun}. 
-    A very important factor about the convection zone is the matter of differential rotation.
+    Within the convection zone, differential rotation is important.
     The Sun rotates not as a solid body as the Earth does but as a fluid as the Gas Giants do. 
-    The rotation rate decreases from the equator where it is 25 days to around 34 days at the poles.
+    The rotation rate decreases from the equator where it is 25 days to around 34 days at the poles \citep{2000SoPh..191...47B}.
+    Furthermore, the rotation rate varies with depth, until the tachocline is reached, where it rotates as a solid body \citep{Howe31032000}.
     
 \subsection{The solar atmosphere}
  
     The solar atmosphere is quite unlike the Earth's.
     While they both have multiple layers, the characteristics are wildly different (as you would expect). 
     The top of the convection zone is the start of the first layer of the solar atmosphere.
-    Here the optical depth, the fraction of photons that can pass through the layer, is $\lessapprox$1, meaning that roughly a third of all photons will go into space.
+    The reason for this is that the optical depth becomes $\lessapprox$1.
+    The optical depth is defined as the fraction of photons that can pass through a layer without being scattered within that layer.
+    For a value of $\lessapprox$1, this means that approximately a third of all photons will pass through this layer unhindered.
     This layer is called the photosphere.
-    There are three more layers, the chromosphere, the transition region and the corona (see Figure \ref{fig:Sun}).
+    There are three more layers of the solar atmosphere: the chromosphere, the transition region and the corona (see Figure \ref{fig:Sun}).
     Then the solar atmosphere transitions into the solar wind which fills the interplanetary medium.
     
 \subsubsection{The photosphere}
@@ -132,140 +135,146 @@
     The structure of the photosphere is composed of convection cells called granules, which are on average 1 Mm in diameter.
     Observed flows within these cells show uprising hot plasma in the centre which pushes the cooler plasma to the edges of the cell before flowing downwards. 
     These granules are short-lived, with a lifetime less than 10 minutes, resulting in a repeating pattern at small-scales.
-    These can be seen in the top image of Fig \ref{fig:photosphere}, within circle A.
+    These can be seen in Figure \ref{fig:photosphere}, within circle A.
     On larger scales, super-granule structures have been observed with a 30 Mm diameter which can last for a day or longer \citep{lrsp-2010-2}.
-    
+   
+    \begin{figure}    
+    	\centering
+    	\includegraphics[width=\textwidth]{QS.pdf}
+    	\caption{
+    		Iron I ($630.2$ nm) image taken with the Swedish Solar Telescope on the $22^{\mathrm{nd}}$ of July 2012.
+    		It shows some of the features that are present in the quiet Sun: a granule cell (A) and a magnetic bright point (B).
+    	}
+    	\label{fig:photosphere}        
+    \end{figure}   
+       
     The convective nature of the Sun has allowed us to infer the interior structure. 
     The reason for this is that turbulence within the convection zone creates an entire spectrum of acoustic waves, named \textit{p}-modes, where \textit{p} stands for pressure.
     \textit{p}-modes penetrate into the solar interior and at certain frequencies, the waves become standing.
-    This sets up many standing modes that can be measured on the photosphere, using line-of-sight Doppler images. 
+    These can be measured on the photosphere, using line-of-sight Doppler images. 
     The mathematics used as a basis for this research is called spherical harmonics and allows \textit{p}-modes that are observed to be understood.
     The mode's overall properties are affected by the physical conditions where the maximum amplitude for that mode occurs. 
     This allows an image to be built up at every depth within the solar interior.
+    For reviews on this topic, see \cite{annurev.aa.22.090184.003113} and \cite{RevModPhys.74.1073} for example.
     
-    The dynamics of the photosphere is governed by two processes; convection as discussed above, but also by the solar magnetic field.
-    This makes understanding how the magnetic field is structured within the photosphere important. 
+    The dynamics of the photosphere is governed by two processes, convection as discussed above, and the solar magnetic field.
+    Thus understanding how the magnetic field is structured within the photosphere is important. 
     The most common method employed in solar physics to measure the magnetic field, is to exploit the Zeeman effect.
-    This is the fact that when atoms are subjected to a magnetic field, their spectral lines split as a function of field strength and polarization.
+    When atoms are subjected to a magnetic field, their spectral lines split as a function of field strength and polarization.
     Unfortunately, this effect can only really be used in the photosphere as the magnetic field present is strong enough to cause the Zeeman effect.
     However, many solar physicists have attempted measurements in various weak field areas \citep{1995ApJ...439..474M,1538-4357-613-2-L177,2008A&A...489L..57K}.
     These images are called solar magnetograms and they have revealed the basic magnetic field structure at the photosphere.
-    The magnetic field is very weak ($\le 300$ Gauss) on average and is very sparse.
-    This is referred to as the quiet Sun and is shown in the top image of Figure \ref{fig:photosphere}. 
-    The structuring from convection can be seen clearly as well as several features (which are discussed below).
-    As can be seen, the magnetic field does not clearly dominate as it does in other regions.
-
+    The magnetic field is very weak ($\le 40$ Gauss) on average and is very sparse \citep{0004-637X-636-1-496,2011A&A...526A..60V}.
+    This is referred to as the quiet Sun and is shown in Figure \ref{fig:photosphere}. 
+    The dominating feature within this image is the granulation cells, which is the structures formed by convection can be seen clearly as well as several small features, which are discussed below. 
+    Since granulation can be seen clearly, the magnetic field does not dominate within the quiet Sun, as it does in other regions.
+    
+    Finally, text. \ref{fig:valc}...
+    
     \begin{figure}    
-        \centering
-        \begin{subfigure}[b]{0.75\textwidth}
-            \includegraphics[width=\textwidth]{QS.pdf}
-        \end{subfigure}\\~\\
-        \begin{subfigure}[b]{0.75\textwidth}
-            \includegraphics[width=\textwidth]{val3.pdf}
-        \end{subfigure}
-        \caption{
-                \textit{(top)} Iron I ($630.2$ nm) image taken with the Swedish Solar Telescope on the $22^{\mathrm{nd}}$ of July 2012.
-                It shows some of the features that are present in the quiet Sun: a granule cell (A) and a magnetic bright point (B).
-                \textit{(bottom)} The VALIIIc \citep{1981ApJS...45..635V} model of the quiet Sun, density is in blue and temperature is in red.
-                The temperature minimum region and the transition region can be seen clearly with these two parameters.
-                }
-        \label{fig:photosphere}        
-    \end{figure}   
+       	\centering
+       	\includegraphics[width=\textwidth]{val3.pdf}
+       	\caption{
+       		     The VALIIIc \citep{1981ApJS...45..635V} model of the quiet Sun, density is blue and temperature is red.
+       		     The temperature minimum region and the transition region can be seen clearly with these two parameters.
+                 }
+       	\label{fig:valc}        
+    \end{figure} 
     
     Within the photosphere are small regions of concentrated magnetic field, named Magnetic Bright Points (MBPs).
     They are small-scale bright dots, as can be seen in Figure \ref{fig:photosphere}, in the circle labelled B.
-    They are formed in the gaps between granule cells; the plasma flow has dragged the magnetic flux and thus becomes highly concentrated (>$1$ kG).
-    The most likely reason for the increased brightness is that the flux tube has been evacuated of any plasma.
+    They are formed in the gaps between granule cells since the plasma flow drags the magnetic flux to high concentrations (>$1$ kG).
+    The most likely reason for the increased brightness is that the flux tube has been evacuated of plasma.
     As such, observations of MBPs allow a glimpse into the top of the convection zone, which has a higher temperature than the photosphere and is brighter.
     One important factor about MBPs was the observation of Alfv\'en waves \citep{Jess2009,Taroyan2009}.
     This was able to supply enough energy to the corona to overcome the ``Coronal Heating problem'' (detailed in section \ref{corona}).
         
     Active Regions (ARs) are areas of intense magnetic field concentrations on the Sun's surface.
     They are catalogued by the National Oceanic and Atmospheric Administration (NOAA) who  assign each AR a number.
-    ARs will vary in scale and what magnetic structures are present.
+    ARs vary in scale and in magnetic structure.
     Two of the most prevalent features within ARs are sunspots and magnetic pores.
-    There are also many quiet Sun features and a whole raft of magnetic reconnection features. 
-    The top image of Figure \ref{fig:AR_Num} displays one such AR. 
+    Furthermore, most ARs will contain magnetic features found in the quiet Sun and events that are believed to be a consequence of magnetic reconnection (spicules and Ellerman Bombs (EBs) for example). 
+    Figure \ref{fig:AR} displays one such AR. 
     It consists of $3$ sunspots, taken as the AR is about to disappear off-limb.
-    Circle A encloses one of the sunspots, but by being able to use a different wavelength filter we can observe an Ellerman Bomb (B) and a jet event (C).
+    Circle A encloses one of the sunspots, but by use of a  different wavelength filter we can observe an EBs (B) and a jet event (C).
     The last two events are associated with magnetic reconnection \citep{2013SoPh..283..307N,2013A&A...560A..31N,2013ApJ...779..125N,2015ApJ...798...19N}.
      
     \begin{figure}
         \centering
-        \begin{subfigure}[b]{0.75\textwidth}
-           \includegraphics[width=\textwidth]{AR.pdf}
-        \end{subfigure}\\~\\
-        \begin{subfigure}[b]{0.75\textwidth}
-           \includegraphics[width=\textwidth]{sunspot_number.pdf}
-        \end{subfigure}
+        \includegraphics[width=\textwidth]{AR.pdf}
         \caption{
-               \textit{(top)} An image of an active region (NOAA 11504) sunspot taken with the Swedish Solar Telescope using the Crisp Imaging SpectroPolarimeter on the $21^{\mathrm{st}}$ June. 
-               The filter used is H$\alpha$ but into the far wings such that strong photospheric features can be observed.
-               It shows some of the features that are present in Active Regions; sunspot (A), Ellerman Bomb (B), a jet (C) and seeing effects (D).            
-               \textit{(bottom)} The sunspot number record as it currently stands since continuous tracking.  
-               The eleven year solar cycle is clearly visible.
+                 An image of an active region (NOAA 11504) sunspot taken with the Swedish Solar Telescope using the Crisp Imaging SpectroPolarimeter on the $21^{\mathrm{st}}$ June. 
+                 The filter used is H$\alpha$ but into the far wings such that strong photospheric features can be observed.
+                 It shows some of the features that are present in Active Regions; sunspot (A), Ellerman Bomb (B), a jet (C) and seeing effects (D).
               }
-        \label{fig:AR_Num}
+        \label{fig:AR}
      \end{figure}    
-    
-    When using a wavelength filter that samples higher temperature plasma ($\ge1$ MK), loop structures can be see that rise several mega-meters in height.
-    These are called coronal loops and they display a wide range of oscillations.
-    Seismology of these loops has estimated the background quantities such as density and magnetic field strength of these loops (see \cite{2005RSPTA.363.2743D} or \cite{Banerjee2007} for a detailed review). 
-    ARs  will also be the areas where flares or coronal mass ejections will originate from, since they contain large amounts of stored magnetic energy.
 
-    These are the most spectacular events produced by the Sun.
-    The amount of mass and energetic particles ejected can be considered scary, as these events have a direct impact on the Earth if the ejected material reaches Earth, from simply creating the aurora near the poles or in certain situations the disruption of radio transmissions, damage to satellites and electrical transmission lines.
-    So it is important to understand the formation mechanism of these events so we can predict them and take measures to limit their damage.
-    This is partly the realm of space weather research. 
-    
     Sunspots are the strongest magnetic field concentrations on the solar surface.
-    They have field strengths up to $4$ kG, they can span up to $20$ Mm in diameter.
-    With the naked eye, they may appear to be dark spots, but with a good telescope, the sunspot structure can be seen to be divided into two parts.
-    The first is the umbra which is the core of the sunspot, it is the coolest region ($\approx 4000$ K), where the magnetic field is strongest and vertically inclined.
+    They have field strengths up to $4$ kG, and they can span up to $20$ Mm in diameter.
+    With the naked eye, they appear as dark spots, but with a good telescope, the sunspot structure is divided into two parts.
+    The first is the umbra which is the core of the sunspot.
+    It is the coolest region ($\approx 4000$ K), where the magnetic field is strongest and vertically inclined.
     The reason for the temperature difference between the sunspot and photosphere is that the magnetic field inhibits convection.
-    This allows the plasma to cool down as no new hot material is being supplied.
+    This allows the plasma to cool as no new hot material is being supplied.
     The second region is the penumbra and is made of elongated structures.
-    Here the magnetic field is very inclined and weaker and fans around the umbra.
+    Here the magnetic field is highly inclined, weaker and fans around the umbra.
 
     Sunspot formation is a hotly debated topic (as many things are in solar physics).
     One current hypothesis about their formation is as follows.
-    The magnetic field of the Sun is strongly polarized and with differential rotation, these magnetic fields lines become bunched together, increasing the local magnetic field strength.
+    The magnetic field of the Sun is strongly polarised and with differential rotation, these magnetic fields lines become bunched together, increasing the local magnetic field strength.
     This effect creates a buoyancy force which slowly makes this newly created flux region rise towards the surface until it penetrates into the photosphere.
     It should be noted, however, that a complete understanding of how sunspots form has not yet been achieved and the mechanism is likely to be more complex than the one described above.
     In fairness of balance, other hypotheses are available.
     A more thorough review of the formation, evolution and unanswered questions relating to sunspots can be found in \cite{SAO}.
     
-    The solar cycle is an $11$ year variation that the Sun undergoes where the polarity of the magnetic field flips.
-    It is generally taken as $22$ years since that returns the magnetic field back to it's original polarity.
-    The cycle does not have the same pattern or does each cycle last the same amount of time.
-    Generally, we have a solar maximum and a solar minimum.
-    As the name suggests, we have a large amount of ARs and magnetic activity at a solar maximum, while this is reduced in a solar minimum.
-    The solar cycle can be seen in the amount of sunspots which are visible (i.e., the amount of ARs that form).
-    This has been counted since the 17$^{\mathrm{th}}$ century and it is called the sunspot number catalogue.
-    The bottom image of Figure \ref{fig:AR_Num} displays this catalogue with the raw count as the blue line and a running average in red.
-    This shows that the amount of sunspots varies with the cycle and that cycles can vary in length.
-    Associated with the solar cycle is the variation in the number of ``extreme'' events, (flares and coronal mass ejections) and affects the overall structure of the solar atmosphere.
-        
-    Closer to home, it also changes the amount of solar radiance and solar UV/EUV that reaches the Earth.
-    Sunspots are directly linked to the Earth's climate by the solar cycle \citep{FRIIS-CHRISTENSEN01111991}.
-    This can directly impact the Earth's climate, as shown by the Maunder Minimum, which was an abnormally low amount of sunspots during the late seventeenth century and was the suspected cause of the ``Little Ice Age''.
+    The solar cycle is on average a 11-year variation that the Sun undergoes.
+    This cycle manifests itself as a variation in the number of sunspots, the amount of solar irradiance and the levels of other solar activity \citep{climate}.
+    The polarity of the solar magnetic field inverts as well.
+    So some suggest that the full solar cycle is 22 years, but the features that occur on the Sun seem to be independent of the current magnetic field polarity. 
+    Each cycle has a solar maximum and a solar minimum.
+    A solar maximum and a solar minimum refer to periods of maximum and minimum sunspot counts, respectively and cycles span from one minimum to the next.
+    As the names suggest, there is a large amount of ARs and magnetic activity at a solar maximum, while this is reduced in a solar minimum.
+    Each solar cycle can be seen in the amount of sunspots which are visible (i.e., the amount of ARs that form).
+    This has been counted since the 17$^{\mathrm{th}}$ century and it is called the sunspot number catalogue \citep{Eddy18061976}.
+    Figure \ref{fig:AR_Num} displays this catalogue with the raw count as the blue line and a running average in red.
+    The main conclusion is that each cycle has a different duration and will produce a differing amount of sunspots.
+    Since each solar cycle will differ in strength, the variation in the number of ``extreme'' events, such as flares and coronal mass ejections (CMEs) is observed.
+    The reason is that these events require regions of strong magnetic field concentrations, i.e., ARs.
+    So as the number of ARs decline, the possible regions that can cause flares or CMEs also decreases.
+    Finally, the structure of the solar atmosphere will vary during each solar cycle as the magnetic field has an important effect on how the solar atmosphere is structured \citep{Sven}. 
+
+    \begin{figure}
+    	\centering
+    	\includegraphics[width=\textwidth]{sunspot_number.pdf}
+    	\caption{
+	    		 The sunspot number record as it currently stands since continuous observations.  
+    		     The eleven year solar cycle is clearly visible.
+    	        }
+    	\label{fig:AR_Num}
+    \end{figure}   
+            
+    The solar cycle can directly impact the Earth's climate, as shown by the Maunder Minimum, which was an abnormally low amount of sunspots during the late seventeenth century and was the suspected cause of the Little Ice Age \citep{climate}.
+    Earth, over the past five years was seeing another abnormal solar minimum, though it was not on the scale of the Maunder Minimum, it still had some effects on the climate.
+    This was evidenced by the recent cold winters experienced by the northern hemisphere and it could influence the relationship between the atmospheric oscillations which affect the temperature of the northern hemisphere \citep{CWE,NAO,SCR}. 
    
-    Sunspots have been under near constant observation.
-    There are three main sunspot phenomena: 3 minute (5 mHz) and 5 minute (3 mHz) oscillations and running penumbral waves (RPWs).
-    The first two are observed with a line-of-sight (LOS) analysis, \textit{i.e.,} frequency filtering using the Fast Fourier Transform (FFT) (which is covered in Chapter 2).
+    While sunspots have been under near constant observation for several centuries.
+    It was not until the mid 20$^{\mathrm{th}}$ century, that oscillations were observed within sunspots themselves \citep{OASO}.
+    There are three main sunspot phenomena: 3-minute (5 mHz) and 5-minute (3 mHz) oscillations and running penumbral waves (RPWs).
+    The first two are observed with a line-of-sight (LOS) analysis, i.e., frequency filtering using the Fast Fourier Transform (FFT) (which is covered in Chapter 2).
     However, there is some evidence to suggest the existence of longer period oscillations \citep{LPO,SOS,Chorley2011}.
-    The source of the 5 minute oscillation is thought to be a result of forcing by the 5 minute \textit{p}-mode global solar oscillation \citep{OWS,WAUO}.
-    The 5 minute oscillation are typically seen in lines which form low in the cool umbral photosphere and are moderately suppressed not only in the penumbra, but also in the chromospheric atmosphere above the umbra \citep{OASO}.
-    The cause of the 3 minute oscillation is still unknown but there are two main theories: they are either standing acoustic waves which are linked to the resonant modes of the sunspot, or, they are low-$\beta$ slow magneto-acoustic waves guided along the ambient magnetic field \citep{UTMO,OWS,OASO,ORWS}.
-    The 3 minute oscillation are seen in elements that form higher up, in the low chromosphere, and these are also moderately suppressed in the penumbra \citep{OASO}.
-    However, it should not be assumed that the period of these waves forms one finite peak in a power spectrum; generally, the immediate spectral area around these periods has several peaks clustered tightly together.
+    The source of the 5-minute oscillation is thought to be a result of forcing by the 5-minute \textit{p}-mode global solar oscillation \citep{OWS,WAUO}.
+    The 5-minute oscillation are typically seen in lines which form low in the cool umbral photosphere and are moderately suppressed not only in the penumbra, but also in the chromospheric atmosphere above the umbra \citep{OASO}.
+    The cause of the 3-minute oscillation is still unknown but there are two main theories: they are either standing acoustic waves which are linked to the resonant modes of the sunspot, or, they are low-$\beta$ slow magneto-acoustic waves guided along the ambient magnetic field \citep{UTMO,OWS,OASO,ORWS}.
+    The 3-minute oscillation are seen in elements that form higher up, in the low chromosphere, and these are also moderately suppressed in the penumbra \citep{OASO}.
+    However, it should not be assumed that the period of these waves form one finite peak in a power spectrum; generally, the immediate spectral area around these periods has several peaks clustered tightly together.
     A review of sunspot oscillations can be found in \cite{OASO} and a review of solar oscillations can be found in \cite{SO}.
 
-    Magnetic pores can be considered as smaller scale sunspots without a penumbra and are sometimes referred as ``naked umbra''.
-    They share many general properties with sunspots, for example, they display similar LOS oscillations.
-    Due to their small size, magnetic pores have not been under as much observation as sunspots since it took a new generation of solar telescopes in order to resolve them clearly.
+    Magnetic pores can be considered as smaller scale sunspots without a penumbra and thus are sometimes referred to, as ``naked umbra'' sunspots.
+    Magnetic pores share many general properties with sunspots, for example, they display similar LOS oscillations or have similar magnetic field strengths.
+    Due to their small size, magnetic pores have not been studied as much as sunspots since it took a new generation of solar telescopes in order to resolve them clearly.
     One example of a magnetic pore can be seen in Figure \ref{fig:chromosphere}, which is studied in Chapter \ref{chapter5}.
-    But this image is in the H$\alpha$ core which samples the chromosphere which is discussed below.
+    This image is in the H$\alpha$ core which samples the chromosphere which is discussed below.
         
 \subsubsection{The chromosphere}
 \label{chromo}
@@ -354,6 +363,16 @@
     The corona is host to many structures, X-ray bright points, plumes, prominences, streamers, coronal loops and coronal holes.
     Coronal holes are open magnetic structures which give rise to the fast solar wind, while coronal loops are one of the best examples of large scale magnetic structures within the solar atmosphere.
     They can be as long as one solar radius and can have a temperature of $1.5$ to $3$ MK.
+
+    When using a wavelength filter that samples higher temperature plasma ($\ge1$ MK), loop structures can be seen that rise several mega-meters in height.
+    These are called coronal loops and they display a wide range of oscillations.
+    Seismology of these loops has estimated the background quantities such as density and magnetic field strength of these loops (see \cite{2005RSPTA.363.2743D} or \cite{Banerjee2007} for a detailed review). 
+    ARs  will also be the areas where flares or coronal mass ejections will originate from, since they contain large amounts of stored magnetic energy.
+    
+    These are the most spectacular events produced by the Sun.
+    The amount of mass and energetic particles ejected can be considered scary, as these events have a direct impact on the Earth if the ejected material reaches Earth, from simply creating the aurora near the poles or in certain situations the disruption of radio transmissions, damage to satellites and electrical transmission lines.
+    So it is important to understand the formation mechanism of these events so we can predict them and take measures to limit their damage.
+    This is partly the realm of space weather research. 
     
     For a long time, it was hypothesised that MHD waves would not be able to go into the corona as the acoustic cut-off frequency would prevent them.
     The launch of the Transition Region And Coronal Explorer (TRACE) space solar telescope changed this \citep{TRACE,TRACE1}.
@@ -376,7 +395,6 @@
 
 \subsection{MHD equations}
 
-    One of the most repetitive parts in any solar physics thesis is what is about to follow.
     There are several equations that form the core of MHD and are solved in many different magnetic configurations. 
     The ultimate aim is to understand how these configurations will evolve in time or how they react to external factors.
     Further, they are solved to find out what kind of waves these configurations can support and how these waves perturb the system. 
