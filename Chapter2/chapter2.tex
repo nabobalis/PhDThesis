@@ -8,20 +8,22 @@
 	 
 \section{Introduction}
 
-	The current solar observation scene has never been more ideal.
+	The current state of solar observations has never been more ideal.
 	There is currently constant space-based monitoring of the Sun but also a myriad of high-quality ground-based solar telescopes in existence.
     This is coupled with a few small space-based telescopes and sounding rocket experiments.
 	Further within the next decade, the largest ground-based solar telescope will open called the Daniel K. Inouye Solar Telescope (DKIST, formerly the Advanced Technology Solar Telescope, ATST) and several highly-advanced satellites will be launched (two of which will move in to very close orbits to the Sun).
-	This is an important era for solar physics going forward.
+	This will be an important era for solar physics.
 	
 	Within this thesis, numerous sources of solar data were used.
 	Two telescopes will be the primary focus of this chapter: the Swedish Solar Telescope (SST) and Solar Dynamics Observatory (SDO).
-	While other ground-based telescopes have their data utilized here, I was able to spend 10 days at the SST and thus it gets a larger focus here.
+	While data from other ground-based telescopes are used, I was able to spend 10 days at the SST and thus it receives a larger focus.
 	These two telescopes offer some of the highest quality data available to a solar physicist.
-	However, all data must be processed and reduced since no telescope or instrument is perfect.
-    There are always small issues with any telescope or instrument and these can cause imaging artefacts that have to be accounted for before any analysis can begin.
-	Once these are taken care of, the method of analysis will need to be considered and it will vary depending on the overall aims.
-	Here, the aim was to measure two properties of the observed magnetic waveguides.
+	Data that is taken directly from any telescope will need to be reduced and this process is called data reduction. 
+	Data reduction will require the creation of certain files, called darks, flats and pinhole images.
+	These images are applied onto the original data to reduce any imaging artefacts that are present within the original data.
+	It should be noted that all data used within this thesis has been reduced to a science ready level.
+	Once the data is reduced, the method of analysis will need to be considered and it will vary depending on the overall aims.
+	Here, the aim was to measure two properties of the observed magnetic wave guides.
     These are the cross-sectional area and total intensity through time.
     Once these two properties have been measured, deducing any periods within these signals and calculating the phase difference between them is required.
     There have been numerous methods created that aim to analyse signals and measure these properties.
@@ -136,8 +138,7 @@
     Since 2010, it has been observing the Sun constantly, beaming large quantities of data back to Earth.
 	Without Earth's atmosphere in the way, it offers some of the clearest observations of the entire Sun to date. 
 	The spacecraft houses three instruments: the \textit{Extreme Ultraviolet Variability Experiment} (EVE) \citep{2012SoPh..275..115W}, the \textit{Helioseismic and Magnetic Imager} (HMI) \citep{2012SoPh..275..229S} and the \textit{Atmospheric Imaging Assembly} (AIA) \citep{2012SoPh..275...17L}.
-	
-	EVE is designed to measure a wide range of extreme ultraviolet spectral lines with a Sun-as-a-Star method.  
+	 
 	HMI measures LOS velocities as well as the LOS and vector magnetic field of the photosphere.
 	AIA is a multi-wavelength instrument and is able to take images of the solar surface to the outer reaches of the solar atmosphere.
     This has offered an unprecedented view of the many layers of the solar atmosphere at the same time.
@@ -213,10 +214,12 @@
     It was first introduced by \cite{cooley1965algorithm}.
 	The Fourier Transform is a mathematical method to decompose a signal which is assumed to be periodic into its constituent frequencies.
 	Generally, it is common to have a real-valued signal input into the FFT and the resulting output is a complex number.
-	The absolute value of this output is the amount (or power if squared) of each frequency in the original signal and the complex part is the phase shift of the sinusoidal function at that frequency.
-    
+	This complex number contains both the amplitude and phase of the sinusoidal component.
+	The absolute value of this output is the amount (or power if squared) of each frequency in the original signal, while the phase is the arctan of the complex and real parts. 
+	
     An example of this can be seen in Figure \ref{fig:signal_overview}.
-    The top left image is of an artificial signal, of the form, $$\sin\left(2\pi \frac{x}{5}\right) + \cos\left(2\pi \frac{x}{10}\right) + 5\times\mathrm{random\ noise},$$ where the noise is Gaussian distributed.
+    The top left image is of an artificial signal, of the form, $$\sin\left(2\pi \frac{x}{5}\right) + \cos\left(2\pi \frac{x}{10}\right) + 5\times\mathrm{random\ noise},$$ where the noise is random samples from a uniform distribution over the range 0-1.
+    This means that the mean is 0.5 and the standard deviation is $0.3$.
     The top right image is the output after this signal is passed into the FFT.
     It is a power spectrum, where we have power as a function of frequency.
     The two peaks that can be seen correspond to the two frequencies of the artificial signal.
@@ -310,7 +313,7 @@
     
     The steps of the algorithm are as follows,
     \begin{enumerate}
-        \item The minima and maxima of the input signal are found.
+        \item The local minima and local maxima of the input signal are found.
         \item A spline fit of the minima and maxima points is computed.
         \item The resulting minima and maxima curves create an envelope that encompass the signal.
         \item This envelope is subtracted from the input signal and this process is repeated again. This is termed sifting.
@@ -319,11 +322,12 @@
         \item This process repeats itself again on the residual signal until a set number of IMFs are obtained or the residual signal contains too few extrema to spline fit.
     \end{enumerate}
     
-    There are two comments to be made here about the algorithm.
-    The first is about the stopping criterion, as their are two commonly used definitions.
+    There are three comments to be made here about the algorithm.
+    Firstly, a local minima (maxima) point is defined if that point is smaller (larger) than its two neighbouring points.
+    Secondly is about the stopping criterion, as their are two commonly used definitions.
     The first one is if the standard deviation of the sifted signals is lower than a given limit, which is typically less than 0.3, the process stops.
     The second one is called the S number which, if the same signal is returned by the sifting process more than S times, this causes the process to stop.
-    Secondly, the overall algorithm has no method of deciding when enough IMFs have been found, so the number picked is arbitrary, but generally the algorithm will stop before this limit is reached.
+    Thirdly, the overall algorithm has no method of deciding when enough IMFs have been found, so the number picked is arbitrary, but generally the algorithm will stop before this limit is reached.
     This is because as the residual becomes linear with each IMF removal, the fitting algorithm will stop naturally since there is not enough extrema points to spline fit.
     
     The resulting set of IMFs, contain the periods within the original signal, while the residual should contain any background trend.
@@ -352,7 +356,7 @@
     This was to account for the change in contrast between several different wavelength filters as this was the first multi-height analysis.
     Their aim was to measure the cross-sectional area of a magnetic pore from the photosphere to the lower chromosphere which is challenging topic.
 	
-	What will occur here, is an analysis on what effect changing the value of sigma has on the resultant cross-sectional area signal.
+	What will occur in this section is an analysis on the effect of changing the sigma multiplier on the returned cross-sectional area signal.
     The value of sigma can appear to be arbitrary and there is an assumption that the intensity of the background photosphere has a normal distribution and as such, sigma can be used to contour these magnetic structures.
     To be more precise, whether different sigma values will give different periods after signal analysis or if the value of sigma once set within a certain range does not change the output is of interest, especially since the current selection of ground-based solar telescopes have resolutions similar to each other and this could be the limiting factor in detecting these oscillations.
     
