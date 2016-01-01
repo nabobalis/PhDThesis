@@ -329,7 +329,16 @@
     The second one is called the S number which, if the same signal is returned by the sifting process more than S times, this causes the process to stop.
     Thirdly, the overall algorithm has no method of deciding when enough IMFs have been found, so the number picked is arbitrary, but generally the algorithm will stop before this limit is reached.
     This is because as the residual becomes linear with each IMF removal, the fitting algorithm will stop naturally since there is not enough extrema points to spline fit.
-    
+
+   	\begin{figure}
+   		\centering
+   		\includegraphics[width=1\textwidth]{signal_overview.pdf}
+   		\caption{
+   			     An overview of the steps that form the EMD process. 
+   		        }
+   		\label{fig:EMD}
+   	\end{figure}
+   	    
     The resulting set of IMFs, contain the periods within the original signal, while the residual should contain any background trend.
     Much like the FFT, you can reverse the method as the sum of all of the IMFs and residual will return the original input signal.
     The EMD allows much like the cross-wavelet, the ability to find the phase difference between two signals containing the same periods.
