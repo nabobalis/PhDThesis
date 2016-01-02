@@ -249,19 +249,21 @@
 	The FFT has an effect known as frequency leakage.
     It is where, if the input signal is non-periodic or the input signal has no closed form transform, there is smearing in the power spectrum.
     This means that the power is not confined to the correct frequency and spreads, so if there is an other frequency close to the strong frequencies, will be masked if the frequency difference between two frequencies is small.
-	This can be overcome by using a window function on the original signal which alters the outcome of the FFT in order to reduce these effects.	
-    Finally, another important part of the FFT is the output can be reversed.
+	This can be overcome by using a window function, through a process called windowing. These window functions are non-zero in a chosen interval and are then multiplied to the original signal before it is then put through the FFT.
+	The shape of these window functions varies and numerous windows have been created. 	
+	This alters the outcome of the FFT in order to reduce the effects of spectral leakage.	
+    Furthermore, another important part of the FFT is the output can be reversed.
     It is possible to recover the original signal using the Inverse FFT (IFFT).
-    This fact means that one can create a frequency window and apply it to the power spectrum.
-    This can be used to filter parts of the frequency spectrum that contain information that is unnecessary or return a new signal to see the behaviour at specific frequencies.
-    It is commonly used method in signal analysis and is used within Chapter 5.
+    This fact means that one can create a bandpass filter and apply it to the Fourier space.
+    This is done in order to remove parts of the Fourier space that contains information that is unnecessary and thus return a new signal to see the behaviour at specific frequencies.
+    It is a commonly used method in signal analysis and is used within Chapter 5.
+    
     Finally, the significance of the FFT power spectrum is an important factor, since it is vital to establish if the periods are above a noise level.
     While there are numerous methods to achieve this, a brief overview of just two.
     The first method is described by \cite{1982ApJ...263..835S} and \cite{1986ApJ...302..757H}.
     It relies on normalising the power spectrum and assumes that the noise in the data is truly random. 
     This means that the probability of the noise at any given frequency being above a power value, $z$, is exponentially distributed, scaling as $\exp(-z)$.
-    This defines the ``false-alarm probability'' which at a given power is equal to, $1 - (1 - \exp(-z))^{N_i}$,where $N_i$ is the number of frequencies contributing to the power spectrum.
-        
+    This defines the ``false-alarm probability'' which at a given power is equal to, $1 - (1 - \exp(-z))^{N_i}$,where $N_i$ is the number of frequencies contributing to the power spectrum.    
     The second method is a Monte-Carlo method known as Fisher Randomization.
     Given a signal, the FFT of the data is calculated and the power of the highest peak is determined.
     Then the original signal is then randomly permuted and the FFT is re-calculated. If the highest peak in the new FFT is higher than that of the original, `1' is added to the count.
@@ -270,7 +272,7 @@
 \subsection{Wavelet transform}
 
 	The second method employed is called the Wavelet Transform.
-	A wavelet is a function that is constrained in time and frequency space i.e., localised within these specific domains.
+	A wavelet is a zero mean function that is constrained in time and frequency space i.e., localised within these specific domains \citep{farge1992wavelet}.
 	The base function used is called the mother wavelet and variations of this function are called daughters.
 	This factor is important, as the FFT will, when given a 1D signal, output a 1D power spectrum.
 	The wavelet algorithm will return a 2D spectrum where the extra dimension is time.
@@ -281,9 +283,18 @@
 	\begin{equation}
 		\Psi_0(\eta) = \pi^{-1/4} \exp(iw_0\eta)\exp(-\eta^2/2).
 	\end{equation}
-    which can be summarized as a plane wave modulated by a Gaussian.
+    where $\eta$ is a non-dimensional time, $w_0$ is the non-dimensional frequency.
+    This can be summarized as a plane wave modulated by a Gaussian.
 	It has good frequency resolution but it comes at a cost of its time resolution, while another wavelet called the Paul wavelet has a poorer frequency resolution but it has an increased time resolution.
 	This allows the wavelet transform to be manipulable to the users' goal.
+    
+    From this step, the continuous wavelet transform can be defined as the convolution of each data point with the scaled version of $\Psi_0(\eta)$,
+	\begin{equation}
+		W_n (s) = \sum_{n^\prime}^{N-1} x_{n^\prime}\Psi_{0}^{*} \left[\frac{(n^\prime-n)\delta t}{s}\right],
+	\end{equation}
+    where $s$ is the wavelet scale, $x_n$ is the data point at time index $n$, where $\delta t$ is the time step and where $*$ means the complex conjugate. 
+    Thus by varying the wavelet scale and moving along the time index, it becomes possible to construct an image showing both the amplitude of any features versus the wavelet scale and how this amplitude varies with time. 
+    It should be noted that the wavelet scale will need to be transformed into frequency, but for the Morlet wavelet, the wavelet scale is identical to the frequency.
     
     The top right image of Figure \ref{fig:signal_overview} shows the output of a wavelet algorithm on the artificial signal.
     The dark regions show an increase in the power, which shows where the periods of the signal are.
