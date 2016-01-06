@@ -220,6 +220,7 @@
     An example of this can be seen in Figure \ref{fig:signal_overview}.
     The top left image is of an artificial signal, of the form, $$\sin\left(2\pi \frac{x}{5}\right) + \cos\left(2\pi \frac{x}{10}\right) + 5\times\mathrm{random\ noise},$$ where the noise is random samples from a uniform distribution over the range 0-1.
     This means that the mean is 0.5 and the standard deviation is $0.3$.
+    This signal can represent a signal at one pixel or a cross-sectional area signal.
     The top right image is the output after this signal is passed into the FFT.
     It is a power spectrum, where we have power as a function of frequency.
     The two peaks that can be seen correspond to the two frequencies of the artificial signal.
@@ -231,6 +232,7 @@
            \caption{
                    An example of the signal analysis methods used in this thesis. 
                    The upper left plot is of an artificial signal with noise.
+                   It can represent a signal at one pixel or a cross-sectional area signal.
                    The upper right plot is a power spectrum from the FFT.
                    The largest two peaks shows the frequencies within the artificial signal.
                    The bottom left plot is a wavelet power spectrum.
@@ -281,7 +283,7 @@
 	For example, the wavelet chosen within this thesis is the Morlet Wavelet.
 	It is defined as,
 	\begin{equation}
-		\Psi_0(\eta) = \pi^{-1/4} \exp(iw_0\eta)\exp(-\eta^2/2).
+		\Psi_0(\eta) = \pi^{-1/4} \exp(iw_0\eta)\exp(-\eta^2/2),
 	\end{equation}
     where $\eta$ is a non-dimensional time, $w_0$ is the non-dimensional frequency.
     This can be summarized as a plane wave modulated by a Gaussian.
@@ -296,7 +298,7 @@
     Thus by varying the wavelet scale and moving along the time index, it becomes possible to construct an image showing both the amplitude of any features versus the wavelet scale and how this amplitude varies with time. 
     It should be noted that the wavelet scale will need to be transformed into frequency, but for the Morlet wavelet, the wavelet scale is identical to the frequency.
     
-    The top right image of Figure \ref{fig:signal_overview} shows the output of a wavelet algorithm on the artificial signal.
+    The bottom left image of Figure \ref{fig:signal_overview} shows the output of a wavelet algorithm on the artificial signal.
     The dark regions show an increase in the power, which shows where the periods of the signal are.
     The wavelet algorithm has the ability to calculate the significance of any regions of power and the black contour lines show this.
     The contour lines shown are for 95\% significance. 
@@ -305,8 +307,11 @@
     This is called the cone of influence (COI) and it is different for each mother wavelet.
     
     Finally, the wavelet transform allows for direct comparison of two signals.
-    It is possible to calculate the cross-wavelet of two signals as well as correlation and the phase difference using the wavelet transform.
+    It is possible to calculate the cross-wavelet of two signals as well as the correlation and the phase difference using the wavelet transform.
     This fact allows the wavelet transform to be used to measure the phase difference of the cross-sectional area and total intensity signals, which is the main method used to find the phase difference within this thesis.
+    This is possible with the FFT. 
+    However, due to the localised nature of the wavelet transform, the phase difference can found as  a function of frequency and time.
+    Thus it is possible to see if the phase difference varies for that frequency which could indicate an underlying physical mechanism such as mode conversion for the observed waves.
     See \cite{torrence} for an overview of the wavelet transform and its applications.
     Further, see \cite{2004SoPh..222..203D} and \cite{WAUO} for an overview of wavelets in a solar physics context.
     
@@ -365,6 +370,15 @@
     To counter-act this effect, several methods have been suggested to lessen this issue and it will generally involve adding extra extrema points on both sides to constrict the spline fit \citep{zeng2004simple}.
     See \cite{huang} for an detailed overview of the EMD and  \cite{terradas} for a solar physics context of this method.
     
+    A comment on why there are three different signal analysis methods utilised within this thesis.
+    Overall, the main idea was to confirm the results of each analysis method.
+    While each individual method offers the ability to find a periodicity within a signal and to compare the phase of two signals. 
+    On their own, they offer no independent verification that the found periodicity and phase is correct. 
+    But using the other methods it allows each method to be verified before any conclusions can be made.
+    Further, the FFT offers a snapshot interpretation of a signal, while the wavelet and EMD offer an interpretation that allows more detailed conclusions to be reached.
+    Finally, the wavelet tend to suffer degradation for high frequency components and if the signal has a low signal to noise ratio.
+    The EMD does not suffer from this issue and thus can cover the regions of the frequency domain that the wavelet is not suited for.
+    
 \section{Area analysis}
 
 	The core idea behind the work presented in this thesis is analysing the cross-sectional area of magnetic pores and sunspots.
@@ -380,16 +394,23 @@
 	
 	What will occur in this section is an analysis on the effect of changing the sigma multiplier on the returned cross-sectional area signal.
     The value of sigma can appear to be arbitrary and there is an assumption that the intensity of the background photosphere has a normal distribution and as such, sigma can be used to contour these magnetic structures.
-    To be more precise, whether different sigma values will give different periods after signal analysis or if the value of sigma once set within a certain range does not change the output is of interest, especially since the current selection of ground-based solar telescopes have resolutions similar to each other and this could be the limiting factor in detecting these oscillations.
+    To be more precise, whether different sigma values will give different periods after signal analysis or if the value of sigma once set within a certain range does not change the output is of interest.
+    This will be discussed in this section.
+    Furthermore, since the current selection of ground-based solar telescopes have resolutions similar to each other and this could be the limiting factor in detecting these oscillations.
+    As the slow MHD sausage mode affects the cross-sectional area much less than the fast MHD sausage mode, it is most likely mode to be detected in observations.
     
 	This analysis is only for ground-based data and for elemental lines that sample the photosphere directly.
 	The chromosphere lines used traditionally (\ion{Ca}{II} and H$\alpha$ line core) make resolving the fine boundaries of a sunspot or a magnetic pore very difficult.
-    This is an area for future investigation.
+	Finally, since the cross-sectional area and total intensity are inherently linked which is a fact of the method used to measure both signals.
+	So the idea is that if the intensity changes, could a fake period be introduced into the cross-sectional area.
+    Further, since during ground observations the light level will change or the seeing conditions will vary, this could introduce an artificial period into the cross-sectional area and total intensity signals.
+    For a fixed sigma multiplier, when the light level increases, more cross-sectional area pixels will be found, while if the light level decreases, less cross-sectional area pixels will be found. 
+    Figuring out how to account for this effect will be important. 
+    These are important areas for future investigation.
     
     \subsection{Data}
     
     The data for this investigation comes from two instruments on the DST: IBIS and ROSA.
-    
     The IBIS dataset consists of an image series of a H$\alpha$ line scan.
     The DST was centred on a sunspot in AR 11579.
     The observation run was on the 30$^{\mathrm{th}}$ of September 2012 at 15:00 UT until 15:16 UT with a cadence of 6.8 seconds.
@@ -547,4 +568,32 @@
     However it important to note that both sigma multipliers still have the same oscillation periods.
     The cause of this difference is that the larger sigma multiplier undersamples the magnetic pore and this has caused the large difference observed in the wavelet figure, as one might expect.
     However, this reveals that the difference here is still minor, it would matter most if the wavelet power was used to measure the amplitude of these oscillations.
-    Overall, the conclusion for this analysis is that the sigma multiplier will not vary the result as long as the value of sigma multiplier is reasonable.
+    Overall, the conclusion for this analysis is that the sigma multiplier will not vary the result as long as the value of sigma multiplier is sound.
+
+	Finally, a quick comment on the mode identification.
+	Figure \ref{fig:phase_sunspot}
+	Figure \ref{fig:phase_pore}
+	
+    \begin{sidewaysfigure}
+    	\centering
+    	\includegraphics[width=1\textwidth]{sunspot_phase.pdf}
+    	\caption{
+			            The wavelet phase difference between the cross-sectional area and total intensity for the sunspot observed with DST/IBIS.
+			            The lowest sigma multiplier is 3 (left) and the largest is 4.5 (right) which correspond to the blue and orange contours in Figure \ref{fig:method_overview}.
+			            The cross-hatch region is the cone of influence.
+						The returned phase spectrum reveals that the two signals are in phase which indicate slow MHD sausage waves.
+						The sigma multiplier has had little effect on the output.
+    	             }
+    	\label{fig:phase_sunspot}
+    \end{sidewaysfigure}
+ 
+    \begin{sidewaysfigure}
+     	\centering
+     	\includegraphics[width=1\textwidth]{pore_phase.pdf}
+     	\caption{
+	             		Same as Figure \ref{fig:phase_sunspot} but for the magnetic pore observed with DST/ROSA.
+	             		The lowest sigma multiplier is 2 (left) and the largest is 3.5 (right).
+	             		The results here show the same behaviour as the DST/IBIS sunspot.
+     		          }
+     	\label{fig:phase_pore}
+    \end{sidewaysfigure}

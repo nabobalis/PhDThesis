@@ -10,14 +10,11 @@ import pycwt as wavelet
 import numpy as np
 import matplotlib.pyplot as plt
 from astropy.io import fits
-import sunpy.io.fits as fit
 from scipy.io import readsav
 import scipy.fftpack as fftpack
 import matplotlib.animation as anim
 import glob
-from sunkitsst.read_cubes import read_cubes
 from matplotlib.image import NonUniformImage
-import sunpy.map as mapc
 from scipy.stats import pearsonr
 from scipy.signal import detrend
 
@@ -70,7 +67,7 @@ def wavel(signal,cadence):
 
     return wave,scales,sig95,idx,t1,coi,period,power
 
-def cross_wavelet(signal_1, signal_2, period, mother='morlet', plot=True):
+def cross_wavelet(signal_1, signal_2, period, mother='morlet'):
 
     signal_1 = (signal_1 - signal_1.mean()) / signal_1.std()    # Normalizing
     signal_2 = (signal_2 - signal_2.mean()) / signal_2.std()    # Normalizing
@@ -91,32 +88,16 @@ def cross_wavelet(signal_1, signal_2, period, mother='morlet', plot=True):
     cor_sig = np.ones([1, signal_1.size]) * sig[:, None]
     cor_sig = np.abs(WCT) / cor_sig
     cor_period = 1/freq
-
-
     t1 = np.linspace(0,period*signal_1.size,signal_1.size)
-
-    ## indices for stuff
     idx = find_closest(cor_period,corr_coi.max())
-
-    ## Into minutes
+    
     t1 /= 60
     cross_period /= 60
     cor_period /= 60
     cross_coi /= 60
     corr_coi /= 60
 
-    extent_corr =  [t1.min(),t1.max(),0,max(cor_period)]
-
-    plt.figure(figsize=(12,12))
-    im3= plt.imshow(np.rad2deg(aWCT), origin='lower',interpolation='nearest', cmap='RdBu', extent=extent_corr)
-    plt.fill(np.concatenate([t1, t1[-1:]+period, t1[-1:]+period,t1[:1]-period, t1[:1]-period]),
-            (np.concatenate([corr_coi,[1e-9], cor_period[-1:], cor_period[-1:], [1e-9]])),
-            'k', alpha=0.3,hatch='x')
-    plt.ylim(([min(cor_period), cor_period[idx]]))
-    plt.xlim(t1.min(),t1.max())
-    cbar = plt.colorbar(im3)
-    cbar.solids.set_edgecolor("face")
-    plt.show()
+    return W12,WCT,aWCT,cor_period,corr_coi,cor_sig,idx,t1
 
 """
 Figure of data analysis example
@@ -242,7 +223,6 @@ pore_cut_box = pore_data[:,pore_background_box[2]:pore_background_box[3],pore_ba
 pore_cut = pore_cut_box.reshape(pore_cut_box.shape[0],pore_cut_box.shape[1]*pore_cut_box.shape[2])
 pore_time = np.linspace(0,pore_data.shape[0]*pore_dt,pore_data.shape[0])
 
-
 sun_lim_list = [3,3.5,4,4.5]
 pore_lim_list = [2,2.5,3,3.5]
 color = ['Blue','Green','Purple', 'Orange']
@@ -268,50 +248,50 @@ for slim, plim in zip(sun_lim_list,pore_lim_list):
 """
 Overview of Method
 """
-idx = 1
-fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(figsize=(12,8),nrows=2, ncols=2)
-
-#Sunspot
-ax1.imshow(sun_bound[idx], origin = 'lower', interpolation = 'nearest', cmap=plt.get_cmap('gray'), extent=sun_cut_extent)
-ax1.set_xlabel('Distance (Arcseconds)')
-ax1.set_ylabel('Distance (Arcseconds)')
-
-for i,li in enumerate(sun_lim):
-    ax1.contour(sun_bound[idx] <= li[idx], origin = 'lower', interpolation = 'nearest', colors=color[i], extent=sun_cut_extent, levels=[0,1])
-
-ax2.hist([sun_bound[idx].flatten(),sun_cut_box[idx].flatten()],bins=250, color= ['Red', 'Orange'],
-          label=['Boundary', 'Background'], stacked=True, fill=True, edgecolor = 'none')
-ax2.set_xlim(1000,4500)
-ax2.set_ylim(0,10000)
-for i,li in enumerate(sun_lim):
-    ax2.axvline(li[idx], color=color[i], linestyle='dashed', linewidth=2)
-
-ax2.set_xlabel('Intensity bins (counts)')
-ax2.set_ylabel('Number of pixels')
-#ax2.locator_params(axis='x', nbins=6)
-ax2.legend()
-
-#Pore
-ax3.imshow(pore_bound[idx], origin = 'lower', interpolation = 'nearest', cmap=plt.get_cmap('gray'), extent=pore_cut_extent)
-ax3.set_xlabel('Distance (Arcseconds)')
-ax3.set_ylabel('Distance (Arcseconds)')
-
-for i,li in enumerate(pore_lim):
-    ax3.contour(pore_bound[idx] <= li[idx], origin = 'lower', interpolation = 'nearest', colors=color[i], extent=pore_cut_extent, levels=[0,1])
-
-ax4.hist([pore_bound[idx].flatten(),pore_cut_box[idx].flatten()],bins=250, color= ['Red', 'Orange'],
-          label=['Boundary', 'Background'], stacked=True, fill=True, edgecolor = 'none')
-ax4.set_xlim(0.2,1.6)
-ax4.set_ylim(0,2000)
-for i,li in enumerate(pore_lim):
-    ax4.axvline(li[idx], color=color[i], linestyle='dashed', linewidth=2)
-
-ax4.set_xlabel('Intensity bins (counts)')
-ax4.set_ylabel('Number of pixels')
-ax4.legend()
-
-fig.tight_layout()
-plt.savefig('/home/nabobalis/GitRepos/PhDThesis/Chapter2/Figs/method_overview.pdf',dpi=300,bbox_inches='tight')
+#idx = 1
+#fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(figsize=(12,8),nrows=2, ncols=2)
+#
+##Sunspot
+#ax1.imshow(sun_bound[idx], origin = 'lower', interpolation = 'nearest', cmap=plt.get_cmap('gray'), extent=sun_cut_extent)
+#ax1.set_xlabel('Distance (Arcseconds)')
+#ax1.set_ylabel('Distance (Arcseconds)')
+#
+#for i,li in enumerate(sun_lim):
+#    ax1.contour(sun_bound[idx] <= li[idx], origin = 'lower', interpolation = 'nearest', colors=color[i], extent=sun_cut_extent, levels=[0,1])
+#
+#ax2.hist([sun_bound[idx].flatten(),sun_cut_box[idx].flatten()],bins=250, color= ['Red', 'Orange'],
+#          label=['Boundary', 'Background'], stacked=True, fill=True, edgecolor = 'none')
+#ax2.set_xlim(1000,4500)
+#ax2.set_ylim(0,10000)
+#for i,li in enumerate(sun_lim):
+#    ax2.axvline(li[idx], color=color[i], linestyle='dashed', linewidth=2)
+#
+#ax2.set_xlabel('Intensity bins (counts)')
+#ax2.set_ylabel('Number of pixels')
+##ax2.locator_params(axis='x', nbins=6)
+#ax2.legend()
+#
+##Pore
+#ax3.imshow(pore_bound[idx], origin = 'lower', interpolation = 'nearest', cmap=plt.get_cmap('gray'), extent=pore_cut_extent)
+#ax3.set_xlabel('Distance (Arcseconds)')
+#ax3.set_ylabel('Distance (Arcseconds)')
+#
+#for i,li in enumerate(pore_lim):
+#    ax3.contour(pore_bound[idx] <= li[idx], origin = 'lower', interpolation = 'nearest', colors=color[i], extent=pore_cut_extent, levels=[0,1])
+#
+#ax4.hist([pore_bound[idx].flatten(),pore_cut_box[idx].flatten()],bins=250, color= ['Red', 'Orange'],
+#          label=['Boundary', 'Background'], stacked=True, fill=True, edgecolor = 'none')
+#ax4.set_xlim(0.2,1.6)
+#ax4.set_ylim(0,2000)
+#for i,li in enumerate(pore_lim):
+#    ax4.axvline(li[idx], color=color[i], linestyle='dashed', linewidth=2)
+#
+#ax4.set_xlabel('Intensity bins (counts)')
+#ax4.set_ylabel('Number of pixels')
+#ax4.legend()
+#
+#fig.tight_layout()
+#plt.savefig('/home/nabobalis/GitRepos/PhDThesis/Chapter2/Figs/method_overview.pdf',dpi=300,bbox_inches='tight')
 
 """
 Wavelet of Signals
@@ -403,8 +383,68 @@ Wavelet of Signals
 #fig.tight_layout()
 #plt.savefig('/home/nabobalis/GitRepos/PhDThesis/Chapter2/Figs/pore_wavelet.pdf',dpi=300,bbox_inches='tight')
 
-#for sig1, sig2 in zip(sun_area,sun_inten):
-#    cross_wavelet(sig1, sig2, sun_dt, mother='morlet', plot=True)
+"""
+Phase of Signals
+"""
+##Sunspot
+#fig, (ax1, ax2) = plt.subplots(figsize=(20,6),nrows=1, ncols=2, sharey=False)
 #
-#for sig1, sig2 in zip(pore_area,pore_inten):
-#    cross_wavelet(sig1, sig2, pore_dt, mother='morlet', plot=True)
+#W12,WCT,aWCT,cor_period,corr_coi,cor_sig,idx,t1 = cross_wavelet(sun_area[0], sun_inten[0], sun_dt, mother='morlet')
+#W12_,WCT_,aWCT_,cor_period_,corr_coi_,cor_sig_,idx_,t1_ = cross_wavelet(sun_area[-1], sun_inten[-1], sun_dt, mother='morlet')
+#extent_corr =  [t1.min(),t1.max(),0,max(cor_period)]
+#
+#im = ax1.imshow(np.rad2deg(aWCT), origin='lower',interpolation='nearest', cmap='RdBu', extent=extent_corr)
+#ax1.fill(np.concatenate([t1, t1[-1:]+sun_dt, t1[-1:]+sun_dt,t1[:1]-sun_dt, t1[:1]-sun_dt]),
+#        (np.concatenate([corr_coi,[1e-9], cor_period[-1:], cor_period[-1:], [1e-9]])),
+#        'k', alpha=0.3,hatch='x')
+#ax1.set_ylim(([min(cor_period), cor_period[idx]]))
+#ax1.set_xlim(t1.min(),t1.max())
+#ax1.set_ylabel('Period (minutes)')
+#ax1.set_xlabel('Time (minutes)')
+#
+#im_ = ax2.imshow(np.rad2deg(aWCT_), origin='lower',interpolation='nearest', cmap='RdBu', extent=extent_corr)
+#ax2.fill(np.concatenate([t1, t1[-1:]+sun_dt, t1[-1:]+sun_dt,t1[:1]-sun_dt, t1[:1]-sun_dt]),
+#        (np.concatenate([corr_coi,[1e-9], cor_period[-1:], cor_period[-1:], [1e-9]])),
+#        'k', alpha=0.3,hatch='x')
+#ax2.set_ylim(([min(cor_period), cor_period[idx]]))
+#ax2.set_xlim(t1.min(),t1.max())
+#ax2.set_ylabel('Period (minutes)')
+#ax2.set_xlabel('Time (minutes)')
+#cbar = fig.colorbar(im_, orientation='vertical')
+#cbar.solids.set_edgecolor("face")
+#ax1.set_aspect('auto')
+#ax2.set_aspect('auto')
+#fig.tight_layout()
+#plt.savefig('/home/nabobalis/GitRepos/PhDThesis/Chapter2/Figs/sunspot_phase.pdf',dpi=300,bbox_inches='tight')
+#
+##Pore
+#fig, (ax1, ax2) = plt.subplots(figsize=(20,6),nrows=1, ncols=2, sharey=False)
+#
+#W12,WCT,aWCT,cor_period,corr_coi,cor_sig,idx,t1 = cross_wavelet(pore_area[0], pore_inten[0], sun_dt, mother='morlet')
+#W12_,WCT_,aWCT_,cor_period_,corr_coi_,cor_sig_,idx_,t1_ = cross_wavelet(pore_area[-1], pore_inten[-1], sun_dt, mother='morlet')
+#extent_corr =  [t1.min(),t1.max(),0,max(cor_period)]
+#
+#im = ax1.imshow(np.rad2deg(aWCT), origin='lower',interpolation='nearest', cmap='RdBu', extent=extent_corr)
+#ax1.fill(np.concatenate([t1, t1[-1:]+pore_dt, t1[-1:]+pore_dt,t1[:1]-pore_dt, t1[:1]-pore_dt]),
+#        (np.concatenate([corr_coi,[1e-9], cor_period[-1:], cor_period[-1:], [1e-9]])),
+#        'k', alpha=0.3,hatch='x')
+#ax1.set_ylim(([min(cor_period), cor_period[idx]]))
+#ax1.set_xlim(t1.min(),t1.max())
+#ax1.set_ylabel('Period (minutes)')
+#ax1.set_xlabel('Time (minutes)')
+#
+#im_ = ax2.imshow(np.rad2deg(aWCT_), origin='lower',interpolation='nearest', cmap='RdBu', extent=extent_corr)
+#ax2.fill(np.concatenate([t1, t1[-1:]+pore_dt, t1[-1:]+pore_dt,t1[:1]-pore_dt, t1[:1]-pore_dt]),
+#        (np.concatenate([corr_coi,[1e-9], cor_period[-1:], cor_period[-1:], [1e-9]])),
+#        'k', alpha=0.3,hatch='x')
+#ax2.set_ylim(([min(cor_period), cor_period[idx]]))
+#ax2.set_xlim(t1.min(),t1.max())
+#ax2.set_ylabel('Period (minutes)')
+#ax2.set_xlabel('Time (minutes)')
+#cbar = fig.colorbar(im_, orientation='vertical')
+#cbar.solids.set_edgecolor("face")
+#ax1.set_aspect('auto')
+#ax2.set_aspect('auto')
+#fig.tight_layout()
+
+#plt.savefig('/home/nabobalis/GitRepos/PhDThesis/Chapter2/Figs/pore_phase.pdf',dpi=300,bbox_inches='tight')
