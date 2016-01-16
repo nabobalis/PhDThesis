@@ -30,33 +30,60 @@
     These events are able to deliver a small amount of energy into the local corona, but not enough to heat the active corona.
        
 \section{Summary of results}
+
+	\subsection{Chapter 2}
+
+    Chapter 2 started off detailing the various solar telescopes, space- and ground-based, utilised within this thesis.
+    It covered the instruments that was either on board the space-based telescopes or attached to an optics bench for ground-based telescopes.
+    From here, the three signal analysis methods employed are described: Fast Fourier Transform (FFT), Wavelets and Empirical Mode Decomposition (EMD).
     
-    In Chapter 2, once the various solar telescopes, both space- and ground-based, utilised within this thesis and the three signal analysis methods employed are described.
     The chapter finishes on a study of the principle method that is used to measure the cross-sectional area of the sunspots and magnetic pores analysed within this thesis.
     The motivation was to understand if the method output was heavily dependent or biased by the sigma multiplier value chosen.
-    If this was the case, then this had to be known before using this method for any scientific analysis.    
-    The sigma multiplier is a crucial factor as this value will influence the end result, which is the cross-sectional area and total intensity signals.
+    If this was the case, then this had to be known before this method could be used for any scientific analysis.    
+    The sigma multiplier is a crucial factor as it will influence the end result, which is the cross-sectional area and total intensity signals.
     In order to undertake this study, high-quality ground-based data was used from the Dunn Solar Telescope (DST).
-    The instruments used from the DST are the \textit{Rapid Oscillations in the Solar Atmosphere} (ROSA) and the \textit{Interferometric Bidimensional Spectrometer} (IBIS).
-    There are two datasets, one for each instrument, with the telescope pointed at a magnetic pore and a sunspot for ROSA and IBIS, respectively.
+    The instruments used from the DST are the \textit{Interferometric Bidimensional Spectrometer} (IBIS) and the \textit{Rapid Oscillations in the Solar Atmosphere} (ROSA) instrument.
+    There are two datasets, one for each instrument, with the telescope pointed at a sunspot and a magnetic pore for IBIS and ROSA, respectively.
     This can be seen in Figure \ref{fig:data_overview}.
-    Since both sunspots and magnetic pores are analysed within this thesis, it was important to study the method on both types of magnetic structures.
-    To start, both structures were contoured using a range of sigma multipliers, 3, 3.5, 4 and 4.5 and 2, 2.5, 3, 3.5 for the sunspot and magnetic pore respectively.
-    The standard deviation values used came from a background box of quiet Sun, i.e., a region of the photosphere that contains no magnetic features.
-    The reason for this difference in sigma multipliers is due to the lack of a good quiet Sun region within the IBIS dataset.
-    Figure \ref{fig:method_overview} shows this clearly with the histograms shown on the right column.
-    This had the result of increasing the sigma multipliers.
-    Analysing the cross-sectional area signals using the wavelet transform revealed the range of periods within these magnetic structures.
-    The range of periods found did not vary with the sigma value used, but what did vary was the strength of the detected periods (see Figure \ref{fig:sunspot_wavelet} and Figure \ref{fig:pore_wavelet}).
-    Thus, it is important to contour the magnetic structures by taking into account the structures's intensity distribution, as this makes choosing a sigma multiplier an easier and more robust choice than choosing a random percentage of the background intensity. 
-    Further, this implies that for the current range of ground-based solar telescopes, that the limiting factor for cross-sectional area oscillations is the resolution.
-    This resolution has been fixed for the past couple of years and until Daniel K. Inouye Solar Telescope (DKIST) data becomes available, the range of sigma multipliers can vary without fear of biasing the results. 
-    Finally, since the phase relations are used to identified waves modes using Table \ref{tab:phase}.
+    These two data sets are good representative of the data sets studied within this thesis.
+    
+    The sigma (mean) value used came from a background box of quiet Sun, i.e., a region of the photosphere that contains no magnetic features.
+    Once the sigma value is calculated, it is multiplied by a value
+    called the sigma multiplier.  
+    Both magnetic structures were contoured using a selection of sigma multipliers, 3, 3.5, 4, and 4.5 and 2, 2.5, 3, and 3.5 for the sunspot and magnetic pore respectively.
+    These values correspond to the colours: blue, green, purple and orange.
+    This contouring is displayed in Figure \ref{fig:method_overview}.
+    The reason for difference in sigma multipliers between the sunspot and magnetic pore is due to the lack of a good quiet Sun region within the IBIS dataset.
+    This is clearly seen in the top right histogram in Figure \ref{fig:method_overview} and this had the result of increasing the sigma multipliers.
+    
+    The resultant cross-sectional area signals are analysed using the wavelet transform and this revealed a range of periods within these magnetic structures.
+    For the IBIS sunspot, the range of sigma multipliers did not change the periods found by the wavelet transform.
+    What did vary was the power of the periods in the wavelet is seen in Figure \ref{fig:sunspot_wavelet}. 
+    The range of sigma multipliers return a threshold value that contours pixels which encompass the sunspot umbra and not the background photosphere.
+    For the ROSA magnetic pore, the difference is more important.
+    Figure \ref{fig:pore_wavelet} demonstrates that for the larger sigma multipliers, the smaller periods have disappeared from the wavelet transform. 
+    This is because, the returned threshold value from the higher sigma multiplier under contours the magnetic pore.
+    As a result, the returned cross-sectional signal is missing a large number of pixels, which can be seen by the signals at the top of Figure \ref{fig:pore_wavelet}.
+        
+    The results can be summarised as the following.
+    The best way to choose a sigma multiplier that will be used to create the threshold value, is to take into account the structures's intensity distribution.
+    This way, choosing a sigma multiplier becomes more straightforward and more robust than choosing a threshold value as a percentage of the quiet Sun intensity.
+    As long as the sigma multiplier is sane, then there will be nothing missed from this analysis.
+    
+    Finally, since the phase relations are used to identified waves modes and this are listed in Table \ref{tab:phase}.
+    All three signal analysis methods offer the ability to calculate the phase of each signal and then compare the cross-sectional area to the total intensity phase.
+    For this analysis, the wavelet transform was used to check the phase difference between the cross-sectional area and total intensity.
+    These can be seen in Figures \ref{fig:phase_sunspot} and \ref{fig:phase_pore} for the IBIS sunspot and ROSA magnetic pore, respectively.
+    
+    
+    
     The wavelet transform offers a good insight into the phase difference between two signals.
     This was also checked with regards to the different sigma multipliers.
     It was found that there was no major effect as one varies sigma as it would be expected.
     There were small regions that were different due to the cross-sectional signals varying but nothing that changed the results.
     
+   	\subsection{Chapter 3}
+    	
     In Chapter 3, the method detailed previously in Chapter 2 is applied to three magnetic structures.
     These are two sunspots and one magnetic pore (seen in Figure \ref{images}).
     The data used here came from the Dutch Open Telescope (DOT) and the Swedish Vacuum Solar Telescope (SVST). 
@@ -76,6 +103,8 @@
     It should be noted that the periods of the observed oscillations, when the period ratios are calculated assuming the largest period is the fundamental, the period ratios give anecdotal evidence for standing harmonics.
     Further investigation is required to clarify this point.
     
+    \subsection{Chapter 4}
+    	
     In Chapter 4, two further magnetic pores are studied.
     This time, using more data from the DOT coupled with DST/ROSA which has an increased resolution than the previously used datasets (see Figure \ref{overview}).
     Taking the method discussed in Chapter 2 and used in Chapter 3, both magnetic pores again show oscillations within their cross-sectional area signals (see Fig \ref{DOT_wls} and \ref{ROSA_wls}).     
@@ -101,6 +130,8 @@
     The expansion factor is dependent on the plasma-$\beta$ at the base of the flux tube and while it is not possible to know this value, it can be assumed to be around 1 for flux tubes that are within the photosphere.
     The results of this can be seen within Figure \ref{fig:harm}, which gives a factor that ranges from 4-8 for the magnetic structures analysed within this thesis.
     These numbers are not too dissimilar to the expansion factors for flux tubes used within MHD wave simulations.
+
+	\subsection{Chapter 5}
     
     In Chapter 5, the focus shifts from the analysis of the cross-sectional area of magnetic structures to Running Penumbral Waves (RPWs).
     RPWs have been observed in sunspots since the 1970's as intensity fronts propagating radially outwards from the outer umbra into the penumbra.
@@ -129,6 +160,13 @@
     
 \section{Future work and questions}
     
+    
+        For future, does this isolate the regions where the pore oscillations? 
+        
+      
+      Further, this implies that for the current range of ground-based solar telescopes, that the limiting factor for cross-sectional area oscillations is the resolution.
+      This resolution has been fixed for the past couple of years and until Daniel K. Inouye Solar Telescope (DKIST) data becomes available, the range of sigma multipliers can vary without fear of biasing the results. 
+             
     This is always a tricky subject.
     With any body of work, there are always unanswered questions or gaps in knowledge that ideally should be filled.
     As such, this thesis does not offer a full view of MHD sausage waves in sunspots and magnetic pores.
