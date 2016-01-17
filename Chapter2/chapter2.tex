@@ -20,7 +20,7 @@
 	These two telescopes offer some of the highest quality data available to a solar physicist.
 	Data that is taken directly from any telescope will need to be reduced and this process is called data reduction. 
 	Data reduction will require the creation of certain files, called darks, flats and pinhole images.
-	These images are applied onto the original data to reduce any imaging artefacts that are present within the original data.
+	These images are applied onto the original data to reduce any imaging artefacts that are present within the original data, while the pinhole images are used to align the cameras along the optical path of the telescope.
 	It should be noted that all data used within this thesis has been reduced to a science ready level.
 	Once the data is reduced, the method of analysis will need to be considered and it will vary depending on the overall aims.
 	Here, the aim was to measure two properties of the observed magnetic wave guides.
@@ -369,16 +369,28 @@
     As such, when these are subtracted from the signal, the resulting IMFs display large swings at the start and end, so these edge effects will easily affect the output.
     To counter-act this effect, several methods have been suggested to lessen this issue and it will generally involve adding extra extrema points on both sides to constrict the spline fit \citep{zeng2004simple}.
     See \cite{huang} for an detailed overview of the EMD and  \cite{terradas} for a solar physics context of this method.
-    
-    A comment on why there are three different signal analysis methods utilised within this thesis.
+
+\subsection{Multiple methods}    
+
+    Within this thesis, three different signal analysis methods are utilised.
     Overall, the main idea was to confirm the results of each analysis method.
     While each individual method offers the ability to find a periodicity within a signal and to compare the phase of two signals. 
     On their own, they offer no independent verification that the found periodicity and phase is correct. 
     But using the other methods it allows each method to be verified before any conclusions can be made.
-    Further, the FFT offers a snapshot interpretation of a signal, while the wavelet and EMD offer an interpretation that allows more detailed conclusions to be reached.
-    Finally, the wavelet tend to suffer degradation for high frequency components and if the signal has a low signal to noise ratio.
-    The EMD does not suffer from this issue and thus can cover the regions of the frequency domain that the wavelet is not suited for.
-    
+    Each method has its own strengths and flaws and by using all three, it is possible to take account of any flaws.
+    The FFT offers a snapshot interpretation of a signal, as the output is only a function of frequency. 
+    However, the wavelet and EMD offer the ability to examine how a periodic changes as a function of time as well.
+    This allows for a more detailed interoperation than the FFT.  
+    Furthermore, the wavelet transform does not cope well with noise in the high frequency part of the spectrum and this can be seen clearly in bottom left image in Figure \ref{fig:signal_overview}.
+    The smaller frequency component have been found by the wavelet but it is not continuous through time, while the higher frequency component has been not as detected less.
+    Without the noise in the signal, or a higher signal to noise ratio, the wavelet gives a much better representation of the input signal. 
+    The output of the EMD detects both periods without an issue but it has not returned the correct amplitude due to the noise in the original signal. 
+    Thus the EMD excels for detected high frequency components over the wavelet, especially for noisy signals.
+    Finally, the main issue with the EMD algorithm is the detection of low frequency components, as the algorithm iterates further, the edge effects can become a problem.
+    As a result, the low frequency components in a signal can become washed out from an IMF. 
+    The wavelet does not have a problem with low frequency components, even for noisy signals. 
+    In conclusion, the combination of these three signal analysis methods allows the weakness of one method to be overcome with another and allows each result to be checked.
+  
 \section{Area analysis}
 
 	The core idea behind the work presented in this thesis is analysing the cross-sectional area of magnetic pores and sunspots.
@@ -568,14 +580,16 @@
     However it important to note that both sigma multipliers still have the same oscillation periods.
     The cause of this difference is that the larger sigma multiplier undersamples the magnetic pore and this has caused the large difference observed in the wavelet figure, as one might expect.
     However, this reveals that the difference here is still minor, it would matter most if the wavelet power was used to measure the amplitude of these oscillations.
-    Overall, the conclusion for this analysis is that the sigma multiplier will not vary the result as long as the value of sigma multiplier is sound.
 
-	Finally, a quick comment on the mode identification.
-	Figure \ref{fig:phase_sunspot}
-	Figure \ref{fig:phase_pore}
-	 \textbf{FINISH THIS
-	 }
-    \begin{sidewaysfigure}
+	Finally, ending on mode identification.
+	Figures \ref{fig:phase_sunspot} and \ref{fig:phase_pore} show the cross-wavelet phase diagram between the cross-sectional and total intensity signals for the IBIS sunspot and ROSA pore, respectively.
+	The output is in the same style as the normal wavelet, however, the colour indicates the phase difference in degrees, where blue is positive and red is negative degrees.
+	The 
+	 
+	It should be noted that this study does not fully cover every nuance regrading this method, it is something that is discussed in Chapter 6.   
+	In conclusion, as long as the value of sigma multiplier is sound, the sigma multiplier will not vary the result.
+	    
+	\begin{sidewaysfigure}
     	\centering
     	\includegraphics[width=1\textwidth]{sunspot_phase.pdf}
     	\caption{
