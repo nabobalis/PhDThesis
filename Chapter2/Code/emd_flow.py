@@ -24,8 +24,8 @@ plt.plot(time,data,'black')
 plt.gca().axes.get_xaxis().set_ticks([])
 plt.gca().axes.get_yaxis().set_ticks([])
 plt.savefig("/home/nabobalis/signal.svg", dpi=300, bbox_inches='tight')
-
 # PLOT 2 EXTERAM POINTS
+
 plt.figure(figsize=(20,8))
 plt.plot(time,data,'black')
 plt.scatter(exterma[0][0],exterma[0][1],c='red', s=250)
