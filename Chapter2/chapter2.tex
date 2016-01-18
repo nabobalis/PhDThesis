@@ -386,7 +386,7 @@
     Without the noise in the signal, or a higher signal to noise ratio, the wavelet gives a much better representation of the input signal. 
     The output of the EMD detects both periods without an issue but it has not returned the correct amplitude due to the noise in the original signal. 
     Thus the EMD excels for detected high frequency components over the wavelet, especially for noisy signals.
-    Finally, the main issue with the EMD algorithm is the detection of low frequency components, as the algorithm iterates further, the edge effects can become a problem.
+    The main issue with the EMD algorithm is the detection of low frequency components, as the algorithm iterates further, the edge effects can become a problem.
     As a result, the low frequency components in a signal can become washed out from an IMF. 
     The wavelet does not have a problem with low frequency components, even for noisy signals. 
     In conclusion, the combination of these three signal analysis methods allows the weakness of one method to be overcome with another and allows each result to be checked.

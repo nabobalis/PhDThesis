@@ -89,7 +89,8 @@
 	The total intensity was determined by summing over the intensity of each pixel found in the waveguide.
 	These waveguides are not static structures as they slowly changed in size during the observing period.
 	This background trend has to be removed for it not to mask any weak oscillatory signatures.
-	The detrending was accomplished by a non-linear regression fit and the consistency of the results was compared to subtracting the residue from an empirical mode decomposition (EMD) analysis (explained below).
+	The main reason for detrending the signal is that wavelet is computed using the Fast Fourier Transform (FFT), the signal has to have a zero mean, otherwise artefacts are introduced into the output.
+	The detrending was accomplished by a non-linear regression fit and the consistency of the results was compared to subtracting the residue from an Empirical Mode Decomposition (EMD) analysis (which is explained in Chapter 2 and below).
 	The residue is the data that remains after the EMD procedure has extracted as many signals as possible and it provides a very good approximation of the background trend.
  
 	The resulting reduced data series were then analysed with a wavelet tool in order to extract any periods of oscillation present within these signals.
@@ -101,13 +102,12 @@
 	
 	Beyond this, the data representing the size and intensity has also been analysed using EMD, which decomposes the time series into a finite number of intrinsic mode functions (IMFs).
 	IMFs are essentially narrowband-filtered time series, with each IMF containing one or two periods that exist in the original signal.
-	The EMD technique was first proposed by \citet{huang} and offers some benefits over more traditional methods of analysis, such as wavelets or Fourier transforms.
+	The EMD technique was first proposed by \citet{huang} and offers some benefits over more traditional methods of analysis, such as wavelets or Fourier transforms (see Chapter 2).
 	However, one drawback is that it is very prone to error with regards to long periods.
-	The problems associated with both the wavelet and EMD process means that the two complement each other.
+	The problems described above regarding the wavelet and EMD mean that the two complement each other.
 	Furthermore, periods that appear in the wavelet \textit{just} below the confidence level, but appear strongly in the EMD process, is a good indication that a period is not spurious.
-	Generally, the next step after EMD analysis is to construct a Hilbert power spectrum that has a better time and spatial resolution than either wavelet or FFT routines.
-	However, this has not been carried out owing to a lack of a robust code base at this time.
 	At this stage, we rely on wavelet and EMD analyses, as is customary in solar physics.
+	For more detail on the signal analysis, see Chapter 2.
 
 \section{Results and discussion}
 
@@ -221,7 +221,8 @@
 	This period does not fully match the period seen in the intensity, but also one of the edge effects of the EMD process can be seen in the intensity signal.
 	Near the end of the time series, the two IMFs overlap with the same period with an in phase behaviour.
 	In summary, the EMD process shows that the major behaviour is in phase, indicating the existence of a slow sausage mode.
-	Also the regions of changing phase difference at lower periods indicates the potential existence of a fast surface mode.
+	Also the regions of changing phase difference at lower periods indicates the potential existence of a fast surface mode as the phase difference matches.
+	The reason for the wave being restricted as only a surface mode is due to current theory that suggests that the fast body mode is not supported in photospheric flux tubes \citep{Moreels2013,Moreels2013b}. 
 	However, the last IMF does not agree with the wavelet phase due to the artefact from the EMD process.
 	
 	It was possible to approximately separate the penumbra from the umbra and investigate its area for oscillations.
@@ -352,9 +353,9 @@
 	
 	For the 2005 sunspot in AR 10789, there is a clearer picture of potential harmonics.
 	The first period is 16.5 minutes and the second period is 11 minutes, which gives a ratio of 1.5 $\pm$ 0.2, and the third period of 7.5 minutes gives a ratio of 2.2 $\pm$ 0.3.
-	The period ratio is modified downwards in a consistent manner as the harmonic number increases.
-	These ratios are strong evidence of standing waves in this magnetic waveguide.
+	The period ratio is modified downwards in a consistent manner as the harmonic number increases and give a strong indication of of standing waves in this magnetic waveguide.
 	As was the case for the 1999 sunspot, the period at four minutes has a period ratio that does not fit into this harmonic viewpoint and is most likely due to the global \textit{p}-mode instead.
+	The ideal theory can not accommodate this period ratio, improved theory will be required.
 	
 	For the 2008 pore of AR 11005, the picture is more muddled by the shorter time series.
 	Taking the 15-minute period to be the first harmonic, the ratio is 1.7 $\pm$ 0.1 for the 8.5-minute period, very similar to both first-period ratios of the previous sunspots.
@@ -370,9 +371,8 @@
 \section{Conclusions}
 
 	In this chapter we have investigated three magnetic waveguides with the objective of detecting MHD sausage waves and determining whether they are slow or fast, propagating or standing.
-	Based on the results presented here, we confidently interpreted the observed periodic changes in the cross-sectional area of these flux tubes, which are manifested as a magnetic pore and two sunspot waveguide structures, as proof of the existence of linear slow and fast surface sausage MHD oscillations.
-	Using wavelet analysis, we found standing waves in the photosphere with periods ranging from 4 to 32 minutes.
+	Based on the results presented here, we confidently interpreted the observed periodic changes in the cross-sectional area of these flux tubes, which are manifested as a magnetic pore and two sunspot waveguide structures, as strong indication of the existence of linear slow and fast surface sausage MHD oscillations.
+	Using wavelet analysis, we found several oscillations and interpreted them as MHD waves in the photosphere with periods ranging from 4 to 32 minutes.
 	Employing complementary EMD analysis has allowed the detected MHD modes to be identified as a combination of \textit{fast surface sausage} and \textit{slow sausage} modes, thanks to the phase difference of the area and intensity.
 	It is very likely that these oscillations are \textit{standing harmonics} supported in a flux tube.
 	The period ratio ($P_{1}/P_{i=2,3}$) of these oscillations indicates strongly that they are part of a group of standing harmonics in a flux tube that is non-homogeneous and bound by the photosphere and the transition region.
-	Furthermore, there is possible indirect evidence of mode conversion occurring in one of these magnetic waveguides.
