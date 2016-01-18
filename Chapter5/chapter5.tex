@@ -141,7 +141,7 @@
 	By overlaying the slits in which UPWs are observed onto the interpolated magnetic field, plotted in Figure \ref{mag_field}, we are able to infer a spatial correlation between the apparently less vertically inclined magnetic fields and the occurrence of UPWs.
 	The observations of such non-radially symmetric wavefronts around a pore, guided by the magnetic field, suggests that the extension of the magnetic field into the solar atmosphere from the pore, is non-axially symmetric.
 	This result poses an interesting question: Does a combination of viewing angle and magnetic field topology limit the potential detection of propagating UPWs around the magnetic waveguide?
-	It is imperative that a future analysis, ideally combining observations and simulations, be undertaken to further test this.
+	In order to disentangle these two effects, it would be imperative that a future analysis would combine observations and simulations to test this hypothesis.
 
     We now direct our investigation towards understanding the potential influence of different wave modes on the raw UPW signals.
 	By employing the FFT technique on each row of the time-distance diagrams (Figure \ref{fft_slit}a-c), the $3$-minute period for each wavelength can be isolated from the general wave behaviour.
@@ -174,7 +174,10 @@
 	Within the H$\alpha$ line core, the occurrence of the $5$-minute mode is limited to regions outside of the pore, potentially due to the dependence of higher frequency modes on the magnetic field inclination\citep{DePontieu2004}.
 	The phase speed is also reduced by approximately $1$-$2$ km s$^{-1}$ consistently around the pore.
 	As there is more power within the $3$-minute mode close to the pore, it is assumed that this comprises the dominant component of the raw wavefront.
-	It is possible, therefore, that the increased influence of the $5$-minute component as the wave moves away from the pore could explain the deceleration in raw phase speed, however, further research should be carried out to fully test this assertion.
+	It is possible, therefore, that the increased amplitude of the $5$-minute component as the wave moves away from the pore could explain the deceleration in raw phase speed.
+	In other words, since the 3-minute and 5-minute component travel at different phase speeds, the observational signature of UPWs is a linear combination of these two components \citep{Jess2013}.
+	Thus as one component dominates, it determines the observed phase speed and once a different component becomes dominant, the observed phase speed will change.
+	However, further research should be carried out to fully test this assertion.
 	Within the SDO/AIA $17.1$ nm filter, the $5$-minute mode has a more defined wave pattern than the $3$-minute mode.
 	We are, therefore, able to suggest that the $5$-minute mode more easily penetrates into the $17.1$ nm passband as has been suggested by previous researchers \citep{Moortel2002}, potentially providing energy into the TR.
 
@@ -190,7 +193,7 @@
 	The black contour depicts the outline of the pore as observed in the photosphere sampled by the H$\alpha$ wing.
 	Within the photosphere (Figure \ref{fft_power}a,c) the 3-minute power is isolated inside the pore structure; specifically, there appears to be large regions of power tracing the boundary of the pore, apparently analogous to the distribution of power within a sunspot \citep{Stangalini2012,Reznikova2012}.
 	The power in the 5-minute band is minimal in the body of the pore but there is an increase at the pore-photosphere transition boundary corresponding to enhanced \textit{p}-mode power \citep{Mathew2008}.
-    We interpret the confinement of the power within the pore as evidence that UPWs are driven by $p$-modes propagating vertically within the pore, which acts as a magnetic waveguide.
+    We interpret the confinement of the power at the magnetic pore boundary as evidence that $p$-modes are absorbed by the magnetic pore and the author speculates that this power drives MHD waves within the magnetic pore which acts as a magnetic waveguide.
 
 	Finally, we are able to analyse the H$\alpha$ line core.
 	The increase of power especially within the 3-minute, easily observed to the north-east of the pore, corresponds well with the occurrence of UPWs within these data.
@@ -203,7 +206,8 @@
 
 	Following the identification and detailed analysis of UPWs around a pore, it is essential to estimate the potential energy carried by these waves into the upper solar atmosphere.
 	Due to the decrease and increase in intensity in comparison to the background plasma for the H$\alpha$ line core and the SDO/AIA filters, respectively, it can be inferred that the wavefront represents an increase in density \citep{Allen1947,Leenaarts2012}.
-	By measuring the contrast between the background plasma and the wavefronts, it is apparent that the intensity perturbations are within the linear regime and, therefore, these waves appear to be magneto-acoustic in nature.
+	By measuring the contrast between the background plasma and the wavefronts, as this ratio is not $>$25\%, it is apparent that the intensity perturbations are within the linear regime.
+	As these waves follow field lines and change the observed intensity, this waves appear to be magnetoacoustic in nature.
 	In order to further this analysis, we assume here that the lack of observed time-delay in these data implies that the lag is below the cadence of these data.
 	Given estimated formation height-differences between the chromospheric H$\alpha$ line core and the SDO/AIA $30.4$ nm filter can be estimated to be around $0.5\pm0.25$ Mm, the upward propagation speed can be calculated as $42\pm21$ km s$^{-1}$.
 	This speed is close to previous estimates of the fast speed in the chromosphere \citep{Morton2012}.
@@ -218,12 +222,16 @@
 		\label{energy}
 	\end{equation}
 	where $\tilde{I_{i}}$ is the intensity perturbation for each pixel, $I_{0}$ is the background intensity, $c_{ph}$ is the phase speed of the sausage wave, $\rho_{0}$ is the background density.
+	It should be noted that the filter passband was not taken into account.
 	We sum over each pixel which is part of the wave, giving us the average energy for that wave.
 	Since the wave is a fast MHD sausage wave, the phase speed is $c_{fast}$ which is the local fast speed, however, since the ratio of the Alfv{\'e}n to the sound speed is $>>1$, the Alfv{\'e}n speed is the dominant value in the fast speed calculation.
 	This assumes that the plasma is optically thin (intensity is proportional to density), which is true for the coronal lines however, not the case for H$\alpha$.
+	For H$\alpha$ this means that the intensity could be affected by changes in temperature or opacity effects, which implies that assumption would be the maximum limit.  
 
 	This analysis leads to energy estimates of the order of $150$ W m$^{-2}$ for the wavefronts in the H$\alpha$ line core.
 	These values drop by two orders of magnitude within the SDO/AIA filters.
+	The reason for this is unclear; one potential reason is that SDO/AIA uses broader filters, compared to SST/CRISP, which lowers the contrast and thus will lower the calculated wave energy.
+	To investigate this point would require IRIS observations that avoid this issue.
 	These energy flux values are about a factor of $100$ less than reported for other abundant sausage wave events in the chromosphere \citep{Morton2012}, however, they still comprise a important fraction of the energy flux required to heat the local quiet \citep{Wedemeyer2012} and active corona \citep{Aschwanden2007}, respectively.
 	It should be noted, that these estimates are influenced by a number of observational factors, such as attenuation in the telescopic apparatus, changes in light levels throughout these data, and the angle of observation, to name a few.
 	We do, however, suggest that during the period of these observations, there are approximately constant seeing conditions and, therefore, these energy estimates should be consistent.

@@ -46,7 +46,7 @@
     
     \cite{Dorotovic2014} observed several large magnetic structures and analysed the change in time of the cross-sectional area and total intensity of these structures.
     Phase relations between the cross-sectional area and total intensity have been investigated by e.g., \citet{Moreels2013} and \citet{Moreels2013b}.
-    The phase difference that was observed is 0$\degree$, i.e., in phase, which matches the phase relation for slow MHD sausage waves. 
+    The phase difference that was observed is 0$\degree$, i.e., in phase, which matches the phase relation for slow MHD sausage waves.   
     Furthermore, these magnetic structures were able to support several oscillations with periods that were not to dissimilar to standing mode harmonics in an ideal case.    
 	\cite{0004-637X-806-1-132} observed a magnetic pore within Active Region NOAA 11683, using high-resolution scans of multiple heights of the solar atmosphere using ROSA and the Interferometric Bidimensional Spectrometer (IBIS) on the DST.
 	They showed that sausage modes were present in all the observed layers that were damped whilst they propagated into the higher levels of solar atmosphere.
@@ -191,6 +191,9 @@
     Exploiting this relation will allow a comparison to be made between the observed changes in pore area and the magnetic oscillations found from Stokes profiles (e.g. \citealp{Balthasar2000}).
     Furthermore, as there are known difficulties with using the Stokes profiles, observing changes in pore area could provide a novel way of validating or refuting the observed magnetic oscillations derived from Stokes profiles.
     These simplified phase relations were confirmed in a more complicated case by e.g., \cite{Moreels2013} and \cite{Moreels2013b}, who also derived the phase relations for other linear MHD waves. 
+
+    Previous research by \cite{PMHDW} showed that the magnetic field (pore area) should be in phase (out of phase) with the intensity if the oscillations are due to changes in optical depth, i.e., an opacity effect.
+    This is the same relationship for the fast magnetoacoustic sausage mode, thus, identification of the fast magnetoacoustic mode will prove difficult with only the two variables used in this chapter.
     
     By measuring the change in pore area with time, we will also be able to estimate the amplitude of the radial velocity perturbation.
     The changes in area are related to changes in the radius of the flux tube by
@@ -204,7 +207,7 @@
         &&v_r=\frac{\partial r}{\partial t}=\frac{2\pi r_1}{P}.
         \label{eq:rad_vel}
     \end{align}
-  
+    
   	Note the term ``sausage mode'' was introduced for waves in magnetic tubes with a circular cross-section.
   	The main property of these waves that distinguishes them from other wave modes is that they change the cross-sectional area.
   	The cross sectional areas of observed pores are typically non-circular.
@@ -286,8 +289,9 @@
     There is significant power that is co-temporal, which can be observed in both the intensity and area wavelets.
     
     Using cross-wavelet in conjunction with the EMD allows the verification of the phase difference between the area and intensity signals for each period. 
-    These methods show that the phase difference is very close to 0\degree, i.e., the oscillations are in phase meaning that they are slow sausage MHD waves.	
-    Furthermore, the percentage change in intensity is also of the same order as reported in \citet{Balthasar2000} and \citet{PMHDW}.
+    These methods show that the phase difference is very close to 0\degree, i.e., the oscillations are in phase meaning that they are slow sausage MHD waves.
+    The current MHD theory that is available (to the knowledge of the author), does not offer a different interpretation.	
+    Furthermore, the percentage change in intensity is of order as previously reported in \citet{Balthasar2000} and \citet{PMHDW}.
     This suggests that, we are most likely observing the same oscillatory phenomena as these authors.
     
     We also have to be certain that any change in area we observe is due to the magnetoacoustic wave rather than a change in the optical depth of the plasma.
@@ -302,6 +306,7 @@
     It was not possible to find the amplitude of the largest period, as it did not appear in the EMD output.
     The values of the area perturbation translate, using Equation (\ref{eq:area_rad}), to 37, 34, and 56 km, respectively, for the amplitude of the radial perturbation.
     Note that the increase in radius is about $100$ km, meaning that the perturbation is only of the order of 1 pixel (at the DOT's resolution).
+    This is within the expectations of linear theory \citep{Moreels2013,Moreels2013b,jess2015multiwavelength}.
     
     Using the values above allows us to calculate the radial velocity perturbation for each period, by means of Equation (\ref{eq:rad_vel}).
     For the periods of 4.7, 8.5, and 20 minutes, we determine the radial velocity perturbation as 0.82, 0.42, and 0.29 km s$^{-1}$, respectively.
@@ -369,7 +374,7 @@
     We found that the phase difference between the area and intensity periods is 0\degree.
     This means, as before, that these oscillations are in phase and are interpreted as signatures of slow sausage MHD waves.
     While we have chosen not to discuss the out of phase behaviour, there are small regions of 45$\degree$ phase difference that have been previously reported \citep{Dorotovic2014}.
-    This needs to be investigated in the future, as the authors are unaware of which MHD mode would cause this behaviour, however, it has been suggested that is due to noise within the data set \citep{2015A&A...579A..73M}.
+    This needs to be investigated in the future, as the author is unaware of which MHD mode would cause this behaviour, however, it has been suggested that is due to noise within the data set \citep{2015A&A...579A..73M}.
     As for the DOT pore, the same properties can be obtained for each period observed as within the ROSA pore, which are summarized in Table \ref{tab:ampl} and \ref{tab:wavelength}.
     
 	The amplitudes for the area oscillations are $2.29\mathrm{x}10^5$ km$^2$, $2.45\mathrm{x}10^5$ km$^2$, and $3.87\mathrm{x}10^5$ km$^2$ for periods of 2-3, 5.5, and 10 minutes, respectively.
@@ -381,7 +386,9 @@
 	Once again, the radial velocity perturbations are found to be sub-sonic.
 	
     The percentage change in the pore's area, and thus the magnetic field, is given by $$\frac{A_1}{A_0} = \frac{b_1}{B_0} \rightarrow 25 - 45\%.$$
+    This is a large effect and linear MHD theory might not be applicable in this case.
     From the above relations we conclude that the size of the magnetic field oscillation is in the region of $200$-$400$ G.
+    To the current knowledge of the author, this has not been reported previously.
     This is a substantial increase when compared to the measurements of the pore detected by DOT, as the amplitudes for these oscillations are of the same order but the cross-sectional area of the pore is an order of magnitude smaller.
     This suggests that the oscillation strength might be independent of the scale of the structure \citep{Dorotovic2014}. 
     
@@ -439,12 +446,12 @@
 	Using the model given by \citet{Maltby1986}, which models a sunspot umbra, this period ratio is 1.38 (density values are 1.364$\mathrm{x}10^{-6}$ and 9.224$\mathrm{x}10^{-14}$ g cm$^{-3}$ for the footpoint and apex respectively).
 	This does not correspond well to the results in this paper, but only for one previously reported result; a highly dynamical non-radially uniform sunspot \citep{Dorotovic2014}.
 	The ratio is substantially smaller than what is detected here, which means the first harmonic should be at $\approx 5.9$ minutes.
-	This model does not seem to be applicable to the observational results presented here. 
-	The reason for this, the authors believe, is due to the effect of finite radius.
+	The reason for this, the author believe, is due to the effect of finite radius.
 	The dispersion relation for slow MHD waves in a finite radial flux tube, shows that the dispersion related to the finite tube radius increases the wave frequency.
 	The shorter the wavelength, the stronger the dispersion effect is.
 	Hence, the relative increase of the first overtone frequency due to the effect of finite radius is larger than that of the fundamental harmonic.
 	This modifies the period of the first harmonic to be higher, which shifts the period ratio to be larger than values that are obtained theoretically in the thin tube approximation.
+    In conclusion, this density stratification model does not seem to be applicable to the observational results presented here, which the is an important point to note.
     
     Figure \ref{fig:harm} details the various solutions (\textit{i.e.,} period ratio) for Equation (\ref{mag_strat}) over a large range of plasma-$\beta$ and expansion ratio ($\Gamma$).
     It is difficult to estimate how much a flux tube expands with height, therefore, we explore the parameter space widely, taking $\Gamma$ of 0-15.
@@ -460,8 +467,8 @@
     Once again, this effect can be dominant when the flux tube expands too much, however, it is unlikely that a flux tube would expand by such a large amount.
     \citet{1982GApFD21237B}, for example, suggest that when the internal gas pressure exceeds the external gas pressure, the flux tube becomes unstable and this occurs when the flux tube expands greatly with height.
     
-    For the cases presented in this paper, the flux tube has to expand four to six times to have a period ratio that is observed.
-    In a number of numerical simulations that model these types of flux tubes, the magnetic field expands approximately 4-10 times, which happens to be not too dissimilar to our findings \citep[see also][]{khomenko,fedun2,fedun1}.
+    For the cases presented in this chapter, the flux tube has to expand four to six times to have a period ratio that is observed.
+    In a number of numerical simulations that model these types of flux tubes, the magnetic field expands approximately 4-10 times, which is in good agreement with our findings, which is another important result \citep[see][]{khomenko,fedun2,fedun1}.
     It should be noted that these estimates for expansion are for flux tubes with magnetic fields that have a field strength less than $2$ kG. 
     
     Unfortunately, as of yet, little is known about the source of the oscillations analysed in this paper.
