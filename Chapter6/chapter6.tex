@@ -21,7 +21,7 @@
     The phase difference indicated strongly that the oscillations are slow MHD sausage waves.
     The extension within this chapter was calculating the amplitudes of the cross-sectional area perturbations.
     The amplitude of these perturbations allows the usage of magneto-seismology equations.
-    These equations calculate several properties (radial) of the detected waves, as well as information on the background properties of the observed magnetic flux tubes.
+    These equations calculate several properties (radial, radial velocity and magnetic field perturbations) of the detected waves, as well as information on the background properties of the observed magnetic flux tubes.
     In Chapter 5, the focus shifted from analysing the cross-sectional of magnetic structures to the analysis of Running Penumbral Waves (RPWs) in a magnetic pore.
     RPWs have only observed in sunspot penumbras; however, this analysis details the presence of events that have the identical signature of RPWs, emanating from a magnetic pore.
     This fact has confirmed that RPWs are a visual effect of MHD sausage waves following the curvature of magnetic field lines of sunspots and magnetic pores.
@@ -38,7 +38,7 @@
     From here, the three signal analysis methods employed are described: Fast Fourier Transform (FFT), Wavelets and Empirical Mode Decomposition (EMD).
     
     The chapter finishes on a study of the principle method that is used to measure the cross-sectional area of the sunspots and magnetic pores analysed within this thesis.
-    The motivation was to understand if the method output was heavily dependent or biased by the sigma multiplier value chosen.
+    The motivation was to understand if the method output was heavily affected or dependent on the sigma multiplier value chosen.
     If this was the case, then this had to be known before this method could be used for any scientific analysis.    
     The sigma multiplier is a crucial factor as it will influence the end result, which is the cross-sectional area and total intensity signals.
     In order to undertake this study, high-quality ground-based data was used from the Dunn Solar Telescope (DST).
@@ -75,7 +75,8 @@
     For this analysis, the wavelet transform was used to check the phase difference between the cross-sectional area and total intensity.
     These can be seen in Figures \ref{fig:phase_sunspot} and \ref{fig:phase_pore} for the IBIS sunspot and ROSA magnetic pore, respectively.
     Overall, the periods show in phase behaviour in these two magnetic structures indicating slow MHD sausage modes. 
-    The cross-wavelet phase images show that there is no effect of the different sigma multipliers on wave identification. 
+    The cross-wavelet phase images show that there is no effect of the different sigma multipliers on wave identification.
+    It should be noted that this study can be expanded upon which will be discussed in Chapter 6, Section 3. 
     
    	\subsection{Chapter 3}
     	
@@ -99,47 +100,75 @@
     In addition, there were small regions of, out of phase and $\pm$45 degrees.
     The out of phase phase difference indicates a fast MHD sausage waves, however this was not consistent and thus was ignored. 
     The $\pm$45 phase difference is more difficult to explain.
-    While there is no current MHD theory that explains this phase difference, it has been shown that noise in a signal can cause the cross-wavelet phase to become shifted by $\pm$45 degrees \citep{2015A&A...579A..73M}.  
+    While there is no current MHD theory that explains this phase difference, it has been shown that noise in a signal can cause the cross-wavelet phase to become shifted by $\pm$45 degrees \citep{2015A&A...579A..73M}.
+    This would be one reason that the wavelet transform would need to be cross-checked with another signal analysis method.
+    However, it should be noted that in \cite{2015A&A...579A..73M}, the signal to noise ratio is very low which is not generally the case with solar observations. 
     
     Finally, whether these oscillations are propagating or standing waves is an open question.
     Since it is not possible to distinguish between these two using only the cross-sectional area and total intensity phase relations.
     This would require another observable.
     However, it has been previously suggested that these oscillations are standing oscillations.
-    Table \ref{chap3:harm_table} lists the discovered periods and has the period ratios if these oscillations were harmonics.     
-    The period ratios are calculated assuming the largest period is the fundamental.
-    These are compared to the period ratios that would be supported in an ideal magnetic flux tube.
-    This gives additional evidence that these oscillations are standing harmonics, however, further investigation is required.
+    Table \ref{chap3:harm_table} lists the discovered periods and lists the period ratios if these oscillations were harmonics.
+    In order to calculate these period ratios, it was assumed that the largest period was the fundamental mode. 
+    Furthermore, Table \ref{chap3:harm_table} has the period ratios in the ideal homogeneous flux tube case.       
+    Thus, these values were compared to the observed period ratios, which gives additional evidence, as in previous research, that these oscillations are standing harmonics; however, further investigation is required.
     
     \subsection{Chapter 4}
     	
     Chapter 4 expands on the previous work from Chapter 3, by studying two further magnetic pores.
     These two new data sets come from the DOT and, the DST/ROSA instrument which offers an increase in resolution and a decrease in time cadence from the data sets studied in Chapter 3.
     These two data sets can be seen in Figure \ref{overview}.
-    By once again, measuring the cross-sectional area and total intensity of each magnetic pore using the method previously in Chapters 2 and 3. 
+    By once again, measuring the cross-sectional area and total intensity of each magnetic pore using the method previously used in Chapters 2 and 3. 
     Both magnetic pores display a collection of oscillations but due to the shorter length of these data sets, the maximum periods found are shorter.
     The periods range from 2 to 20 minutes and can be seen in Figures \ref{DOT_wls} and \ref{ROSA_wls}.     
-    The phase difference between the cross-sectional area and total intensity show that these oscillations are are slow MHD sausage waves.
-    The extension within this chapter is utilisation of the perturbation amplitude of these oscillations.
+    The phase difference between the cross-sectional area and total intensity show that these oscillations are slow MHD sausage waves.
     
-    Using linear ideal MHD theory, it is possible to derive equations that will allow the calculation of the radial displacement speed of the oscillation as well as the magnetic field change of the structure due to the oscillation.
-    To achieve this, the amplitude of the oscillations was required and the Fast Fourier Transform (FFT) was used to provide this.
-    The radial displacement speeds were calculated to be within the range of 0.3 km s$^{-1}$ to 3 km s$^{-1}$. 
-    Further, the magnetic field change was calculated to be from 5\% up 30\%. 
-    These results are stated within Table \ref{tab:ampl}.
-    The magnetic field change for the magnetic pore observed with ROSA is much larger than the magnetic pore observed in DOT.
-    The reason is that the amplitude of the oscillations is of the same order for both magnetic pores despite that the ROSA magnetic pore has a much smaller cross-sectional area.
-    Therefore, with the MHD wave type known, it is possible to estimate the phase speed for this wave type within a typical magnetic flux tube.
-    This allows the calculation of the wavelength for the observed oscillations (see Table \ref{tab:wavelength}).
-    The calculated wavelengths add more evidence to the anecdotal evidence shown in Chapter 3.
-    There is a picture emerging that these oscillations could be standing harmonics supported within these magnetic flux tubes. 
-    If the assumption that these are standing harmonics is taken, using magneto-seismology it is possible to estimate the expansion factor of the flux tubes.
-    This is the ratio of the radius at the base of the flux tube to the radius at the top of the flux tube.
-    In this case, it is from the photosphere to the transition region.
-    Table \ref{harm_table} lists the period ratios of the observed oscillations for the two magnetic pores.
-    This forms the base to calculate the expansion factor.
-    The expansion factor is dependent on the plasma-$\beta$ at the base of the flux tube and while it is not possible to know this value, it can be assumed to be around 1 for flux tubes that are within the photosphere.
-    The results of this can be seen within Figure \ref{fig:harm}, which gives a factor that ranges from 4-8 for the magnetic structures analysed within this thesis.
-    These numbers are not too dissimilar to the expansion factors for flux tubes used within MHD wave simulations.
+    The extension within this chapter is utilisation of the perturbation amplitude of these oscillations.
+    Using linear ideal MHD theory, it is possible to derive equations that will calculate the the ratio of magnetic field perturbation to the background magnetic field due to the oscillation as well as the radial displacement and radial velocity perturbation of the oscillation.
+    These are Equations \ref{eq:mag_area}, \ref{eq:area_rad}, and \ref{eq:rad_vel}, respectively. 
+    To achieve this, the amplitude of the oscillations was required and the EMD was used to provide this.
+    The IMFs returned from the EMD algorithm are known to return close to the actual amplitude of the signal.
+    To make sure this was correct, these results were checked with the FFT were within 10\% of each other.
+	It should be noted that the wavelet transform can not be used to work out perturbation amplitudes.
+	This is because the power spectrum is biased towards lower frequencies and thus must be normalised.
+  
+    For the DOT pore, the amplitudes for the cross-sectional area oscillations are $3.87\mathrm{x}10^5$, $3.61\mathrm{x}10^5$ and $5.90\mathrm{x}10^5$ km$^2$ for the oscillations with periods of 4.7, 8.5 and 20 minutes, respectively.
+    The area perturbation was calculated to be 37, 34, and 56 km and the radial velocity perturbation was calculated to be 0.82, 0.42, and 0.29 km s$^{-1}$.
+    The obtained radial speeds are very sub-sonic, however, they are of order of observed horizontal flows around pores.
+    Furthermore, the percentage change in the magnetic field was to be found 4-7\%\ which was found for another magnetic pore observed with DST/IBIS \citep{0004-637X-806-1-132}.
+    To calculate the wavelength the phase speed of the wave needs to known.
+    Due to previous MHD wave mode identification, the result was the slow MHD sausage mode, the phase speed in a photospheric tube was calculated to be 5.2 km s$^{-1}$.
+    This was using a background sunspot atmospheric model.
+    Finally, the obtained estimates of the wavelength (wavenumber) for these oscillation was $1269$ km ($4.95\mathrm{x}10^{-6}$ m$^{-1}$), $2268$ km ($2.77\mathrm{x}10^{-6}$ m$^{-1}$) and $5319$ km ($1.18\mathrm{x}10^{-6}$ m$^{-1}$).
+       
+	For the ROSA pore, the amplitudes for the cross-sectional area oscillations are $2.29\mathrm{x}10^5$, $2.45\mathrm{x}10^5$, and $3.87\mathrm{x}10^5$ km$^2$ for periods of 2-3, 5.5, and 10 minutes, respectively.
+    The radial perturbation amplitude was calculated to be 69.1, 74.2, and 117 km and a radial velocity perturbation as 3.03, 1.41, and 1.23 km s$^{-1}$.
+    The percentage change in the magnetic field was found to be  25-45\%.
+    This changes is several times the size of the DOT pore and should be measurable in future observations. 
+    For this data set, there were no corresponding magnetograms and as a result, could not be verified.
+    These results suggests that the oscillation strength might be independent of the scale of the structure \citep{Dorotovic2014}. 
+    Finally, the calculated wavelength (wavenumber) was $540$-$810$ km ($7.76\mathrm{x}10^{-6}$ m$^{-1}$), 1485 km ($3.58\mathrm{x}10^{-6}$ m$^{-1}$), and 2.2 Mm ($2.85\mathrm{x}10^{-6}$ m$^{-1}$).
+    A summary of these findings can be found in Tables \ref{tab:ampl} and \ref{tab:wavelength}.
+      
+    The calculated wavelengths are further evidence for standing harmonic oscillations within magnetic flux tubes in the photosphere.
+    To show this, if the assumption that these are standing harmonics is taken, using magneto-seismology can prove or disprove this assumption.
+    This is possible because magneto-seismology allows the calculation of two important properties of flux tubes.
+    It should be noted that these flux tubes are photospheric flux tubes that start at the photosphere and end at the transition region.
+    The first is density stratification, which is the ratio of the density at the base of the flux tube to the top of the flux tube.
+    The second is the expansion factor ($\Gamma$), which is the ratio of the radius at the base of the flux tube to the top of the flux tube.
+    These are Equations (\ref{den_strat}) and (\ref{mag_strat}) and the period ratio between the fundamental and first harmonic is the output value.
+    Table \ref{harm_table} lists the period ratios of the observed oscillations for the two magnetic pores and other period ratios are used from \cite{Dorotovic2014} (Chapter 3).
+
+	For density stratification three density models were used: VAL-III C, sunspot umbra and magnetic bright point.
+	These came from \cite{1981ApJS...45..635V}, \cite{Maltby1986} and \cite{GFME13a,GFE14}, respectively.
+	The resulting period ratio from these three models were 1.44, 1.38 and 1.41.
+	This does not correspond well to the results presented in this chapter, but only for one previously reported result in Chapter 3.
+	It can be concluded that density stratification does not seem to be applicable in this case.
+
+	For the expansion factor, Equation (\ref{mag_strat}) was solved for a range of expansion factors and plasma-$\beta$ values, which can be seen in Figure \ref{fig:harm}.
+	Over-plotted in this parameter space are the period ratios observed in blue.
+	For the results within this chapter, the flux tube has to expand four to six times to have a period ratio that is observed.
+	This can be compared to a number of numerical simulations that model these types of flux tubes and an observation of a coronal loop which were in good agreement with these results, see \cite{khomenko,fedun2,fedun1} and \cite{2008A&A...489L..57K}.
 
 	\subsection{Chapter 5}
     
