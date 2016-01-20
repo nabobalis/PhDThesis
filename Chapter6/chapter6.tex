@@ -45,9 +45,10 @@
 
 	\subsection{Chapter 2}
 
-    Chapter 2 started off detailing the various solar telescopes, space- and ground-based, utilised within this thesis.
+    Chapter 2 started by detailing the various solar telescopes, space- and ground-based, utilised within this thesis.
     It covered the instruments that was either on board the space-based telescopes or attached to an optics bench for ground-based telescopes.
     From here, the three signal analysis methods employed are described: FFT, Wavelets and EMD.
+    It detailed how each method works, strengths and weakness and why three methods were used instead of just one.
     
     The chapter finishes on a study of the principle method that is used to measure the cross-sectional area of the sunspots and magnetic pores analysed within this thesis.
     The motivation was to understand if the method output was heavily affected or dependent on the sigma multiplier value chosen.
@@ -57,38 +58,39 @@
     The instruments used from the DST are the \textit{Interferometric Bidimensional Spectrometer} (IBIS) and the \textit{Rapid Oscillations in the Solar Atmosphere} (ROSA) instrument.
     There are two datasets, one for each instrument, with the telescope pointed at a sunspot and a magnetic pore for IBIS and ROSA, respectively.
     This can be seen in Figure \ref{fig:data_overview}.
-    These two data sets are good representative of the data sets studied within this thesis.
+    These two data sets are a good representative of the data sets studied within this thesis.
     
     The sigma (mean) value used came from a background box of quiet Sun, i.e., a region of the photosphere that contains no magnetic features.
-    Once the sigma value is calculated, it is multiplied by a value
-    called the sigma multiplier.  
+    Once the sigma value is calculated, it is multiplied by a value which is called the sigma multiplier.  
     Both magnetic structures were contoured using a selection of sigma multipliers, 3, 3.5, 4, and 4.5 and 2, 2.5, 3, and 3.5 for the sunspot and magnetic pore respectively.
     These values correspond to the colours: blue, green, purple and orange.
     This contouring is displayed in Figure \ref{fig:method_overview}.
     The reason for difference in sigma multipliers between the sunspot and magnetic pore is due to the lack of a good quiet Sun region within the IBIS dataset.
-    This is clearly seen in the top right histogram in Figure \ref{fig:method_overview} and this had the result of increasing the sigma multipliers.
+    This is clearly seen in the top right histogram in Figure \ref{fig:method_overview}, where the returned distribution is skewed, and this had the result of increasing the sigma multipliers.
     
     The resultant cross-sectional area signals are analysed using the wavelet transform and this revealed a range of periods within these magnetic structures.
-    For the IBIS sunspot, the range of sigma multipliers did not change the periods found by the wavelet transform.
-    What did vary was the power of the periods in the wavelet is seen in Figure \ref{fig:sunspot_wavelet}. 
-    The range of sigma multipliers return a threshold value that contours pixels which encompass the sunspot umbra and not the background photosphere.
-    For the ROSA magnetic pore, the difference is more important.
+    For the IBIS sunspot, the range of sigma multipliers did not alter the periods found by the wavelet transform.
+    What did vary was the wavelet power of the periods, as seen in Figure \ref{fig:sunspot_wavelet}. 
+    The range of sigma multipliers return a threshold value that contours pixels which encompass the sunspot umbra and not the penumbra or background photosphere.
+    This is why the sigma multiplier has little effect on the output in this case.
+    For the ROSA magnetic pore, the difference in multipliers is more important.
     Figure \ref{fig:pore_wavelet} demonstrates that for the larger sigma multipliers, the smaller periods have disappeared from the wavelet transform. 
     This is because, the returned threshold value from the higher sigma multiplier under contours the magnetic pore.
     As a result, the returned cross-sectional signal is missing a large number of pixels, which can be seen by the signals at the top of Figure \ref{fig:pore_wavelet}.
-        
+    This could mean that only certain regions of the magnetic pore oscillate and might be possible to isolate those regions in a future work.
+  
     The results can be summarised as the following.
     The best way to choose a sigma multiplier that will be used to create the threshold value, is to take into account the structures's intensity distribution.
     This way, choosing a sigma multiplier becomes more straightforward and more robust than choosing a threshold value as a percentage of the quiet Sun intensity.
-    As long as the sigma multiplier is sane, then there will be nothing missed from this analysis.
+    As long as the sigma multiplier is sane, then there will be nothing missed from the analysis.
     
-    Finally, since the phase relations are used to identified waves modes and this are listed in Table \ref{tab:phase}.
-    All three signal analysis methods offer the ability to calculate the phase of each signal and that allows the comparison of the cross-sectional area to the total intensity phase.
+    Finally, the phase difference or phase relations are used to identify the various waves modes and these are listed in Table \ref{tab:phase}.
+    All three signal analysis methods offer the ability to calculate the phase of each signal and that allows the comparison of the cross-sectional area to the total intensity phase difference.
     For this analysis, the wavelet transform was used to check the phase difference between the cross-sectional area and total intensity.
     These can be seen in Figures \ref{fig:phase_sunspot} and \ref{fig:phase_pore} for the IBIS sunspot and ROSA magnetic pore, respectively.
-    Overall, the periods show in phase behaviour in these two magnetic structures indicating slow MHD sausage modes. 
-    The cross-wavelet phase images show that there is no effect of the different sigma multipliers on wave identification.
-    It should be noted that this study can be expanded upon which will be discussed in Chapter 6, Section 3. 
+    Overall, the periods show in phase behaviour within these two magnetic structures which indicates slow MHD sausage modes. 
+    The cross-wavelet phase images show that there is no effect of the different sigma multipliers on wave mode identification.
+    It should be noted that this study can be expanded upon which will be discussed later on. 
     
    	\subsection{Chapter 3}
     	
