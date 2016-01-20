@@ -10,23 +10,35 @@
     
 	In this thesis, the results of two-dimensional image analysis of sunspots and magnetic pores in the lower solar atmosphere is detailed.
     These results are directly compared to theoretically derived results and indicate the ubiquitous presence of slow MHD sausage waves in the larger magnetic structures that inhabit the solar surface.
-    In Chapter 2, the telescopes and their associated instruments that supplied the data, that was analysed in this thesis are described.
+    
+    In Chapter 2, the telescopes and their associated instruments that supplied the science ready data sets are described, along with brief data reduction details.
     Then the signal analysis methods used to determine the periods and phase difference were detailed.
+    These being the Fast Fourier Transform (FFT), Wavelets and Empirical Mode Decomposition (EMD).
     Finally, the method used to measure the cross-sectional area and total intensity of the magnetic structures is examined.
-    The reason for this is to understand what the effects of varying the sigma multiplier has on the results of the signal analysis, which is important in order to reduce bias.
-    In Chapter 3, the cross-sectional area and total intensity is measured on several magnetic structures.
-    The overall results indicate the presence of slow MHD sausage waves.
-    This conclusion is reached by comparing the phase difference between the cross-sectional area and total intensity which was in phase.
-    In Chapter 4, the cross-sectional area and total intensity is once again measured for two new magnetic pore data sets.
-    The phase difference indicated strongly that the oscillations are slow MHD sausage waves.
-    The extension within this chapter was calculating the amplitudes of the cross-sectional area perturbations.
-    The amplitude of these perturbations allows the usage of magneto-seismology equations.
-    These equations calculate several properties (radial, radial velocity and magnetic field perturbations) of the detected waves, as well as information on the background properties of the observed magnetic flux tubes.
+    The reason for this is to understand what the effects of varying the sigma multiplier has on the results of the signal analysis, which is important before this method is used to analyse data sets.
+    
+    In Chapter 3, the cross-sectional area and total intensity is measured on two sunspots and one magnetic pore.
+    By comparing the phase difference between the cross-sectional area and total intensity signals, which are calculated using the method described in Chapter 2.
+    It was possible to find the ubiquitous presence of slow MHD sausage waves within these magnetic structures.
+    This conclusion is reached because the measured phase difference was very close to 0$^\circ$, i.e., they were in phase.
+    This is the signature of the slow MHD sausage wave within cylindrical magnetic flux tubes.
+    
+    In Chapter 4, the cross-sectional area and total intensity is calculated for two new magnetic pore data sets.
+    The phase difference indicated that the oscillations are slow MHD sausage waves.
+    The usage of magneto-seismology equations allowed the calculation of several properties of the detected oscillations within the two magnetic pores.
+    These were, for example, the radial distance perturbation, radial velocity perturbation and magnetic field perturbations.
+    The properties of these oscillations gave the impression of standing harmonics.
+    However, it was possible to use magneto-seismology to demonstrate that these oscillations are in fact standing harmonics.
+    This was accomplished by working out if density stratification or radial expansion of the flux can cause the observed period ratios.
+    The calculated radial expansion was in good agreement with previous simulations and observations. 
+    
     In Chapter 5, the focus shifted from analysing the cross-sectional of magnetic structures to the analysis of Running Penumbral Waves (RPWs) in a magnetic pore.
-    RPWs have only observed in sunspot penumbras; however, this analysis details the presence of events that have the identical signature of RPWs, emanating from a magnetic pore.
-    This fact has confirmed that RPWs are a visual effect of MHD sausage waves following the curvature of magnetic field lines of sunspots and magnetic pores.
+    RPWs have only observed in sunspot penumbras; however, RPW-like events were observed, for the first time, to occur around a magnetic pore.
+    This observation is the final step in confirming that RPWs are a visual effect of MHD sausage waves following the curvature of magnetic field lines of sunspots and magnetic pores.
     These have been previously termed Upwardly Propagating Waves (UPWs).
-    This creates a delay of the appearance of the wave at higher levels, causing this patten of outwardly propagating waves.
+    This visual effect is caused because the magnetic field becomes more radially inclined further from the umbral centre.
+    These radially inclined fields have longer arc lengths and thus a wave following these field lines have to cover a larger distance before it can appear in the chromosphere.
+    This creates a delay of the appearance of these waves at higher levels, causing this patten of radially outward propagating waves.
     These events are able to deliver a small amount of energy into the local corona, but not enough to heat the active corona.
        
 \section{Summary of results}
@@ -35,7 +47,7 @@
 
     Chapter 2 started off detailing the various solar telescopes, space- and ground-based, utilised within this thesis.
     It covered the instruments that was either on board the space-based telescopes or attached to an optics bench for ground-based telescopes.
-    From here, the three signal analysis methods employed are described: Fast Fourier Transform (FFT), Wavelets and Empirical Mode Decomposition (EMD).
+    From here, the three signal analysis methods employed are described: FFT, Wavelets and EMD.
     
     The chapter finishes on a study of the principle method that is used to measure the cross-sectional area of the sunspots and magnetic pores analysed within this thesis.
     The motivation was to understand if the method output was heavily affected or dependent on the sigma multiplier value chosen.
@@ -157,7 +169,7 @@
     The first is density stratification, which is the ratio of the density at the base of the flux tube to the top of the flux tube.
     The second is the expansion factor ($\Gamma$), which is the ratio of the radius at the base of the flux tube to the top of the flux tube.
     These are Equations (\ref{den_strat}) and (\ref{mag_strat}) and the period ratio between the fundamental and first harmonic is the output value.
-    Table \ref{harm_table} lists the period ratios of the observed oscillations for the two magnetic pores and other period ratios are used from \cite{Dorotovic2014} (Chapter 3).
+    Table \ref{harm_table} lists the period ratios of the observed oscillations for the two magnetic pores and other period ratios are used from Chapter 3.
 
 	For density stratification three density models were used: VAL-III C, sunspot umbra and magnetic bright point.
 	These came from \cite{1981ApJS...45..635V}, \cite{Maltby1986} and \cite{GFME13a,GFE14}, respectively.
@@ -175,10 +187,15 @@
     
     Chapter 5 shifts the focus from cross-sectional area analysis of sunspots and magnetic pores to the investigation of Running Penumbral Waves (RPWs).
     RPWs have been observed within sunspot penumbras since the 1970's as intensity fronts propagating radially outwards from the outer umbra into the penumbra, before disappearing at the penumbra photosphere boundary.
+    Data from the Swedish Solar Telescope (SST) using the \textit{CRisp Imaging SpectroPolarimeter} (CRISP) instrument was combined with co-aligned and co-temporal data from the \textit{Atmospheric Imaging Assembly} (AIA) instrument on board the Solar Dynamics Observatory (SDO) satellite.
+    An overview of the ground- and space-based data can be seen in Figure \ref{chap5:overview}.
+    The focus was on a small Active Region (AR) containing two magnetic pores.
+    The first one was a small magnetic pore that had a light-bridge which did not penetrate into the chromosphere.
+    The second one, which was the focus for this observation, was a larger magnetic pore that was seen clearly in the chromosphere. 
+    Wideband and white light images from the SST and SDO, respectively, showed that these magnetic pores had no penumbral structure in the photosphere.
     
-    Excellent seeing data from the Swedish Solar Telescope (SST) using the \textit{CRisp Imaging SpectroPolarimeter} (CRISP) instrument was combined with co-aligned and co-temporal data from the \textit{Atmospheric Imaging Assembly} (AIA) instrument onboard the Solar Dynamics Observatory (SDO) satellite (see Figure \ref{chap5:overview}).
+    
     The result was the first direct imaging of RPWs in a magnetic pore in the H$\alpha$ line core.
-    The whitelight images show no penumbral structure in the photosphere for the observed magnetic pore.
     Further, the repeat period as well as the horizontal speed is typical of RPWs that have been observed before within sunspots.
     The RPWs can be seen to emanate from the magnetic pore radially outwards, however, it is not concentric as RPWs that are commonly observed within sunspots.
     These results came from slit analysis around the magnetic pore (see Figure \ref{chap5:overview} and \ref{fft_slit}).
@@ -188,7 +205,7 @@
     This fact coupled with previous research that indicates that RPWs are in fact Upwardly Propagating Waves (UPWs), is the final step in confirming this.     
     Further, the UPWs were observed with SDO/AIA lines that sample the transition region and low corona, which suggests that UPWs are reaching the higher parts of the solar atmosphere.
     Mode identification for RPWs has been a difficult topic. 
-    Previous studies and most theoretical understanding of RPWs implies that they are slow magneto-acoustic waves.
+    Previous studies and mosWt theoretical understanding of RPWs implies that they are slow magneto-acoustic waves.
     However, in the case presented within Chapter 5, we suggest that the RPWs/UPWs are actually fast magneto-acoustic waves, since the wave appears as dark and light fronts, which is a change in intensity which we conclude is a change in density implying a compressive nature to this waves.
     A time lag analysis between the H$\alpha$ slit and the SDO/AIA slits gives us a result of less than 12 seconds, i.e., the lag is less than the cadence of SDO/AIA.
     So the best assumption that can be made is that the lag is at that cadence (12 seconds). could be zero!
