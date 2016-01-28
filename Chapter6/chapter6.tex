@@ -239,75 +239,73 @@
     
     \subsection{Methods}
 
-	To begin, in Chapter 2 the signal analysis methods used with this thesis were described.
-	These methods were used to analyse signals to measure the period and phase of a signal and they were used successful in order to achieve the overall goals for each chapter.
-	However, the field of signal analysis is ever evolving.
-    For example, the wavelet transform has had numerous papers published which extend the algorithm to account for power bias at lower periods \citep{liu2007rectification,veleda2012cross} as well as being able to discern if the signal is standing or propagating \citep{2008SoPh..248..395S}.
-    The Empirical Mode Decomposition has been extended, adding a step to the method where it does an ensemble averages \citep{wu2009ensemble}, better methods to deal with the edge effects with the spline fit \citep{zeng2004simple} as well as improved stopping criterion \citep{huang2008review}.
-    It is important that the methods used to analyse signals and extract phase relations and amplitudes be made robuster in order to be certain in the period, phase and amplitudes of any oscillations found.
-    If magneto-seismology requires these quantities to calculate the background properties of flux tubes, it is vital that any signal analysis method used is as robust as possible. 
+	To begin, in Chapter 2 the signal analysis methods used within this thesis were described.
+	These methods were used to analyse signals in order to measure the period and phase of a signal and they were used successfully to achieve the overall scientific goals for Chapters 3, 4, and 5.
+	However, the field of signal analysis is ever evolving and many papers are published either suggesting improvements to current methods or offering new methods.
+    The wavelet transform has had numerous papers published which extend the algorithm.
+    For example, it was discovered that there is a power bias towards lower frequencies within the output \citep{liu2007rectification,veleda2012cross}.
+    Furthermore, a modified version wavelet transform has been developed that is able to discern if the input signal is made up of standing or propagating components \citep{2008SoPh..248..395S}.
+    The Empirical Mode Decomposition has been extended, adding a further step to the method where it does an ensemble averages to improve the outputted intrinsic mode functions (IMFs) \citep{wu2009ensemble}.
+    Other ideas on how to deal with the edge effects with the spline fitting have been purposed \citep{zeng2004simple} and improved stopping criterion \citep{huang2008review}.
+    Recently a new method has been created called Variational Mode Decomposition (VMD, \citealt{6655981}).
+    It has a mathematical framework, much like the FFT and wavelet transform, that the EMD lacks and preliminary results suggest that it is more robust to sampling and noise effects than EMD.
+    It is important that improved signal analysis methods are employed within solar physics as it more complex signals are interpreted within the literature, for example see \cite{refId0}. 
+    Furthermore, the magneto-seismology equations used require the amplitude of the perturbation and as a result, any method that is more robust to noise or other signal analysis effects it is important that these be used as they give direct scientific answers.
 
-
-    
-    Further to this, the current range of ground-based and space-based solar data has approximately the same resolution and this limit will be around for another two years. 
-    This is a problem since the results are inherently dependant on this as this fixes the lower limit of any observations, especially when it comes to detecting perturbations.
-    With DKIST, as well as Solar-C, this limit will be reduced.
-    Thus, attempting this analysis on solar data from the next generation of solar telescopes would be a future extension of this work. 
-    
-      %      Further, this implies that for the current range of ground-based solar telescopes, that the limiting factor for cross-sectional area oscillations is the resolution.
-      %      This resolution has been fixed for the past couple of years and until Daniel K. Inouye Solar Telescope (DKIST) data becomes available, the range of sigma multipliers can vary without fear of biasing the results. 
-      %          
-      %          
-      %          potential cross talk between area and intensity is ignored. Pure intensity oscillation would result in area oscillation due to a fixed sigma threshold. brighter > larger area ; darker > smaller area
-      %   
-      %   why is this the case? What bias can be introduced due to lack of resolution?
-      %   an area variation is measured - area is defined by contouring intensity - intensity variation is introduced by some waves - the very thing we are trying to measure - is there potential for cross-talk, how addressed?
-      %   
-      %   again - is there a possibility that the intensity variation leads to the "appearance of cross sectional variation.
-      %   
-      %   still not clear how resolution limits or influences the results. What would we expect to gain or see that we don't see now?
-      
-      
-
+    Finally, at the end of Chapter 2, was an analysis of the method used to measure the cross-sectional area and total intensity.
+    To extend this study, it is important to look at the effect of light level change during an observation sequence as well as the effect if a pure intensity oscillation would result in a false detection of a cross-sectional area oscillation. 
+    Theoretically, a pure intensity oscillation would result in a cross-sectional area oscillation due to a fixed sigma multiplier, as if it is brighter a larger cross-sectional area will be measured compared to when the intensity oscillation is dark and thus a smaller area would be measured.
+    An artificial data set of a sunspot or a magnetic pore can be constructed to study these effects in the future.  
+                
     \subsection{Science}
  
-     Firstly, in Chapter 2, the method used to contour the magnetic structures was analysed.
-     However, it was limited to low lying photospheric wavelengths.
-     This would be expanded to cover other wavelengths which sample up into the chromosphere. 
-     Studying how the cross-sectional area oscillations change as a function of height would be an important next stage for this research.
-     In order to map how the amplitudes change with height, if the phase difference varies and if detected periods at one height exist within another height.
-     However, as one moves upwards in the solar atmosphere, the boundary between a magnetic structure and the background atmosphere becomes harder to distinguish, so the analysis in Chapter 2 would need to be refined with multiple heights to investigate any pitfalls with layered datasets.
-     
-     Finally, in Chapter 4, the phase speed of the MHD wave was calculated from typical background properties.
-     Thus, the results that came from that are determined by those properties. 
-     Further work would ideally employ magneto-seismology in order to calculate the phase speed of the detected oscillations. 
-     Normally, this is possible using multiple heights since a time lag could be calculated with this method, as the height between wavelengths is known approximately.
-     However, research \citep{2015A&A...579A..73M} have been published that makes it possible to do this with only the amplitude of the oscillations.
-     This would be a further extension to the work in Chapter 3 and 4.
-     
-     
-       %For future, does this isolate the regions where the pore oscillations? 
-       %        
-       %      
-       
-                 
-                 The first extension to the work presented within Chapters 3 and 4 is to expand the analysis from the photosphere to the chromosphere.
-                 Currently the work focused only on the photosphere using G-band data.
-                 Thus by using more wavelengths, it becomes possible to analyse the magnetic structures at multiple heights of the solar atmosphere.
-                 This would enable analysis of how the cross-sectional area and total intensity oscillations vary as a function of height.
-                 
-                 
-                 
-                    
-    Finally, the observed UPWs within the magnetic pore is an interesting avenue of wave research.
-    Here, there are many questions that need to be answered.
-    To start, this observation indicated that the UPW events were fast sausage modes needs to be squared with the current literature.
-    Either the interpretation is correct and UPWs can be either fast or slow waves or the analysis is incorrect.
-    Further ground-based observations of magnetic pores would need to be conducted in order to understand UPWs within these structures.
-    The author is only aware that RPWs have been only observed in sunspots , is the difference in wave mode due to a difference between sunspots and magnetic pores? 
-    Does the presence of the penumbra cause this or would it be that the plasma-$\beta$ varies in a pore differently such that mode conversion leads to a fast magnetic-acoustic wave instead of a slow magnetic-acoustic wave?
-    In Chapter 5, the region where the waves were observed was a small region of quiet chromosphere.
-    Does the surrounding chromospheric atmosphere dictate if UPWs can be observed?
-    Generally, symmetrical sunspots display concentric and clear RPWs, is that due to the magnetic field topology of the sunspot being much stronger than a magnetic pore, thus the observation of UPWs allows us to infer the magnetic field topology around sunspots and magnetic pores?
-    Finally, do UPWs have a common source with the LOS oscillations and cross-sectional area oscillations observed in these magnetic structures, or are they the same wave that can be observed in several different ways?
-    Solar physics has a long way to go and so does the research presented within this Thesis.
+    The focus within this thesis regarding how the cross-sectional area of sunspots and magnetic pore changes with time was within the photosphere only using a G-band filter.
+    This filter samples the lower photosphere ($<$250 km).
+    The first extension to this work would be utilising more filters that are found on ground-based telescope instruments.
+    For example, \ion{Fe}{I} 630.26 nm, \ion{Na}{D} 589.70 nm, and \ion{Ca}{II} 854.16 nm which sample lower photosphere ($~$50 km), mid-photosphere ($~$ 450 km) and mid-chromosphere ($~$1000 km), respectively.
+    This would enable a study into how the cross-sectional area and total intensity vary as a function of height for a sunspot or magnetic pore. 
+    Furthermore, 
+    
+The first extension to the work presented within Chapters 3 and 4 is to expand the analysis from the photosphere to the chromosphere.
+Currently the work focused only on the photosphere using G-band data.
+Thus by using more wavelengths, it becomes possible to analyse the magnetic structures at multiple heights of the solar atmosphere.
+This would enable analysis of how the cross-sectional area and total intensity oscillations vary as a function of height.
+
+However, it was limited to low lying photospheric wavelengths.
+This would be expanded to cover other wavelengths which sample up into the chromosphere. 
+Studying how the cross-sectional area oscillations change as a function of height would be an important next stage for this research.
+In order to map how the amplitudes change with height, if the phase difference varies and if detected periods at one height exist within another height.
+However, as one moves upwards in the solar atmosphere, the boundary between a magnetic structure and the background atmosphere becomes harder to distinguish, so the analysis in Chapter 2 would need to be refined with multiple heights to investigate any pitfalls with layered datasets.
+
+Finally, in Chapter 4, the phase speed of the MHD wave was calculated from typical background properties.
+Thus, the results that came from that are determined by those properties. 
+Further work would ideally employ magneto-seismology in order to calculate the phase speed of the detected oscillations. 
+Normally, this is possible using multiple heights since a time lag could be calculated with this method, as the height between wavelengths is known approximately.
+However, research \citep{2015A&A...579A..73M} have been published that makes it possible to do this with only the amplitude of the oscillations.
+This would be a further extension to the work in Chapter 3 and 4.
+
+
+%For future, does this isolate the regions where the pore oscillations? 
+Further to this, the current range of ground-based and space-based solar data has approximately the same resolution and this limit will be around for another two years. 
+This is a problem since the results are inherently dependant on this as this fixes the lower limit of any observations, especially when it comes to detecting perturbations.
+With DKIST, as well as Solar-C, this limit will be reduced.
+Thus, attempting this analysis on solar data from the next generation of solar telescopes would be a future extension of this work. 
+
+%      Further, this implies that for the current range of ground-based solar telescopes, that the limiting factor for cross-sectional area oscillations is the resolution.
+%      This resolution has been fixed for the past couple of years and until Daniel K. Inouye Solar Telescope (DKIST) data becomes available, the range of sigma multipliers can vary without fear of biasing the results. 
+%   why is this the case? What bias can be introduced due to lack of resolution?
+%   an area variation is measured - area is defined by contouring intensity - intensity variation is introduced by some waves - the very thing we are trying to measure - is there potential for cross-talk, how addressed?
+%   
+%   still not clear how resolution limits or influences the results. What would we expect to gain or see that we don't see now?
+Finally, the observed UPWs within the magnetic pore is an interesting avenue of wave research.
+Here, there are many questions that need to be answered.
+To start, this observation indicated that the UPW events were fast sausage modes needs to be squared with the current literature.
+Either the interpretation is correct and UPWs can be either fast or slow waves or the analysis is incorrect.
+Further ground-based observations of magnetic pores would need to be conducted in order to understand UPWs within these structures.
+The author is only aware that RPWs have been only observed in sunspots , is the difference in wave mode due to a difference between sunspots and magnetic pores? 
+Does the presence of the penumbra cause this or would it be that the plasma-$\beta$ varies in a pore differently such that mode conversion leads to a fast magnetic-acoustic wave instead of a slow magnetic-acoustic wave?
+In Chapter 5, the region where the waves were observed was a small region of quiet chromosphere.
+Does the surrounding chromospheric atmosphere dictate if UPWs can be observed?
+Generally, symmetrical sunspots display concentric and clear RPWs, is that due to the magnetic field topology of the sunspot being much stronger than a magnetic pore, thus the observation of UPWs allows us to infer the magnetic field topology around sunspots and magnetic pores?
+Finally, do UPWs have a common source with the LOS oscillations and cross-sectional area oscillations observed in these magnetic structures, or are they the same wave that can be observed in several different ways?
+Solar physics has a long way to go and so does the research presented within this Thesis.
