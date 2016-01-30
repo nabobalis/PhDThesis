@@ -14,7 +14,7 @@ That will be impossible.
 
 ### Building the Thesis
 
-As it stands, as the figures do not need the raw data to be made. This will build with pdflatex and output a file at `thesis/thesis.pdf`.
+As it stands, as the figures do not need the raw data to be made. This will build with pdflatex and output a file called `thesis.pdf`.
 
 Copyright
 ---------
