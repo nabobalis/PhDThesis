@@ -532,7 +532,8 @@ supported!}
 \ifPHD@times
   \ifxetex
   \else
-    \RequirePackage{mathptmx}  % times roman, including math (where possible)
+%    \RequirePackage{newtxtext}  % times roman, including math (where possible)
+    \RequirePackage{newtxmath}
   \fi
   \setFonttrue
   \message{PhDThesisPSnPDF: Using Times Roman font}
