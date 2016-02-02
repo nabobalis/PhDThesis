@@ -5,7 +5,7 @@
 % Set {innerside margin / outerside margin / topmargin / bottom margin}  and
 % other page dimensions
 \ifsetCustomMargin
- \RequirePackage[left=40mm,right=30mm,top=30mm,bottom=30mm]{geometry}
+ \RequirePackage[left=40mm,right=30mm,top=25mm,bottom=20mm]{geometry}
 \setFancyHdr % To apply fancy header after geometry package is loaded
 \fi
 
@@ -16,7 +16,6 @@
 % To remove the excess top spacing for enumeration, list and description
 %\usepackage{enumitem}
 %\setlist[enumerate,itemize,description]{topsep=0em}
-
 % *****************************************************************************
 % ******************* Fonts (like different typewriter fonts etc.)*************
 
@@ -55,7 +54,7 @@
 
 \RequirePackage[labelsep=space,tableposition=top]{caption}
 \renewcommand{\figurename}{Fig.} %to support older versions of captions.sty
-
+\renewcommand{\floatpagefraction}{.7}
 
 % *************************** Graphics and figures *****************************
 
