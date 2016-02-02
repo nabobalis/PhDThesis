@@ -1,7 +1,6 @@
 \graphicspath{{Chapter1/Figs/}}
 
 \chapter{Introduction}
-\label{chapter1}
       	
    \vspace*{\fill}\par
    \pagebreak
@@ -192,7 +191,7 @@
     
 \subsubsection{Active regions}
     
-    Active Regions (ARs) are areas of intense magnetic field concentrations located on the Sun's surface.
+    Active Regions (ARs), sometimes referred as sunspot groups, are areas of intense magnetic field concentrations located on the Sun's surface.
     They are catalogued by the National Oceanic and Atmospheric Administration (NOAA) who assign each AR an identification number.
     ARs vary in scale, lifetime and what magnetic structures are present and two of most prevalent features within ARs are sunspots and magnetic pores.
     Furthermore, most ARs will contain magnetic features found in the quiet Sun and events that are believed to be a consequence of magnetic reconnection.
@@ -212,16 +211,58 @@
         \label{fig:AR}
      \end{figure}    
 
-	ARs will form within a band from the equator, typically $\pm$30$^\circ$ \textbf{CITE}.
-	They most likely arise from a large coherent flux bundle that is formed depp in the convective zone \citep{1974MNRAS.169...35M,2014SoPh..289.3351T}.
+	ARs will form within a band from the equator, typically $\pm$30$^\circ$ and arise from a large flux bundle that is formed deep in the convective zone \citep{SAO,1974MNRAS.169...35M,2014SoPh..289.3351T}.
 	Magnetic buoyancy is the reason this bundle rises as a $\Omega$-shaped loop that breaks through the photosphere.
-	Locally, the magnetic field is fragmented and convection is the mechanism that concentrates the emerging flux to form intense flux tubes, magnetic pores and sunspots.
-	It can take up to 4 days for a well-developed AR to form and it is common that a sunspot group is surrounded by regions of enhanced brightness in the photosphere and in the corona, EUV and X-ray loops can be seen to be anchored in ARs.
-	Many ARs will grow and reach a maximum size in about two weeks and sunspots will form during flux emergence but most disappear after a single rotation.
-	The leader sunspot in an AR is called the p-spot (leader) and the last sunspot in the AR is called the f-spot (follower).
+	On small scales, the magnetic field is fragmented and convection concentrates the emerging magnetic flux such that intense magnetic flux tubes form.
+	Figure \ref{fig:dynamo_field} shows a schematic of how the magnetic flux is transported upwards to form ARs.
+	The process requires two processes: the solar dynamo to create the magnetic field and differential rotation to create the flux bundle.
+	Typically, it can take up to 4 days for the AR to form completely and it is common that a cluster of sunspots are surrounded by regions of enhanced brightness in the photosphere and in the corona, EUV and X-ray loops can be seen to be anchored in ARs \citep{2014masu.book.....P}.
+	An AR can reach its maximum size in two weeks and sunspots will keep forming as long as magnetic flux emerges but most sunspots will decay after a single rotation.
+	The leading sunspot in an AR is called the p-spot or leader and the last sunspot in the AR is called the f-spot or follower.
+	It is common that the leader sunspot is long-lived while the follower sunspot will short-lived, be irregular in shape and an opposite polarity magnetic field to the leader sunspot.
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{dynamo.pdf}
+		\caption{
+				 Schematic of magnetic flux emergance.
+				 The red inner sphere represents the Sun's radiative zone and the blue mesh the photosphere and the solar dynamo is between these two layers
+				 (a) The Sun's differential rotation shears the magnetic field.
+				 (b) Toroidal magnetic field is produced due to differential rotation.
+				 (c) Buoyant magnetic loops rise to the surface when the magnetic field is strong enough and they twist as they rise due to differential rotation.
+				 Sunspots are formed from these loops.
+				 (d,e) Additional magnetic flux emerges. 
+				 (f) Magnetic flux spreads in latitude and longitude from decaying sunspots.
+			     Reproduced from \cite{1367-2630-9-8-297} and is available online from \url{http://www.arrl.org/w1aw-bulletins-archive/ARLP018/2013}.
+		        }
+		\label{fig:dynamo_field}
+	\end{figure}
+			
+	ARs are classified by the magnetic field polarity of the entire region is as follows.
+	A unipolar ($\alpha$-type) AR make up 46\% of all ARs while a bipolar ($\beta$-type) AR makes up 53\% and the remaining ARs have a complex ($\gamma$-type) magnetic polarity \citep{2014masu.book.....P}.
+	Figure \ref{fig:AR_Mag} show a complex AR that was observed with the National Aeronautics and Space Administration's (NASA) Solar Dynamics Observatory's (SDO) Helioseismic and Magnetic Imager (HMI) instrument.
+	The top image is a white light view of the AR while the bottom image is a line-of-sight (LOS) magnetogram where blue is positive polarity and red is negative polarity.
+	These sunspot groups are the more likely ones to be the source of a large solar flare.
+	Furthermore, $\delta$-type sunspots have an umbra that has an opposite polarity inside the same penumbra and large solar flares are common here as the magnetic gradients are high and the magnetic field is highly complex.
+	Sunspots move faster than the surrounding plasma and this implies that they are most likely anchored below the surface where the rotation rate is faster.
+	Sunspot groups tend to drift apart at a rate of 0.1$^\degree$ per day as the leader sunspot is at a lower latitude and will rotate faster since the Sun differential rotates.
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{sunspot.jpg}\\
+		\includegraphics[width=\textwidth]{sunspot_magnetic.jpg}\\
+		\caption{
+			     An example of a complex AR as seen by National Aeronautics and Space Administration's (NASA) Solar Dynamics Observatory (SDO)'s Helioseismic and Magnetic Imager (HMI) instrument.
+			     The top image is the AR as seen in white light.
+			     The bottom image is a magnetogram and displays the line-of-sight (LOS) magnetic field of a AR where blue indicates positive polarity and red indicates negative polarity.
+			     Taken from \url{http://www.spaceweatherlive.com/en/help/the-magnetic-classification-of-sunspots}.	
+		        }
+		\label{fig:AR_Mag}
+	\end{figure}
+
 	The decay of an AR is takes longer than the growth stage and what is commonly seen is the slow cancellation and dispersal of magnetic flux as $\Omega$-loops submerge.
 	Typically an AR are bipolar flux which are well-ordered into two islands of opposite polarity.
-	
+		
 \subsubsection{Sunspots}
 
     Sunspots are the strongest magnetic field concentrations on the solar surface.
@@ -248,30 +289,6 @@
 	The magnetic field strength decreases gradually with increasing radius from the centre and an average magnetic field over the entire sunspot is 1.2-1.7 kG.
 	The penumbral inclination of the magnetic field increases with radius to a mean value of 70-80 degrees at the edge of the sunspot and the magnetic field weakens to 700-900 G.
 
-	Sunspot groups are typically classified by the magnetic field polarity of the entire region.
-	Typically the leader and follower sunspots have opposite polarity magnetic fields.
-	The leader sunspot tends to be very long-lived while the follower sunspot will be irrregular in shape and last a few days.
-	For example, a uni-polar ($\alpha$-type) sunspot group makes up 46\% while bipolar ($\beta$-type) sunspots group make up 53\% and the remaining sunspot groups are very complex ($\gamma$-type).
-	Figure \ref{fig:AR_Mag} show cases an example of a complicated sunspot group observed with National Aeronautics and Space Administration's (NASA) Solar Dynamics Observatory (SDO)'s Helioseismic and Magnetic Imager (HMI) instrument.
-	The top image is a white light image while the bottom image is a magnetogram where blue is positive polarity and red is negative polarity magnetic field.
-	These sunspot groups are the more likely ones to be the source of a large solar flare.
-	Furthermore, $\delta$-type sunspots have an umbra that has an opposite polarity inside the same penumbra and large solar flares are common here as the magnetic gradients are high and the magnetic field is highly complex.
-	Sunspots move faster than the surrounding plasma and this implies that they are most likely anchored below the surface where the rotation rate is faster.
-	Sunspot groups tend to drift apart at a rate of 0.1$^\degree$ per day as the leader sunspot is at a lower latitude and will rotate faster since the Sun differential rotates.
-	\begin{figure}
-		\centering
-		\includegraphics[width=\textwidth]{sunspot.jpg}\\
-		\includegraphics[width=\textwidth]{sunspot_magnetic.jpg}\\
-		\caption{
-			An example of a very complex sunspot group with a $\gamma$ magnetic classification as seen by National Aeronautics and Space Administration's (NASA) Solar Dynamics Observatory (SDO)'s Helioseismic and Magnetic Imager (HMI) instrument.
-			This sunspot region was the source of a major X2.3 solar flare.
-			The top image shows us this sunspot region in visible light.
-			The bottom image is a so called ``magnetogram'' and shows the magnetic layout of a sunspot region.
-			The red colour indicates sunspots or areas with a negative polarity and the blue colour indicates areas with positive polarity sunspots.	
-		}
-		\label{fig:AR_Mag}
-	\end{figure}
-		
 	The umbra of a sunspot is far from uniform.
 	It is known that dark nuclei that are around 15\% brightness of the quiet Sun photosphere with diameters up to 1Mm are located within the umbra.
 	Furthermore, umbral dots are small bright features that are found in all sunspots and magnetic pores, \cite{1950Obs....70..234T,1964ApJ...139...45D}.
@@ -332,16 +349,6 @@
     The magnetic field will grow until the external gas pressure is balanced with the internal magnetic pressure.
     As the sunspot or magnetic pore forms, an annular convection cell, referred to as a moat is formed around the flux tube and can be considered a super-granular cell with a sunspot in the middle.
     This moat has up flow at the flux tube and a horizontal flow at the boundary of the flux tube and further out.
-
-	\begin{figure}
-		\centering
-		\includegraphics[width=\textwidth]{dynamo.pdf}
-		\caption{
-			Schematic of solar flux-transport dynamo processes. Red inner sphere represents the Sun's radiative interior and blue mesh the solar surface. In between is the solar convection zone where dynamo resides. (a) Shearing of poloidal field by the Sun's differential rotation near convection zone bottom. The Sun rotates faster at the equator than the pole. (b) Toroidal field produced due to this shearing by differential rotation. (c) When toroidal field is strong enough, buoyant loops rise to the surface, twisting as they rise due to rotational influence. Sunspots (two black dots) are formed from these loops. (d--f) Additional flux emerges (d, e) and spreads (f) in latitude and longitude from decaying spots.
-			Reproduced from \cite{1367-2630-9-8-297} and is available online from \url{http://www.arrl.org/w1aw-bulletins-archive/ARLP018/2013}
-		}
-		\label{fig:dynamo_field}
-	\end{figure}
     
     Furthermore, sunspots can be formed by the accumulation of magnetic flux which collects at the boundary of a super-granule cell or a junction of several cells \cite{1974MNRAS.169...35M}.
     Magnetic pores can appear if there is a down flows of 0.5 km s$^{-1}$, and cooling signals the onset of convective collapse.
@@ -356,7 +363,7 @@
     While sunspots have been under near constant observation for several centuries.
     It was not until the mid 20$^{\mathrm{th}}$ century, that oscillations were observed within sunspots themselves \citep{OASO}.
     There are three main sunspot phenomena: 3-minute (5 mHz) and 5-minute (3 mHz) oscillations and running penumbral waves (RPWs).
-    The first two are observed with a line-of-sight (LOS) analysis, i.e., frequency filtering using the Fast Fourier Transform (FFT) (which is covered in Chapter 2).
+    The first two are observed with a LOS analysis, i.e., frequency filtering using the Fast Fourier Transform (FFT) (which is covered in Chapter 2).
     However, there is some evidence to suggest the existence of longer period oscillations \citep{LPO,SOS,Chorley2011}.
     The source of the 5-minute oscillation is thought to be a result of forcing by the 5-minute \textit{p}-mode global solar oscillation \citep{OWS,WAUO}.
     The 5-minute oscillation are typically seen in lines which form low in the cool umbral photosphere and are moderately suppressed not only in the penumbra, but also in the chromospheric atmosphere above the umbra \citep{OASO}.
@@ -393,12 +400,12 @@
     	\label{fig:AR_Num}
     \end{figure}   
             
-    The solar cycle can directly impact the Earth's climate, as shown by the Maunder Minimum, which was an abnormally low amount of sunspots during the late seventeenth century and was the suspected cause of the Little Ice Age \citep{climate}.
+    The solar cycle can directly impact the Earth's climate, as shown by the Maunder Minimum, which was an abnormally low amount of sunspots during the late seventeenth century and was the suspected cause of the Little Ice Age \citep{FRIIS-CHRISTENSEN01111991,climate}.
     Earth, over the past five years was seeing another abnormal solar minimum, though it was not on the scale of the Maunder Minimum, it still had some effects on the climate.
     This was evidenced by the recent cold winters experienced by the northern hemisphere and it could influence the relationship between the atmospheric oscillations which affect the temperature of the northern hemisphere \citep{CWE,NAO,SCR}. 
    
 \subsubsection{The chromosphere}
-
+\label{chromo}
     The next layer is visible from Earth when there is a total eclipse of the Sun, it is seen as an intense red region which got it the name, the chromosphere, from the Greek word ``chroma'', meaning colour.
     It is roughly $2$ Mm thick and is a highly complex layer.
     The temperature of the chromosphere increases with height and reaches around $20,000$ K at the boundary where it meets the next layer, the transition region.    
@@ -430,7 +437,7 @@
     	\centering
     	\includegraphics[width=\textwidth]{internetwork_sketch.pdf}
     	\caption{
-		    	Reproduced from \cite{Sven} and is available online from \url{http://folk.uio.no/svenwe/public/pub08issi_wln.html}
+		    	Reproduced from \cite{Sven} and is available online from \url{http://folk.uio.no/svenwe/public/pub08issi_wln.html}.
 		    	}
     	\label{fig:chromo_field}
     \end{sidewaysfigure}
@@ -466,6 +473,7 @@
     These events further cement the link between the lower solar atmosphere and the higher regions.
     
 \subsubsection{The corona}
+\label{corona}
 
     The next layer is the outer atmosphere of the Sun is called the corona.
     It is most easily seen during a total solar eclipse, but also observable using a coronagraph \citep{markus2004physics}.
@@ -501,7 +509,7 @@
     The launch of the Transition Region And Coronal Explorer (TRACE) space solar telescope changed this \citep{TRACE,TRACE1}.
     Numerous MHD oscillations where observed: damped transversal oscillations \citep{8007,2002A&A...394L..39G}, standing fast kink waves \citep{1999ApJ520880A,1999Sci...285..862N,1999SoPh..187..261S}, standing acoustic modes \citep{2003A&A...406.1105W}, fast sausage \citep{2001MNRAS.326..428W,2002MNRAS.336..747W,2003A&A...406..709K}, fast kink waves \citep{2005A&A...430L..65V}, propagating acoustic modes \citep{1997ApJ...491L.111O,2000A&A...355L..23D,2002A&A...393..649M} and torsional modes \citep{1998A&A...337..287E}. 
     This led to a large focus on coronal seismology which allows the estimation of the background properties of coronal loops using the observed properties of these waves.
-    See a review on this topic by \cite{lrsp-2005-3}.
+    See a review on this topic by \cite{lrsp-2005-3} or \cite{MHDOS}.
     Finally, EIT waves were discovered using the Extreme Ultraviolet Imaging Telescope (EIT) instrument onboard the Solar and Heliospheric Observatory (SOHO) space satellite \citep{1998GeoRL..25.2465T}.
     These are large single-pulsed propagating fronts which appear to move unhindered throughout the corona after a large-scale event (such as a flare).
     They are believed to be associated with Moreton waves.
