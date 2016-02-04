@@ -39,15 +39,14 @@
 	The work detailed within this thesis uses data from five telescopes: Swedish Solar Telescope (SST), Solar Dynamics Observatory (SDO), Dunn Solar Telescope (DST), Dutch Open Telescope (DOT) and the Swedish Solar Telescope (SVST).
     They are outlined below.
     
-\subsection{Swedish Solar Telescope (SST)}
+\subsection{Swedish solar telescope}
 
 	The Swedish Solar Telescope is a one metre vacuum solar telescope located at the Roque de los Muchachos Observatory on La Palma in the Canary Islands.
-	The SST was the replacement for the Swedish Vacuum Solar Telescope which used to occupy the same site and will be talked about later in this Chapter.
+	The SST was the replacement for the Swedish Vacuum Solar Telescope which used to occupy the same site and will be talked about later in this chapter.
 	The SST has a $1.1$ m lens, of which only $1$ m is usable, which is connected to a several storey vacuum tower. 
     The light collected travels down the vacuum tower into a corrector system and then to the optics bench. 
     The usage of a vacuum tower means that the collected light does not pass through any air.
-    This reduces any distortion that comes from the air being heated by the beam of light.
-    This improves the overall image quality. 
+    This reduces any distortion that comes from the air being heated by the beam of light  and improves the overall image quality. 
     The scale of the SST can be seen in Figure \ref{fig:SST}.
     It shows the building that houses the SST and the tower that contains the vacuum tower can be seen.    
 	\begin{sidewaysfigure}
@@ -63,8 +62,8 @@
          
     Further to this, the SST is equipped with an adaptive optics (AO) system. 
 	AO is a term used for a process that will adjust the optics of the instrument in order to reduce the effects of turbulence from the Earth's atmosphere. 
-	At a basic level, the AO at the SST has a sensor that monitors the wavefront of the incoming light wave and analyses how the wavefront is distorted. 
-	This distortion is counteracted by deforming a lens, by using a voltage since the lens is made of a piezoelectric material. 
+	At a basic level, the AO at the SST has a sensor that monitors the wavefront of the incoming light wave and analyses how the wavefront is distorted.
+	This distortion is counteracted by deforming a lens, made of a piezoelectric material, with a specific set of voltages to restore the wavefront.
 	This is not the same method used by larger and newer optical telescopes used for astrophysics that have a deformable primary mirror in conjugation with a powerful laser.
 	
 	The SST has two instruments, the \textit{CRisp Imaging SpectroPolarimeter} (CRISP) and the \textit{TRI-Port Polarimetric Echelle-Littrow} (TRIPPEL).
@@ -76,9 +75,9 @@
     This allows many wavelengths to be chosen with one instrument, which is required in order to observe the height variation of the solar atmosphere.
 	The Fabry-Perot is made from a pair of partly reflective mirrors that are separated by a small distance.
     By varying the distance between the two mirrors, a specific wavelength can escape the mirror system and go to the cameras.
-    With the ability to vary the distance between the mirrors, the Fabry-Perot system is able to investigate the line profile, of many elements.
-	Table \ref{crisp} has approximately a third of the wavelengths available with CRISP. 
-	The selection of wavelengths here is the more commonly used filters that often appear in published papers.
+    With the ability to vary the distance between the mirrors, the Fabry-Perot system is able to investigate the line profile of many elements.
+	Table \ref{crisp} has approximately a fourth of the wavelengths available with CRISP. 
+	The selection of wavelengths here are the commonly used filters that appear in published papers.
 	For example, the Fe I 630.26 nm line is used to observe the photosphere and clear granulation can be seen.
 	More importantly, this wavelength is used to measure the photospheric magnetic field.
 	    
@@ -97,7 +96,7 @@
         \end{tabular}
         \caption{
                 Summary of the more common wavelengths that are selectable with CRISP.
-                Each filter has a name, wavelength at the line-core and the Full Width at Half Maximum (FWHM) and an average formation height of the line-core, which are soured from \cite{jess1}. 
+                Each filter has a name, wavelength at the line-core and the Full Width at Half Maximum (FWHM) and an average formation height of the line-core, which come from \cite{jess1}. 
                 }
         \label{crisp}
         \end{center}
@@ -112,40 +111,39 @@
     However, H$\alpha$ line formation is a difficult topic.
     The line is highly complex, most likely it is dependant on numerous physical effects such as ionization or non-LTE effects. 
     Currently, the standard understanding of H$\alpha$ comes from radiative MHD simulations done, for example by \cite{Leenaarts2007} and \cite{Leenaarts2012}.
-    From these  two sources, we can summarize a few properties and observations of the H$\alpha$ line core.
+    From these two sources, a few properties and observations of the H$\alpha$ line core can be summarised.
     
     Current research suggests that structures that appear darker, such as fibrils, in the line-core are formed higher compared to other features.
     Further, the opacity of H$\alpha$ that is formed in the upper chromosphere is temperature insensitive.
     This means that the opacity of the line is mainly determined by the mass density at these regions.
-    
-    The results suggest that fibrils are mainly located within magnetically dominated (i.e., low plasma-beta) regions between photospheric field concentrations of opposite polarity.
-    These fibrils are aligned with the local magnetic field direction.
-    Further, fibrils are located in regions where the local density is larger compared to the background chromosphere. 
+    The results suggest that fibrils are mainly located within magnetically dominated (i.e., low plasma-$\beta$) regions between photospheric field concentrations of opposite polarity.
+    These fibrils are aligned with the local magnetic field direction are located in regions where the local density is larger compared to the background chromosphere. 
     This effects the average formation height for H$\alpha$ by making it higher and thus the intensity is lower.
-    Thus, fibrils can be used to trace out regions of enhanced chromospheric mass density. 
+    Therefore, fibrils can be used to trace out regions of enhanced chromospheric mass density. 
     
     Finally, the light beam at the SST is spilt into two parts when CRISP is in use.
     The red wing goes to CRISP, while the blue part goes to a series of broadband cameras.
-    These wavelengths are G-band and Ca K which sample the photosphere.
+    These wavelengths are G-band and \ion{Ca}{K} which sample the photosphere.
     These offer some of the highest resolution images of the solar photosphere to date and are only used when the seeing is excellent. 
     Examples of the data from these cameras can be seen on the SST website (\url{http://www.solarphysics.kva.se/})
     
-    One small comment on the data reduction step.
-    The method used to reduce SST data is called Multi-Object Multi-Frame Blind Deconvolution (MOMFBD), which is a complex and computationally demanding method to improve the quality of the data without affecting the cadence of the observation data. 
-    See \cite{Noort2005} for a full breakdown of these reduction method. 
+    To reduce SST data, the steps detailed at the start of this chapter will occur.
+    However, the method used to remove the effects of the Earth's atmosphere from SST data is called Multi-Object Multi-Frame Blind Deconvolution (MOMFBD).
+    This is a complex and computationally demanding method to improve the quality of the data without affecting the cadence of the observation data. 
+    See \cite{Noort2005} for a full breakdown of this reduction method. 
     
-\subsection{Solar Dynamics Observatory (SDO)}
+\subsection{Solar dynamics observatory}
 
-	Solar Dynamics Observatory (SDO) is one of the latest space-based telescopes launched by National Aeronautics and Space Administration (NASA) \citep{2012SoPh..275....3P}.
-	It can be considered as the replacement for the Solar and Heliospheric Observatory (SOHO) \citep{domingo1995soho} and the Transition Region and Coronal Explorer (TRACE) \citep{TRACE}.
-    Since 2010, it has been observing the Sun constantly, beaming large quantities of data back to Earth.
+	Solar Dynamics Observatory is one of the latest space-based telescopes launched by National Aeronautics and Space Administration (NASA \citealt{2012SoPh..275....3P}).
+	It can be considered as the replacement for the Solar and Heliospheric Observatory (SOHO \citealt{domingo1995soho}) and the Transition Region and Coronal Explorer (TRACE \citealt{TRACE}).
+    Since 2010, it has been observing the Sun constantly beaming large quantities of data back to Earth.
 	Without Earth's atmosphere in the way, it offers some of the clearest observations of the entire Sun to date. 
-	The spacecraft houses three instruments: the \textit{Extreme Ultraviolet Variability Experiment} (EVE) \citep{2012SoPh..275..115W}, the \textit{Helioseismic and Magnetic Imager} (HMI) \citep{2012SoPh..275..229S} and the \textit{Atmospheric Imaging Assembly} (AIA) \citep{2012SoPh..275...17L}.
+	The spacecraft houses three instruments: the \textit{Extreme Ultraviolet Variability Experiment} (EVE \citealt{2012SoPh..275..115W}), the \textit{Helioseismic and Magnetic Imager} (HMI \citealt{2012SoPh..275..229S}) and the \textit{Atmospheric Imaging Assembly} (AIA \citealt{2012SoPh..275...17L}).
 	 
 	HMI measures LOS velocities as well as the LOS and vector magnetic field of the photosphere.
 	AIA is a multi-wavelength instrument and is able to take images of the solar surface to the outer reaches of the solar atmosphere.
     This has offered an unprecedented view of the many layers of the solar atmosphere at the same time.
-    This view can be seen in Figure \ref{fig:SDO}, which shows the full wavelength range of AIA as well as an HMI image.
+    This view can be seen in Figure \ref{fig:SDO}, which shows the full temperature range of AIA as well as an HMI image.
     The figure showcases almost every wavelength that is available on AIA, from the low temperature lines such as $170$ nm that sample the photosphere, to the hotter lines that display the complex structure within the corona such as $13.1$ nm. 
     From HMI, there is a LOS magnetogram that showcases the magnetic field within the photosphere.
     
@@ -164,27 +162,26 @@
     
 \subsection{Other ground telescopes}
 
-	Data from three other ground-based telescopes is used.
-	What follows is a brief summary of each one and more details are given within the chapters where the data from these telescopes are used.
+	Datasets from three other ground-based telescopes are used within this thesis.
+	What follows is a brief summary of each one and more details are given within the chapters where the data from these telescopes is used.
     
-	First, the Swedish Vacuum Solar Telescope (SVST) which was the predecessor to the current SST.
+	First, the Swedish Vacuum Solar Telescope which was the predecessor to the current SST.
 	It had a 47.5 cm mirror with several wavelength narrowband filters with no AO.
     The narrowband filters were not too dissimilar to the wavelengths in Table. \ref{crisp}.
     See \cite{1991AdSpR..11..129S} for a full overview of the SVST.
 
-	Second, the Dutch Open Telescope (DOT) is an open-air solar telescope that is now retired. 
-	The DOT is located next to the SST on La Palma.
-    It has a very compact design that is quite different to the SST.
+	Second, the Dutch Open Telescope is an open-air solar telescope that is now retired. 
+	The DOT is located next to the SST on La Palma and it has a very compact design that is quite different to the SST.
     It has a mirror that is slightly smaller than the previous SVST, at only 45 cm.
     The full instrumental setup consisted of 6 cameras each with a different narrow band filter.
-	With no AO, it used a more unconventional method to lessen seeing effects.
-	The telescope was on a mount several meters high, which was open to the atmosphere.
-    As such, the strong winds blew across the mirror reducing seeing effects from temperature gradients that are caused by the ground, which reduced image distortion.
-    Further, it used high frequency cameras that allowed speckle reconstruction.
+	With no AO it used a more unconventional method to lessen seeing effects.
+	The telescope was on a mount several meters high which was open to the atmosphere.
+    As such, the strong winds blew across the mirror reducing seeing effects from temperature gradients that are caused by the ground which reduced image distortion.
+    Furthermore, it used high frequency cameras that allowed speckle reconstruction.
     Speckle reconstruction is a method to reducing the effect of Earth's atmosphere on the images obtained.
-    But using high-speed camera able to capture many frames in one second, the frames are combined in order to form a model of the distortion from the atmosphere. 
-    This effect however, reducing the cadence of the observation.
-    See \cite{rutten} for a full overview of the DOT.
+    By using high-speed camera able to capture many frames in one second, these frames are combined in order to form a model of the distortion from the atmosphere. 
+    This effect however, increases the cadence of the observation.
+    See \cite{1992A&A...261..321K} or \cite{20764} for a full analysis of speckle reconstruction and \cite{rutten} for a full overview of the DOT.
     
 	Finally, the Richard B. Dunn Solar Telescope, located at Sacramento Peak in New Mexico and is run by the National Solar Observatory (NSO).
     It has a 76 cm mirror and is a vacuum telescope similar to the SST but its design is unique.
@@ -200,9 +197,9 @@
 
 	Once the process of data acquisition is finished and the data has been reduced using methods that are specific for that telescope or instrument, analysis of the data can begin.
     The method used will vary depending on the overall science goal or aim.
-    For example, statistical studies require crunching through large quantities of data in order to categorize the general properties of the phenomenon that is under investigation. 
+    For example, statistical studies require crunching through large quantities of data in order to categorise the general properties of the phenomenon that is under investigation. 
 	Other studies will focus on single events, either due to the lack of a large selection of data or if the event under investigation is rare.
-	The analysis undertaken within this thesis is focused on measuring the properties of waves in several sunspots and pores and later a single dataset studying RPWs.
+	The analysis undertaken within this thesis is focused on measuring the properties of MHD waves in several sunspots and pores and later a single dataset studying RPWs.
    	
 	From Chapter 1, it is clear that to observe MHD sausage waves in cylindrical structures, the phase relations between specific observational quantities such as the cross-sectional area and total intensity are required.
     While further phase relations are available, the two quantities used were the ones only possible with the ground-based data available at the time.
@@ -210,7 +207,7 @@
     Once these signals have been measured from the datasets used, the periods and phase difference of these signals must be found.
     The methods used are the Fast Fourier Transform (FFT), wavelets and Empirical Mode Decomposition (EMD) and are discussed below.
      
-\subsection{Fast Fourier Transform (FFT)}
+\subsection{Fast fourier transform}
 
 	The first method is the Fast Fourier Transform (FFT).
 	Its name is a reference to the fact that the FFT is very fast computational algorithm of the Discrete Fourier Transform (DFT).
@@ -225,7 +222,7 @@
     This means that the mean is 0.5 and the standard deviation is $0.3$.
     This signal can represent a signal at one pixel or a cross-sectional area signal.
     The top right image is the output after this signal is passed into the FFT.
-    It is a power spectrum, where we have power as a function of frequency.
+    It is a power spectrum, where power is a function of frequency.
     The two peaks that can be seen correspond to the two frequencies of the artificial signal.
     The small peaks that are littered in the power spectrum correspond to the uniform noise that was added to the signal.
     
@@ -233,14 +230,12 @@
            \centering
            \includegraphics[width=0.85\textwidth]{signal_overview.pdf}
            \caption{
-                   An example of the signal analysis methods used in this thesis. 
+                   An example of the signal analysis methods. 
                    The upper left plot is of an artificial signal with noise.
-                   It can represent a signal at one pixel or a cross-sectional area signal.
                    The upper right plot is a power spectrum from the FFT.
                    The largest two peaks shows the frequencies within the artificial signal.
                    The bottom left plot is a wavelet power spectrum.
                    It expands on the FFT by offering a 2D view of the frequency spectrum with time.
-                   So it is possible to see what period is within the signal but also at what time it is located at and its duration.
                    The bottom right plot shows an IMF output from a EMD algorithm.
                    The IMF contains one of the periods from the artificial signal used and this corresponds to the smaller frequency within the artificial signal.
                    }
@@ -249,11 +244,11 @@
 	
 	The nature of signal analysis means that each individual method has both positives and negatives.
 	Generally, the type of signal or the overall aim will determine the method used.
-	To start, input signals have a finite length which is the case for the Fourier Transform. 
+	To start, input signals have a finite length and many signal analysis methods assume infinite length, which is the case for the Fourier Transform. 
 	This fact means that artefacts are introduced as a result, however, this is not unique to the FFT and most signal analysis algorithms suffer from this issue. 
 	The FFT has an effect known as frequency leakage.
     It is where, if the input signal is non-periodic or the input signal has no closed form transform, there is smearing in the power spectrum.
-    This means that the power is not confined to the correct frequency and spreads, so if there is an other frequency close to the strong frequencies, will be masked if the frequency difference between two frequencies is small.
+    This means that the power is not confined to the correct frequency and spreads, so if there is an other frequency close to a strong frequency, it will be masked.
 	This can be overcome by using a window function, through a process called windowing. These window functions are non-zero in a chosen interval and are then multiplied to the original signal before it is then put through the FFT.
 	The shape of these window functions varies and numerous windows have been created. 	
 	This alters the outcome of the FFT in order to reduce the effects of spectral leakage.	
@@ -263,16 +258,16 @@
     This is done in order to remove parts of the Fourier space that contains information that is unnecessary and thus return a new signal to see the behaviour at specific frequencies.
     It is a commonly used method in signal analysis and is used within Chapter 5.
     
-    Finally, the significance of the FFT power spectrum is an important factor, since it is vital to establish if the periods are above a noise level.
-    While there are numerous methods to achieve this, a brief overview of just two.
+    Finally, the significance of the FFT power spectrum is an important factor, since it is vital to establish if the periods are above noise level.
+    While there are numerous methods to achieve this, here is a brief overview of just two.
     The first method is described by \cite{1982ApJ...263..835S} and \cite{1986ApJ...302..757H}.
     It relies on normalising the power spectrum and assumes that the noise in the data is truly random. 
     This means that the probability of the noise at any given frequency being above a power value, $z$, is exponentially distributed, scaling as $\exp(-z)$.
-    This defines the ``false-alarm probability'' which at a given power is equal to, $1 - (1 - \exp(-z))^{N_i}$,where $N_i$ is the number of frequencies contributing to the power spectrum.    
+    This defines the ``false-alarm probability'' at which a given power is equal to, $1 - (1 - \exp(-z))^{N_i}$, where $N_i$ is the number of frequencies contributing to the power spectrum.    
     The second method is a Monte-Carlo method known as Fisher Randomization.
     Given a signal, the FFT of the data is calculated and the power of the highest peak is determined.
     Then the original signal is then randomly permuted and the FFT is re-calculated. If the highest peak in the new FFT is higher than that of the original, `1' is added to the count.
-    The process is repeated the desired number of times and the false alarm probability is returned at the end and it is simply the count divided by the number of permutations \citealt{1985AJ.....90.2317L}. 
+    The process is repeated the desired number of times and the false alarm probability is returned at the end and it is simply the count divided by the number of permutations \citep{1985AJ.....90.2317L}. 
     
 \subsection{Wavelet transform}
 
@@ -283,7 +278,7 @@
 	The wavelet algorithm will return a 2D spectrum where the extra dimension is time.
 	This means you can also know what frequency is within the signal but also at what time in the signal that frequency exists and its duration.
 	This is a more powerful method due to this fact, but also, each mother wavelet have different properties so depending on the goal of the signal analysis, by changing the mother wavelet different information can be extracted. 
-	For example, the wavelet chosen is the Morlet Wavelet.
+	For example, the wavelet chosen here is the Morlet Wavelet.
 	It is defined as,
 	\begin{equation}
 		\Psi_0(\eta) = \pi^{-1/4} \exp(iw_0\eta)\exp(-\eta^2/2),
@@ -295,11 +290,11 @@
     
     From this step, the continuous wavelet transform can be defined as the convolution of each data point with the scaled version of $\Psi_0(\eta)$,
 	\begin{equation}
-		W_n (s) = \sum_{n^\prime}^{N-1} x_{n^\prime}\Psi_{0}^{*} \left[\frac{(n^\prime-n)\delta t}{s}\right],
+		W_n (n, s) = \sum_{n^\prime}^{N-1} x_{n^\prime}\Psi_{0}^{*} \left[\frac{(n^\prime-n)\delta t}{s}\right],
 	\end{equation}
     where $s$ is the wavelet scale, $x_n$ is the data point at time index $n$, where $\delta t$ is the time step and where $*$ means the complex conjugate. 
     Thus by varying the wavelet scale and moving along the time index, it becomes possible to construct an image showing both the amplitude of any features versus the wavelet scale and how this amplitude varies with time. 
-    It should be noted that the wavelet scale will need to be transformed into frequency, but for the Morlet wavelet, the wavelet scale is identical to the frequency.
+    It should be noted that the wavelet scale will need to be transformed into frequency, but for the Morlet wavelet the wavelet scale is proportional to the frequency.
     
     The bottom left image of Figure \ref{fig:signal_overview} shows the output of a wavelet algorithm on the artificial signal.
     The dark regions show an increase in the power, which shows where the periods of the signal are.
@@ -318,11 +313,11 @@
     See \cite{torrence} for an overview of the wavelet transform and its applications.
     Further, see \cite{2004SoPh..222..203D} and \cite{WAUO} for an overview of wavelets in a solar physics context.
     
-\subsection{Empirical Mode Decomposition (EMD)}
+\subsection{Empirical mode decomposition}
 
 	Finally, we have the Empirical Mode Decomposition (EMD).
 	As the name suggests, this method is not based off a mathematical theorem or transformation in the way that the FFT or wavelets.
-    The algorithm will output resultant several signals, called the residual and Intrinsic Mode Functions (IMFs).
+    The algorithm will output several signals, called the residual and Intrinsic Mode Functions (IMFs).
     The residual is the left over signal from the algorithm and tends to contain any slow varying background trend.
     An IMF will generally be a simple oscillatory mode, ideally it should contain one of the frequencies within the original signal.
     There are two requirements in order to be considered as an IMF.
@@ -335,17 +330,17 @@
         \item The local minima and local maxima of the input signal are found.
         \item A spline fit of the minima and maxima points is computed.
         \item The resulting minima and maxima curves create an envelope that encompass the signal.
-        \item This envelope is subtracted from the input signal and this process is repeated again. This is termed sifting.
+        \item The mean of the envelope is subtracted from the input signal and this process is repeated again. This is termed sifting.
         \item The sifting stops once the stopping criterion is satisfied.
         \item The resulting signal is called an IMF and is subtracted from the original signal. The leftover signal is termed the residual.
         \item This process repeats itself again on the residual signal until a set number of IMFs are obtained or the residual signal contains too few extrema to spline fit.
     \end{enumerate}
     These steps are shown in Figure \ref{fig:EMD}.
     There are three comments to be made here about the algorithm.
-    Firstly, a local minima (maxima) point is defined if that point is smaller (larger) than its two neighbouring points.
-    Secondly is about the stopping criterion, as their are two commonly used definitions.
-    The first one is if the standard deviation of the sifted signals is lower than a given limit, which is typically less than 0.3, the process stops.
-    The second one is called the S number which, if the same signal is returned by the sifting process more than S times, this causes the process to stop.
+    First, a local minima (maxima) point is defined if that point is smaller (larger) than its two neighbouring points.
+    Second, are two commonly used definitions for the stopping criterion.
+    The first one is, if the standard deviation of the sifted signals is lower than a given limit, which is typically less than 0.3, the process stops.
+    The second one is called the S number which is, if the same signal is returned by the sifting process more than S times, this causes the process to stop.
     Thirdly, the overall algorithm has no method of deciding when enough IMFs have been found, so the number picked is arbitrary, but generally the algorithm will stop before this limit is reached.
     This is because as the residual becomes linear with each IMF removal, the fitting algorithm will stop naturally since there is not enough extrema points to spline fit.
 
@@ -353,9 +348,9 @@
    		\centering
    		\includegraphics[width=1\textwidth]{EMD_FLOW.pdf}
    		\caption{
-   			     An overview of the steps that form the EMD process. 
+   			     An overview of the steps that form the Empirical Mode Decomposition (EMD) algorithm. 
    			     On the left is a flow chart that summarises each step of the EMD algorithm.
-   			     On the right, is a graphical explanation of certain steps in the flow chart. 
+   			     On the right is a graphical explanation of certain steps in the flow chart. 
    		        }
    		\label{fig:EMD}
    	\end{figure}
@@ -371,7 +366,7 @@
     The envelope fit with each iteration, starts to become very large at the edges since there is nothing to constrain it.
     As such, when these are subtracted from the signal, the resulting IMFs display large swings at the start and end, so these edge effects will easily affect the output.
     To counter-act this effect, several methods have been suggested to lessen this issue and it will generally involve adding extra extrema points on both sides to constrict the spline fit \citep{zeng2004simple}.
-    See \cite{huang} for an detailed overview of the EMD and  \cite{terradas} for a solar physics context of this method.
+    See \cite{huang} for an detailed overview of the EMD and \cite{terradas} for a solar physics context.
 
 \subsection{Multiple methods}    
 
@@ -385,7 +380,7 @@
     However, the wavelet and EMD offer the ability to examine how a periodic changes as a function of time as well.
     This allows for a more detailed interoperation than the FFT.  
     Furthermore, the wavelet transform does not cope well with noise in the high frequency part of the spectrum and this can be seen clearly in bottom left image in Figure \ref{fig:signal_overview}.
-    The smaller frequency component have been found by the wavelet but it is not continuous through time, while the higher frequency component has been not as detected less.
+    The smaller frequency component have been found by the wavelet but it is not continuous through time, while the higher frequency component has been detected less.
     Without the noise in the signal, or a higher signal to noise ratio, the wavelet gives a much better representation of the input signal. 
     The output of the EMD detects both periods without an issue but it has not returned the correct amplitude due to the noise in the original signal. 
     Thus the EMD excels for detected high frequency components over the wavelet, especially for noisy signals.
@@ -399,7 +394,7 @@
 	The core idea behind the work presented in this thesis is analysing the cross-sectional area of pores and sunspots.
 	So it is vital to be able to confidently measure the cross-sectional area.
     The base idea is to threshold the structure and use that as a measure of its cross-sectional area.
-    The issue is how various methods have been used in published research.
+    The issue is that various methods have been used in published research.
     While many never state exactly how they contoured a sunspot or a pore, partially due to not caring explicitly about the cross-sectional area.
     Previously, \cite{morton2011} used a $2.5\sigma$ threshold of the mean background intensity for G-band data, here, sigma ($\sigma$) refers to the standard deviation of the background intensity.
     The number before sigma will be called the sigma multiplier throughout this section.
@@ -414,14 +409,12 @@
     Furthermore, since the current selection of ground-based solar telescopes have resolutions similar to each other and this could be the limiting factor in detecting these oscillations.
     As the slow MHD sausage mode affects the cross-sectional area much less than the fast MHD sausage mode, it is most likely mode to be detected in observations.
     
-	This analysis is only for ground-based data and for elemental lines that sample the photosphere directly.
+	This analysis is only for ground-based data and for ion lines that sample the photosphere directly.
 	The chromosphere lines used traditionally (\ion{Ca}{II} and H$\alpha$ line core) make resolving the fine boundaries of a sunspot or a pore very difficult.
-	Finally, since the cross-sectional area and total intensity are inherently linked which is a fact of the method used to measure both signals.
-	So the idea is that if the intensity changes, could a fake period be introduced into the cross-sectional area.
-    Further, since during ground observations the light level will change or the seeing conditions will vary, this could introduce an artificial period into the cross-sectional area and total intensity signals.
-    For a fixed sigma multiplier, when the light level increases, more cross-sectional area pixels will be found, while if the light level decreases, less cross-sectional area pixels will be found. 
-    Figuring out how to account for this effect will be important. 
-    These are important areas for future investigation.
+	The cross-sectional area and total intensity are inherently linked on a conceptual level.
+	Thus, it might be possible that if the intensity changes, a fake period could be introduced into the cross-sectional area.
+    Furthermore, during ground observations the light level will change or the seeing conditions will vary, this could introduce an artificial period into the cross-sectional area and total intensity signals.
+    Figuring out how to account for these effects will be important, however these are areas for future investigation.
     
     \subsection{Data}
     
@@ -432,14 +425,14 @@
     The full field of view (FOV) was 96\arcsecs by 96\arcsecs with a pixel size of 0.097\arcsecs.
     The part of the line scan used here is -0.7 nm, which falls into the blue wing of the H$\alpha$ line profile.
     This part of the line profile samples the photosphere strongly and will show Ellerman Bombs as well as Type II spicules.
-    See \cite{2013A&A...560A..31N} on the reduction methods for this IBIS data.
+    See \cite{2013A&A...560A..31N} on the reduction methods for this IBIS dataset.
 
     The ROSA dataset consists of an image series of G-band narrowband filter images.
     The DST was centred on a small pore cluster in AR 11683.
     The observation run was on the 6$^{\mathrm{th}}$ of March 2013 at 19:27 UT till 20:02 UT with a cadence of 2.11 seconds.
     The full FOV was 115\arcsecs by 115\arcsecs with a pixel size of 0.12\arcsecs.
     The narrowband filter means that only the line core was sampled and for G-band (430.5 nm) this corresponds to the low photosphere.
-    See \cite{0004-637X-806-1-132} for the reduction methods for this ROSA data.
+    See \cite{0004-637X-806-1-132} for the reduction methods for this ROSA dataset.
     
     Both magnetic structures can be seen in Figure \ref{fig:data_overview}.
     The image on the left showcases the  IBIS sunspot while on the right, the ROSA pore is displayed.
@@ -456,7 +449,7 @@
                 The right figure is of a cropped FOV for ROSA.
                 It is the G-band narrowband filter which samples the lower photosphere.
                 The focus is on a small pore cluster, in AR 11683 and was taken on the 6$^{\mathrm{th}}$ of March 2013 at 19:27 UT till 20:02 UT.
-                The pore investigated here is the larger one in the middle.
+                The pore investigated is the larger one in the middle.
                 }
         \label{fig:data_overview}
     \end{sidewaysfigure}
@@ -472,8 +465,8 @@
     Theoretically, the lower limit should return the pixels for sunspots and pores which are substantially darker than other features in the photosphere.
     By counting these pixels, this should correspond to the cross-sectional area of these magnetic structures.
     
-    Figure \ref{fig:method_overview} shows this method applied on the example datasets.
-    The left column shows the two context images of these datasets shown in Figure \ref{fig:data_overview}.
+    Figure \ref{fig:method_overview} shows this method applied to these datasets.
+    The left column shows the context images of each dataset shown in Figure \ref{fig:data_overview}.
     However, added to these images are four contours coloured as follows: blue, green, purple and orange.
     Each colour represents a different sigma multiplier for the standard deviation.
     The sunspot and pore do not share the same range of sigma multipliers.
@@ -483,20 +476,18 @@
         \centering
         \includegraphics[width=0.85\textwidth]{method_overview.pdf}
         \caption{
-                An overview of the method used to contour the magnetic structures in this thesis.
+                An overview of the method used to contour magnetic structures.
                 The left column shows context images of the datasets shown in Figure \ref{fig:data_overview}.
                 They have the contours of the various sigma multipliers shown.
-                The contour colours of blue, green, purple and orange correspond to 3, 3.5, 4 and 4.5$\sigma$ and 2, 2.5, 3 and 3.5$\sigma$ for the sunspot and pore respectively.
-                The right column shows histograms of the background photosphere in yellow and of the context image of the magnetic structures shown on the left in red.
+                The contour colours of blue, green, purple and orange correspond to 3, 3.5, 4 and 4.5 and 2, 2.5, 3 and 3.5 for the sunspot and pore respectively.
+                The right column shows histograms of the background photosphere in yellow and of the context image shown on the left in red.
                 The vertical lines shown display where the sigma multipliers end up on the histogram.
-                These are coloured in the same vein as the left column contours.
                 }
         \label{fig:method_overview}
     \end{sidewaysfigure}
     
     \subsection{IBIS sunspot}
     
-    First, the sunspot observed with IBIS will be investigated.
     The contouring for the sunspot at the lower sigma multipliers does capture small parts of the penumbra.
     For example at 2.5$\sigma$ (which is not shown), the contour was the entire sunspot, i.e., the umbra and penumbra.
     The jump to 3$\sigma$ (blue) curtails most of the penumbra.
@@ -504,23 +495,22 @@
     However, it is not until we reach the largest sigma value, 4.5 which is the orange contour, that the penumbral area disappears completely.
     The reason for this can be seen in the right column of Figure \ref{fig:method_overview}.
     The top figure is of a histogram of both the background which is in yellow and the context image on the left which is in red.
-    The background here is not in a normal distribution and the reason for this is that the full FOV does not have a good area of quiet Sun photosphere.
+    The background here is not a normal distribution and the reason for this is that the full FOV does not have a good area of quiet Sun photosphere.
     The wings of H$\alpha$ show a variety of features, including Ellerman Bombs and Type II spicules, so finding an isolated region becomes harder.
-    Further, the full FOV is more limited in IBIS than ROSA or CRISP. 
+    Furthermore, the full FOV is more limited in IBIS than ROSA or CRISP. 
     This means that the sigma value is skewed and thus the sigma multiplier will have to be higher to counter act this.
     Finally, the sunspot histogram shows a clear difference between the penumbra and umbra.
     The histogram can be split into two parts, the left part contains the umbra and the right part contains the penumbra.
     The penumbra for this sunspot occupies a larger portion of the context image which explains why the right part of the histogram is taller, i.e., a higher count.
     At the intensity values between 1800 to 2300, the histogram plateaus and within this region is where the range of sigma multipliers lie. 
     The vertical coloured lines correspond to the same colour contour lines in the context image.
-    It is possible to claim that, as long as the sigma multiplier is between this range, we have isolated the penumbra from the umbra.
-    Using this as guide, it makes it easy to show that the sigma multiplier of 4.5 (orange) would be an ideal value since it gives the values in the middle of the plateau.
+    It is possible to claim that, as long as the sigma multiplier is in between this range, we have isolated the penumbra from the umbra.
+    Using this as guide, it makes it easy to show that the sigma multiplier of 4.5 (orange) would be an ideal value since it gives a value in the middle of the plateau.
     
     \subsection{ROSA pore}
         
-    Second, the pore observed with ROSA will be investigated.
     The overall picture is quite different and the main reason for this is the lack of a penumbra.
-    While there was a plateau that separated the penumbra and umbra for the sunspot, this is missing for the pore and the sigma multiplier is harder to directly choose.
+    While there was a plateau that separated the penumbra and umbra for the sunspot, this is missing for the pore and the sigma multiplier is harder to choose directly.
     The sigma multipliers are lower for the pore and are 2, 2.5, 3 and 3.5.
     Each of these are shown on the bottom left image of Figure \ref{fig:method_overview}.
     These values again correspond to blue, green, purple and orange contours.
@@ -530,12 +520,11 @@
     By looking at the histogram, a different picture emerges when compared to the sunspot.
     Since the pore is very small, the behaviour of the previous histogram for the sunspot does not emerge.
     There is no clear separation between the background and the pore, so picking a direct sigma value is more difficult when using the histogram.
-    The background histogram also has a normal distribution unlike the previous example.
+    The background histogram also has a normal distribution unlike the IBIS sunspot.
     The lower limit (the blue vertical line) shows that at this value, there is still large amounts of the background quiet Sun.
     But, as the limit is increased, that amount drops to near zero and as such, we have very little quiet Sun within the cross-sectional area contour.
     Here, instead of a plateau, the histogram reveals that there is a tail.
-    This tail corresponds to the pixel values that correspond to the pore.
-    For a pore, this tail can be used to pick a sigma multiplier since it tails off to much lower values than the quiet Sun histogram.
+    This tail corresponds to the pixel values that correspond to the pore and it can be used to pick a sigma multiplier since it tails off to much lower values than the quiet Sun histogram.
     The start of this tail is around 2.5$\sigma$ and this gives a very good contour of the pore.
     That is why taking values of the threshold above 2.5$\sigma$ cuts off pixels that are clearly part of the pore.
     The different sigma multipliers used for the sunspot and pore are most likely due to the lack of a good background region for the sunspot in IBIS.
@@ -544,19 +533,19 @@
     \subsection{Discussion}
     
     Finally, it is important to see whether these different sigma multipliers give different periods within the resultant cross-sectional area signals.
-    Figure \ref{fig:sunspot_wavelet} and \ref{fig:pore_wavelet} show the wavelet transform of the signals that correspond to the smallest and largest sigma multipliers used for the sunspot (3, blue and 4.5, orange) and pore (2, blue and 3.5, orange).
+    Figures \ref{fig:sunspot_wavelet} and \ref{fig:pore_wavelet} show the wavelet transform of the signals that correspond to the smallest and largest sigma multipliers used for the sunspot (3, blue and 4.5, orange) and pore (2, blue and 3.5, orange).
     The top row show the cross-sectional signals of these sigma multipliers and the bottom row is the resultant wavelet transforms.
 
     \begin{sidewaysfigure}
         \centering
         \includegraphics[width=0.75\textwidth]{sunspot_wavelet.pdf}
         \caption{
-            The top row shows the cross-sectional area signals returned from a sigma multiplier of 3 and 4.5 for the sunspot observed with DST/IBIS.
-            These correspond to the blue and orange contours in Figure \ref{fig:method_overview}.
-            The bottom row shows the resultant wavelet transform of these two signals.
-            The cross-hatch region is the cone of influence, while the black contour line is the 95\% significance level.
-            The returned wavelet transforms images show that for the IBIS sunspot, the different in sigma multipliers causes no difference in the detected area oscillations.
-        }
+	             The top row shows the cross-sectional area signals returned from a sigma multiplier of 3 and 4.5 for the IBIS sunspot.
+	             These correspond to the blue and orange contours in Figure \ref{fig:method_overview}.
+	             The bottom row shows the resultant wavelet transform of these two signals.
+	             The cross-hatch region is the cone of influence, while the black contour line is the 95\% significance level.
+	             The returned wavelet transforms images show that for the IBIS sunspot, the difference in sigma multipliers cause no variation in the detected area oscillations.
+                }
         \label{fig:sunspot_wavelet}
     \end{sidewaysfigure}
     
@@ -564,12 +553,12 @@
         \centering
         \includegraphics[width=0.75\textwidth]{pore_wavelet.pdf}
         \caption{
-            Same as Figure \ref{fig:sunspot_wavelet} but for the pore observed with DST/ROSA.
-            The lowest sigma multiplier is 2 and the largest is 3.5. 
-            These correspond to the blue and orange contours in Figure \ref{fig:method_overview}.
-            Unlike the sunspot, there is a clear difference between the different sigma multipliers.
-            The periods at 2 and 3 minutes are not shown in the largest case and this showcases that for smaller magnetic structures, the sigma multiplier is very important. 
-        }
+		         Same as Figure \ref{fig:sunspot_wavelet} but for the ROSA pore.
+		         The lowest sigma multiplier is 2 and the largest is 3.5. 
+		         These correspond to the blue and orange contours in Figure \ref{fig:method_overview}.
+		         Unlike the sunspot, there is a clear difference between the different sigma multipliers.
+		         The periods at 2 and 3 minutes are not shown in the largest case and this showcases that for pores, the sigma multiplier is very important. 
+                }
         \label{fig:pore_wavelet}
     \end{sidewaysfigure}
     
@@ -582,8 +571,8 @@
     Now, for the pore observed in ROSA.
     To start, it is important to note that it is a longer observation sequence.
     The most obvious difference here is the variation of wavelet power at periods less than 4 minutes between the two sigma multipliers. 
-    For the lowest sigma multiplier (2, blue), there is a large amount of wavelet power and most of that region has a significance. 
-    This image has the opposite for the largest sigma multiplier (3.5, orange) but still lingers on.
+    For the lowest sigma multiplier (2, blue), there is a large amount of wavelet power and most of that region is above the significance level. 
+    This image is the opposite for the largest sigma multiplier (3.5, orange).
     There are only two small regions of wavelet power that are within the significance level.
     Otherwise, the difference between these sigma multipliers is minor.
     These are for the larger periods that can be seen at 5 and 9 minutes.
@@ -608,7 +597,7 @@
     	\centering
     	\includegraphics[width=1\textwidth]{sunspot_phase.pdf}
     	\caption{
-			            The wavelet phase difference between the cross-sectional area and total intensity for the sunspot observed with DST/IBIS.
+			            The wavelet phase difference between the cross-sectional area and total intensity for the IBIS sunspot.
 			            The lowest sigma multiplier is 3 (left) and the largest is 4.5 (right) which correspond to the blue and orange contours in Figure \ref{fig:method_overview}.
 			            The cross-hatch region is the cone of influence.
 						The returned phase spectrum reveals that the two signals are in phase which indicate slow MHD sausage waves.
@@ -621,9 +610,9 @@
      	\centering
      	\includegraphics[width=1\textwidth]{pore_phase.pdf}
      	\caption{
-	             		Same as Figure \ref{fig:phase_sunspot} but for the pore observed with DST/ROSA.
+	             		Same as Figure \ref{fig:phase_sunspot} but for the ROSA pore.
 	             		The lowest sigma multiplier is 2 (left) and the largest is 3.5 (right).
-	             		The results here show the same behaviour as the DST/IBIS sunspot.
+	             		The results here show the same behaviour as the IBIS sunspot.
      		          }
      	\label{fig:phase_pore}
     \end{sidewaysfigure}

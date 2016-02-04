@@ -1,56 +1,17 @@
 % ******************************************************************************
 % ****************************** Custom Margin *********************************
 
-% Add `custommargin' in the document class options to use this section
-% Set {innerside margin / outerside margin / topmargin / bottom margin}  and
-% other page dimensions
 \ifsetCustomMargin
  \RequirePackage[left=40mm,right=30mm,top=25mm,bottom=20mm]{geometry}
 \setFancyHdr % To apply fancy header after geometry package is loaded
 \fi
 
-% Add spaces between paragraphs
-%\setlength{\parskip}{0.5em}
-% Ragged bottom avoids extra whitespaces between paragraphs
 \raggedbottom
-% To remove the excess top spacing for enumeration, list and description
-%\usepackage{enumitem}
-%\setlist[enumerate,itemize,description]{topsep=0em}
-% *****************************************************************************
-% ******************* Fonts (like different typewriter fonts etc.)*************
-
-% Add `customfont' in the document class option to use this section
-
-\ifsetCustomFont
-% Set your custom font here and use `customfont' in options. Leave empty to
-% load computer modern font (default LaTeX font).
-%\RequirePackage{helvet}
-
-% For use with XeLaTeX
-%  \setmainfont[
-%    Path              = ./libertine/opentype/,
-%    Extension         = .otf,
-%    UprightFont = LinLibertine_R,
-%    BoldFont = LinLibertine_RZ, % Linux Libertine O Regular Semibold
-%    ItalicFont = LinLibertine_RI,
-%    BoldItalicFont = LinLibertine_RZI, % Linux Libertine O Regular Semibold Italic
-%  ]
-%  {libertine}
-%  % load font from system font
-%  \newfontfamily\libertinesystemfont{Linux Libertine O}
-\fi
 
 % *****************************************************************************
 % **************************** Custom Packages ********************************
 
-% ************************* Algorithms and Pseudocode **************************
-
-%\usepackage{algpseudocode}
-
 % ********************Captions and Hyperreferencing / URL **********************
-
-% Captions: This makes captions of figures use a boldfaced small font.
-%\RequirePackage[small,bf]{caption}
 
 \RequirePackage[labelsep=space,tableposition=top]{caption}
 \renewcommand{\figurename}{Fig.} %to support older versions of captions.sty
@@ -58,19 +19,19 @@
 
 % *************************** Graphics and figures *****************************
 
-%\usepackage{rotating}
-%\usepackage{wrapfig}
-
-% Uncomment the following two lines to force Latex to place the figure.
-% Use [H] when including graphics. Note 'H' instead of 'h'
-%\usepackage{float}
-%\restylefloat{figure}
-
-% Subcaption package is also available in the sty folder you can use that by
-% uncommenting the following line
-% This is for people stuck with older versions of texlive
-%\usepackage{sty/caption/subcaption}
+\usepackage{rotating}
+\usepackage{wrapfig}
 \usepackage{subcaption}
+
+% ********************************** Tables ************************************
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{cancel}
+\usepackage{bm}
+\usepackage{multicol}
+
+% *********************************** Misc **************************************
+
 \usepackage[utf8]{inputenc}
 \usepackage{stringenc}
 \usepackage{pdfescape}
@@ -81,88 +42,15 @@
 \usepackage{gensymb}
 \usepackage{pdfpages}
 \usepackage{bibentry}
-\usepackage{rotating}
 \usepackage{afterpage}
 %\usepackage{refcheck}
 
-\makeatletter
-\renewcommand*{\UTFviii@defined}[1]{%
-	\ifx#1\relax
-	\begingroup
-	% Remove prefix "\u8:"
-	\def\x##1:{}%
-	% Extract Unicode char from command name
-	% (utf8.def does not support surrogates)
-	\edef\x{\expandafter\x\string#1}%
-	\StringEncodingConvert\x\x{utf8}{utf16be}% convert to UTF-16BE
-	% Hexadecimal representation
-	\EdefEscapeHex\x\x
-	% Enhanced error message
-	\PackageError{inputenc}{Unicode\space char\space \string#1\space
-		(U+\x)\MessageBreak
-		not\space set\space up\space
-		for\space use\space with\space LaTeX}\@eha
-	\endgroup
-	\else\expandafter
-	#1%
-	\fi
-}
-\makeatother
-
-\DeclareUnicodeCharacter{00A0}{}
-
-% ********************************** Tables ************************************
-\usepackage{booktabs} % For professional looking tables
-\usepackage{multirow}
-\usepackage{cancel}
-\usepackage{bm}
-\usepackage{multicol}
-
-\newcommand{\arcsecs}{\hbox{$^{\prime\prime}$}}
-\newcommand{\ion}[2]{#1\,{\sc #2}}
-\newcommand{\va}{\ensuremath{c_A}}
-\newcommand{\vs}{\ensuremath{c_s}}
-\newcommand{\vph}{\ensuremath{c_{ph}}}
-\newcommand{\Beq}{\ensuremath{\bm{\mathrm{B}}_0}}
-\newcommand{\vp}{\ensuremath{\delta\! \bm{\mathrm{v}}}}
-% *********************************** SI Units *********************************
-%\usepackage{siunitx} % use this package module for SI units
-
-
 % ******************************* Line Spacing *********************************
 
-% Choose linespacing as appropriate. Default is one-half line spacing as per the
-% University guidelines
-
-% \doublespacing
 \onehalfspacing
-% \singlespacing
-
-
-% ************************ Formatting / Footnote *******************************
-
-% Don't break enumeration (etc.) across pages in an ugly manner (default 10000)
-%\clubpenalty=500
-%\widowpenalty=500
-
-%\usepackage[perpage]{footmisc} %Range of footnote options
-
 
 % *****************************************************************************
 % *************************** Bibliography  and References ********************
-
-%\usepackage{cleveref} %Referencing without need to explicitly state fig /table
-
-% Add `custombib' in the document class option to use this section
-\ifuseCustomBib
-\RequirePackage[square, sort, numbers, authoryear]{natbib} % CustomBib
-
-% If you would like to use biblatex for your reference management, as opposed to the default `natbibpackage` pass the option `custombib` in the document class. Comment out the previous line to make sure you don't load the natbib package. Uncomment the following lines and specify the location of references.bib file
-
-%\RequirePackage[backend=biber, style=numeric-comp, citestyle=numeric, sorting=nty, natbib=true]{biblatex}
-%\bibliography{References/references} %Location of references.bib only for biblatex
-
-\fi
 
 % changes the default name `Bibliography` -> `References'
 \renewcommand{\bibname}{References}
@@ -183,62 +71,15 @@
 % ************************* User Defined Commands ******************************
 % ******************************************************************************
 
-% *********** To change the name of Table of Contents / LOF and LOT ************
-
-%\renewcommand{\contentsname}{My Table of Contents}
-%\renewcommand{\listfigurename}{My List of Figures}
-%\renewcommand{\listtablename}{My List of Tables}
-
+\newcommand{\arcsecs}{\hbox{$^{\prime\prime}$}}
+\newcommand{\ion}[2]{#1\,{\sc #2}}
+\newcommand{\va}{\ensuremath{c_A}}
+\newcommand{\vs}{\ensuremath{c_s}}
+\newcommand{\vph}{\ensuremath{c_{ph}}}
+\newcommand{\Beq}{\ensuremath{\bm{B}_0}}
+\newcommand{\vp}{\ensuremath{\delta\! \bm{v}}}
 
 % ********************** TOC depth and numbering depth *************************
 
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
-
-
-% ******************************* Nomenclature *********************************
-
-% To change the name of the Nomenclature section, uncomment the following line
-
-%\renewcommand{\nomname}{Symbols}
-
-
-% ********************************* Appendix ***********************************
-
-% The default value of both \appendixtocname and \appendixpagename is `Appendices'. These names can all be changed via:
-
-%\renewcommand{\appendixtocname}{List of appendices}
-%\renewcommand{\appendixname}{Appndx}
-
-% *********************** Configure Draft Mode **********************************
-
-% Uncomment to disable figures in `draftmode'
-%\setkeys{Gin}{draft=true}  % set draft to false to enable figures in `draft'
-
-% These options are active only during the draft mode
-% Default text is "Draft"
-%\SetDraftText{DRAFT}
-
-% Default Watermark location is top. Location (top/bottom)
-%\SetDraftWMPosition{bottom}
-
-% Draft Version - default is v1.0
-%\SetDraftVersion{v1.1}
-
-% Draft Text grayscale value (should be between 0-black and 1-white)
-% Default value is 0.75
-%\SetDraftGrayScale{0.8}
-
-
-% ******************************** Todo Notes **********************************
-%% Uncomment the following lines to have todonotes.
-
-%\ifsetDraft
-%	\usepackage[colorinlistoftodos]{todonotes}
-%	\newcommand{\mynote}[1]{\todo[author=kks32,size=\small,inline,color=green!40]{#1}}
-%\else
-%	\newcommand{\mynote}[1]{}
-%	\newcommand{\listoftodos}{}
-%\fi
-
-% Example todo: \mynote{Hey! I have a note}
