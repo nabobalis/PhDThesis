@@ -10,25 +10,29 @@
 	The current state of solar observations has never been more ideal.
 	There is currently constant space-based monitoring of the Sun but also a myriad of high-quality ground-based solar telescopes in existence.
     This is coupled with a few small space-based telescopes and sounding rocket experiments.
-	Further within the next decade, the largest ground-based solar telescope will open called the Daniel K. Inouye Solar Telescope (DKIST, formerly the Advanced Technology Solar Telescope, ATST) and several highly-advanced satellites will be launched (two of which will move in to very close orbits to the Sun).
+	Furthermore, within the next decade, the largest ground-based solar telescope will open called the Daniel K. Inouye Solar Telescope (DKIST, formerly the Advanced Technology Solar Telescope, ATST) and several highly-advanced satellites will be launched (two of which will move in to very close orbit to the Sun).
 	This will be an important era for solar physics.
 	
-	Within this thesis, numerous sources of solar data were used.
+	Numerous sources of solar data were used in the analyses presented here.
 	Two telescopes will be the primary focus of this chapter: the Swedish Solar Telescope (SST) and Solar Dynamics Observatory (SDO).
-	While data from other ground-based telescopes are used, I was able to spend 10 days at the SST and thus it receives a larger focus.
+	While data from other ground-based telescopes are used, having spent 10 days at the SST it receives a larger focus.
 	These two telescopes offer some of the highest quality data available to a solar physicist.
-	Data that is taken directly from any telescope will need to be reduced and this process is called data reduction. 
-	Data reduction will require the creation of certain files, called darks, flats and pinhole images.
-	These images are applied onto the original data to reduce any imaging artefacts that are present within the original data, while the pinhole images are used to align the cameras along the optical path of the telescope.
-	It should be noted that all data used within this thesis has been reduced to a science ready level.
-	Once the data is reduced, the method of analysis will need to be considered and it will vary depending on the overall aims.
-	Here, the aim was to measure two properties of the observed magnetic wave guides.
-    These are the cross-sectional area and total intensity through time.
-    Once these two properties have been measured, deducing any periods within these signals and calculating the phase difference between them is required.
-    There have been numerous methods created that aim to analyse signals and measure these properties.
-    Within this thesis, three methods are employed which are the fast Fourier transform (FFT), Wavelet Transform (WT) and Empirical Mode Decomposition (EMD).  
-    These methods will be discussed later in this chapter once the instrumentation is detailed.
-    Finally, there is a brief analysis into the method used to measure the cross-sectional area for two example magnetic flux tubes.
+	
+	Data that is taken directly from any telescope will need to be corrected for any artefacts and this process is called data reduction. 
+	Data reduction requires the creation of specific files called darks, flats and pinhole images.
+	Darks are the images when there is no incoming light and displays the background noise of the camera.
+	Flats are the images when the incoming light is uniform and this displays the imaging artefacts that come from the optics.
+	Pinhole are images used to align the cameras along the optical path of the telescope.
+	These images are applied onto the original data to reduce any imaging artefacts that are present within the original data.
+	The final step is to remove the effects of the Earth's atmosphere and these methods are detailed later on.
+	It should be noted that all data used had been reduced to a science ready level.
+	
+	Once the data is reduced, the method of analysis will need to be considered and it will vary depending on the scientific aims.
+	Here, the aim was to measure the cross-sectional area and total intensity through time of sunspots and pores.
+    Once these two properties have been measured, deducing any periods within these signals and calculating the phase difference between them is required and numerous signal analysis methods exist that aim to do just that.
+    Three methods are employed which are the fast Fourier transform (FFT), Wavelet Transform (WT) and Empirical Mode Decomposition (EMD).  
+
+    In this chapter, the telescopes and instruments will be details then the signal analysis methods are covered and the chapter ends on a brief analysis into the method used to measure the cross-sectional area for two example magnetic flux tubes.
 	
 \section{Sources of solar data}
 
@@ -160,7 +164,7 @@
     
 \subsection{Other ground telescopes}
 
-	Data from three other ground-based telescopes is used within this thesis.
+	Data from three other ground-based telescopes is used.
 	What follows is a brief summary of each one and more details are given within the chapters where the data from these telescopes are used.
     
 	First, the Swedish Vacuum Solar Telescope (SVST) which was the predecessor to the current SST.
@@ -279,7 +283,7 @@
 	The wavelet algorithm will return a 2D spectrum where the extra dimension is time.
 	This means you can also know what frequency is within the signal but also at what time in the signal that frequency exists and its duration.
 	This is a more powerful method due to this fact, but also, each mother wavelet have different properties so depending on the goal of the signal analysis, by changing the mother wavelet different information can be extracted. 
-	For example, the wavelet chosen within this thesis is the Morlet Wavelet.
+	For example, the wavelet chosen is the Morlet Wavelet.
 	It is defined as,
 	\begin{equation}
 		\Psi_0(\eta) = \pi^{-1/4} \exp(iw_0\eta)\exp(-\eta^2/2),
@@ -307,7 +311,7 @@
     
     Finally, the wavelet transform allows for direct comparison of two signals.
     It is possible to calculate the cross-wavelet of two signals as well as the correlation and the phase difference using the wavelet transform.
-    This fact allows the wavelet transform to be used to measure the phase difference of the cross-sectional area and total intensity signals, which is the main method used to find the phase difference within this thesis.
+    This fact allows the wavelet transform to be used to measure the phase difference of the cross-sectional area and total intensity signals, which is the main method used to find the phase difference.
     This is possible with the FFT. 
     However, due to the localised nature of the wavelet transform, the phase difference can found as  a function of frequency and time.
     Thus it is possible to see if the phase difference varies for that frequency which could indicate an underlying physical mechanism such as mode conversion for the observed waves.
