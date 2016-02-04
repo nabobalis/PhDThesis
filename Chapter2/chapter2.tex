@@ -198,7 +198,7 @@
     The method used will vary depending on the overall science goal or aim.
     For example, statistical studies require crunching through large quantities of data in order to categorize the general properties of the phenomenon that is under investigation. 
 	Other studies will focus on single events, either due to the lack of a large selection of data or if the event under investigation is rare.
-	The analysis undertaken within this thesis is focused on measuring the properties of waves in several sunspots and magnetic pores and later a single dataset studying RPWs.
+	The analysis undertaken within this thesis is focused on measuring the properties of waves in several sunspots and pores and later a single dataset studying RPWs.
    	
 	From Chapter 1, it is clear that to observe MHD sausage waves in cylindrical structures, the phase relations between specific observational quantities such as the cross-sectional area and total intensity are required.
     While further phase relations are available, the two quantities used were the ones only possible with the ground-based data available at the time.
@@ -392,16 +392,16 @@
   
 \section{Area analysis}
 
-	The core idea behind the work presented in this thesis is analysing the cross-sectional area of magnetic pores and sunspots.
+	The core idea behind the work presented in this thesis is analysing the cross-sectional area of pores and sunspots.
 	So it is vital to be able to confidently measure the cross-sectional area.
     The base idea is to threshold the structure and use that as a measure of its cross-sectional area.
     The issue is how various methods have been used in published research.
-    While many never state exactly how they contoured a sunspot or a magnetic pore, partially due to not caring explicitly about the cross-sectional area.
+    While many never state exactly how they contoured a sunspot or a pore, partially due to not caring explicitly about the cross-sectional area.
     Previously, \cite{morton2011} used a $2.5\sigma$ threshold of the mean background intensity for G-band data, here, sigma ($\sigma$) refers to the standard deviation of the background intensity.
     The number before sigma will be called the sigma multiplier throughout this section.
 	More recently, \cite{0004-637X-806-1-132} used $2.2\sigma$ of the mean background intensity for their data.
     This was to account for the change in contrast between several different wavelength filters as this was the first multi-height analysis.
-    Their aim was to measure the cross-sectional area of a magnetic pore from the photosphere to the lower chromosphere which is challenging topic.
+    Their aim was to measure the cross-sectional area of a pore from the photosphere to the lower chromosphere which is challenging topic.
 	
 	What will occur in this section is an analysis on the effect of changing the sigma multiplier on the returned cross-sectional area signal.
     The value of sigma can appear to be arbitrary and there is an assumption that the intensity of the background photosphere has a normal distribution and as such, sigma can be used to contour these magnetic structures.
@@ -411,7 +411,7 @@
     As the slow MHD sausage mode affects the cross-sectional area much less than the fast MHD sausage mode, it is most likely mode to be detected in observations.
     
 	This analysis is only for ground-based data and for elemental lines that sample the photosphere directly.
-	The chromosphere lines used traditionally (\ion{Ca}{II} and H$\alpha$ line core) make resolving the fine boundaries of a sunspot or a magnetic pore very difficult.
+	The chromosphere lines used traditionally (\ion{Ca}{II} and H$\alpha$ line core) make resolving the fine boundaries of a sunspot or a pore very difficult.
 	Finally, since the cross-sectional area and total intensity are inherently linked which is a fact of the method used to measure both signals.
 	So the idea is that if the intensity changes, could a fake period be introduced into the cross-sectional area.
     Further, since during ground observations the light level will change or the seeing conditions will vary, this could introduce an artificial period into the cross-sectional area and total intensity signals.
@@ -431,7 +431,7 @@
     See \cite{2013A&A...560A..31N} on the reduction methods for this IBIS data.
 
     The ROSA dataset consists of an image series of G-band narrowband filter images.
-    The DST was centred on a small magnetic pore cluster in AR 11683.
+    The DST was centred on a small pore cluster in AR 11683.
     The observation run was on the 6$^{\mathrm{th}}$ of March 2013 at 19:27 UT till 20:02 UT with a cadence of 2.11 seconds.
     The full FOV was 115\arcsecs by 115\arcsecs with a pixel size of 0.12\arcsecs.
     The narrowband filter means that only the line core was sampled and for G-band (430.5 nm) this corresponds to the low photosphere.
@@ -451,8 +451,8 @@
                 The sunspot is in AR 11579 and was taken on the 30$^{\mathrm{th}}$ of September 2012 at 15:00 UT until 15:16 UT.
                 The right figure is of a cropped FOV for ROSA.
                 It is the G-band narrowband filter which samples the lower photosphere.
-                The focus is on a small magnetic pore cluster, in AR 11683 and was taken on the 6$^{\mathrm{th}}$ of March 2013 at 19:27 UT till 20:02 UT.
-                The magnetic pore investigated here is the larger one in the middle.
+                The focus is on a small pore cluster, in AR 11683 and was taken on the 6$^{\mathrm{th}}$ of March 2013 at 19:27 UT till 20:02 UT.
+                The pore investigated here is the larger one in the middle.
                 }
         \label{fig:data_overview}
     \end{sidewaysfigure}
@@ -465,14 +465,14 @@
     The normal distribution means that the standard deviation can be used to select specific pixels within the image.
     As the number of standard deviations is increased, more of the data will be covered by the distribution.
     By limiting the pixels of interest by having a limit that is lower than say two standard deviations or higher, the pixels left over will be the darkest 5\% of pixels, or the other way round would return the brightest 5\% of pixels.
-    Theoretically, the lower limit should return the pixels for sunspots and magnetic pores which are substantially darker than other features in the photosphere.
+    Theoretically, the lower limit should return the pixels for sunspots and pores which are substantially darker than other features in the photosphere.
     By counting these pixels, this should correspond to the cross-sectional area of these magnetic structures.
     
     Figure \ref{fig:method_overview} shows this method applied on the example datasets.
     The left column shows the two context images of these datasets shown in Figure \ref{fig:data_overview}.
     However, added to these images are four contours coloured as follows: blue, green, purple and orange.
     Each colour represents a different sigma multiplier for the standard deviation.
-    The sunspot and magnetic pore do not share the same range of sigma multipliers.
+    The sunspot and pore do not share the same range of sigma multipliers.
     For the sunspot the sigma multipliers are 3, 3.5, 4, 4.5 and for the pore they are 2, 2.5, 3, 3.5.
 
     \begin{sidewaysfigure}
@@ -482,7 +482,7 @@
                 An overview of the method used to contour the magnetic structures in this thesis.
                 The left column shows context images of the datasets shown in Figure \ref{fig:data_overview}.
                 They have the contours of the various sigma multipliers shown.
-                The contour colours of blue, green, purple and orange correspond to 3, 3.5, 4 and 4.5$\sigma$ and 2, 2.5, 3 and 3.5$\sigma$ for the sunspot and magnetic pore respectively.
+                The contour colours of blue, green, purple and orange correspond to 3, 3.5, 4 and 4.5$\sigma$ and 2, 2.5, 3 and 3.5$\sigma$ for the sunspot and pore respectively.
                 The right column shows histograms of the background photosphere in yellow and of the context image of the magnetic structures shown on the left in red.
                 The vertical lines shown display where the sigma multipliers end up on the histogram.
                 These are coloured in the same vein as the left column contours.
@@ -512,35 +512,35 @@
     It is possible to claim that, as long as the sigma multiplier is between this range, we have isolated the penumbra from the umbra.
     Using this as guide, it makes it easy to show that the sigma multiplier of 4.5 (orange) would be an ideal value since it gives the values in the middle of the plateau.
     
-    \subsection{ROSA magnetic pore}
+    \subsection{ROSA pore}
         
-    Second, the magnetic pore observed with ROSA will be investigated.
+    Second, the pore observed with ROSA will be investigated.
     The overall picture is quite different and the main reason for this is the lack of a penumbra.
-    While there was a plateau that separated the penumbra and umbra for the sunspot, this is missing for the magnetic pore and the sigma multiplier is harder to directly choose.
-    The sigma multipliers are lower for the magnetic pore and are 2, 2.5, 3 and 3.5.
+    While there was a plateau that separated the penumbra and umbra for the sunspot, this is missing for the pore and the sigma multiplier is harder to directly choose.
+    The sigma multipliers are lower for the pore and are 2, 2.5, 3 and 3.5.
     Each of these are shown on the bottom left image of Figure \ref{fig:method_overview}.
     These values again correspond to blue, green, purple and orange contours.
     The lowest multiplier contours large amounts of the background photosphere.
-    However, all the larger multipliers contour only the magnetic pore.
-    There are clear parts of the magnetic pore that are ignored with these higher multipliers.
+    However, all the larger multipliers contour only the pore.
+    There are clear parts of the pore that are ignored with these higher multipliers.
     By looking at the histogram, a different picture emerges when compared to the sunspot.
-    Since the magnetic pore is very small, the behaviour of the previous histogram for the sunspot does not emerge.
-    There is no clear separation between the background and the magnetic pore, so picking a direct sigma value is more difficult when using the histogram.
+    Since the pore is very small, the behaviour of the previous histogram for the sunspot does not emerge.
+    There is no clear separation between the background and the pore, so picking a direct sigma value is more difficult when using the histogram.
     The background histogram also has a normal distribution unlike the previous example.
     The lower limit (the blue vertical line) shows that at this value, there is still large amounts of the background quiet Sun.
     But, as the limit is increased, that amount drops to near zero and as such, we have very little quiet Sun within the cross-sectional area contour.
     Here, instead of a plateau, the histogram reveals that there is a tail.
-    This tail corresponds to the pixel values that correspond to the magnetic pore.
-    For a magnetic pore, this tail can be used to pick a sigma multiplier since it tails off to much lower values than the quiet Sun histogram.
-    The start of this tail is around 2.5$\sigma$ and this gives a very good contour of the magnetic pore.
-    That is why taking values of the threshold above 2.5$\sigma$ cuts off pixels that are clearly part of the magnetic pore.
-    The different sigma multipliers used for the sunspot and magnetic pore are most likely due to the lack of a good background region for the sunspot in IBIS.
-    A direct comparison of intensity counts for a sunspot and magnetic pore is difficult since the ROSA pipeline normalizes the intensity counts.
+    This tail corresponds to the pixel values that correspond to the pore.
+    For a pore, this tail can be used to pick a sigma multiplier since it tails off to much lower values than the quiet Sun histogram.
+    The start of this tail is around 2.5$\sigma$ and this gives a very good contour of the pore.
+    That is why taking values of the threshold above 2.5$\sigma$ cuts off pixels that are clearly part of the pore.
+    The different sigma multipliers used for the sunspot and pore are most likely due to the lack of a good background region for the sunspot in IBIS.
+    A direct comparison of intensity counts for a sunspot and pore is difficult since the ROSA pipeline normalizes the intensity counts.
     
     \subsection{Discussion}
     
     Finally, it is important to see whether these different sigma multipliers give different periods within the resultant cross-sectional area signals.
-    Figure \ref{fig:sunspot_wavelet} and \ref{fig:pore_wavelet} show the wavelet transform of the signals that correspond to the smallest and largest sigma multipliers used for the sunspot (3, blue and 4.5, orange) and magnetic pore (2, blue and 3.5, orange).
+    Figure \ref{fig:sunspot_wavelet} and \ref{fig:pore_wavelet} show the wavelet transform of the signals that correspond to the smallest and largest sigma multipliers used for the sunspot (3, blue and 4.5, orange) and pore (2, blue and 3.5, orange).
     The top row show the cross-sectional signals of these sigma multipliers and the bottom row is the resultant wavelet transforms.
 
     \begin{sidewaysfigure}
@@ -560,7 +560,7 @@
         \centering
         \includegraphics[width=0.75\textwidth]{pore_wavelet.pdf}
         \caption{
-            Same as Figure \ref{fig:sunspot_wavelet} but for the magnetic pore observed with DST/ROSA.
+            Same as Figure \ref{fig:sunspot_wavelet} but for the pore observed with DST/ROSA.
             The lowest sigma multiplier is 2 and the largest is 3.5. 
             These correspond to the blue and orange contours in Figure \ref{fig:method_overview}.
             Unlike the sunspot, there is a clear difference between the different sigma multipliers.
@@ -575,7 +575,7 @@
     The short length of this data series means that it is impossible to find larger period oscillations, so the only periods found in this sunspot are 1 and 2 minute oscillations.
     This is interesting, since it should be possible to observe 3 and 5 minute oscillations but they are absent within this particular dataset.
        
-    Now, for the magnetic pore observed in ROSA.
+    Now, for the pore observed in ROSA.
     To start, it is important to note that it is a longer observation sequence.
     The most obvious difference here is the variation of wavelet power at periods less than 4 minutes between the two sigma multipliers. 
     For the lowest sigma multiplier (2, blue), there is a large amount of wavelet power and most of that region has a significance. 
@@ -585,7 +585,7 @@
     These are for the larger periods that can be seen at 5 and 9 minutes.
     While they are under the cone of influence, they are more obvious and their associated wavelet power is larger for the smaller sigma multiplier.
     However it important to note that both sigma multipliers still have the same oscillation periods.
-    The cause of this difference is that the larger sigma multiplier undersamples the magnetic pore and this has caused the large difference observed in the wavelet figure, as one might expect.
+    The cause of this difference is that the larger sigma multiplier undersamples the pore and this has caused the large difference observed in the wavelet figure, as one might expect.
     However, this reveals that the difference here is still minor, it would matter most if the wavelet power was used to measure the amplitude of these oscillations.
 
 	Finally, ending on mode identification.
@@ -595,7 +595,7 @@
 	In this case, for both magnetic structures the phase difference is strongly in phase. 
 	The ROSA pore demonstrates a more complex image, there are more regions of out of phase behaviour that seems to change from positive to negative.
 	However, the regions with this behaviour are smaller than one wave period and are ignored as a result.    
-	This behaviour is more common in magnetic pores than sunspots.
+	This behaviour is more common in pores than sunspots.
 	Overall, within both these structures the oscillations can be classified as slow MHD sausage modes. 
 	It should be noted that this study does not fully cover every nuance regrading this method, it is something that is discussed in Chapter 6.   
 	In conclusion, as long as the value of sigma multiplier is sound, the sigma multiplier will not vary the result.
@@ -617,7 +617,7 @@
      	\centering
      	\includegraphics[width=1\textwidth]{pore_phase.pdf}
      	\caption{
-	             		Same as Figure \ref{fig:phase_sunspot} but for the magnetic pore observed with DST/ROSA.
+	             		Same as Figure \ref{fig:phase_sunspot} but for the pore observed with DST/ROSA.
 	             		The lowest sigma multiplier is 2 (left) and the largest is 3.5 (right).
 	             		The results here show the same behaviour as the DST/IBIS sunspot.
      		          }
