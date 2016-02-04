@@ -1,30 +1,12 @@
 \documentclass[a4paper,12pt,times,authoryear,custommargin]{Classes/PhDThesisPSnPDF}
+
 % ********************************** Preamble **********************************
 % Preamble: Contains packages and user-defined commands and settings
 \input{Preamble/preamble}
+
 % ************************ Thesis Information & Meta-data **********************
 % Thesis title and author information, refernce file for biblatex
 \input{thesis-info}
-
-% ***************************** Abstract Separate ******************************
-% To printout only the titlepage and the abstract with the PhD title and the
-% author name for submission to the Student Registry, use the `abstract' option in
-% the document class.
-
-\ifdefineAbstract
- \pagestyle{empty}
- \includeonly{Declaration/declaration, Abstract/abstract}
-\fi
-
-% ***************************** Chapter Mode ***********************************
-% The chapter mode allows user to only print particular chapters with references
-% Title, Contents, Frontmatter are disabled by default
-% Useful option to review a particular chapter or to send it to supervisior.
-% To use choose `chapter' option in the document class
-
-\ifdefineChapter
- \includeonly{Chapter3/chapter3}
-\fi
 
 % ******************************** Front Matter ********************************
 \begin{document}
@@ -43,16 +25,7 @@
 \include{Abstract/abstract}
 
 % *********************** Adding TOC and List of Figures ***********************
-
 \tableofcontents
-
-%\listoffigures
-
-%\listoftables
-
-% \printnomenclature[space] space can be set as 2.5cm between symbol and
-% description
-\printnomencl
 
 % ******************************** Main Matter *********************************
 \mainmatter
@@ -64,42 +37,19 @@
 \include{Chapter5/chapter5}
 \include{Chapter6/chapter6}
 
-% ********************************** Back Matter *******************************
-% Backmatter should be commented out, if you are using appendices after References
-%\backmatter
-
 % ********************************** Bibliography ******************************
-%\begin{spacing}{1}
-
-% To use the conventional natbib style referencing
-% Bibliography style previews: http://nodonn.tipido.net/bibstyle.php
-% Reference styles: http://sites.stat.psu.edu/~surajit/present/bib.htm
-%\nocite{*}
+\begin{spacing}{1}
+\nocite{*}
 \bibliographystyle{LivRevSolar} % use this to have URLs listed in References apalike
 \cleardoublepage
 \footnotesize
 \bibliography{References/references} % Path to your References.bib file
 \normalsize
-% If you would like to use BibLaTeX for your references, pass `custombib' as
-% an option in the document class. The location of 'reference.bib' should be
-% specified in the preamble.tex file in the custombib section.
-% Comment out the lines related to natbib above and uncomment the following line.
-
-%\printbibliography[heading=bibintoc, title={References}]
-
-
-%\end{spacing}
+\end{spacing}
 
 % ********************************** Appendices ********************************
-
-\begin{appendices} % Using appendices environment for more functunality
-%
+\begin{appendices}
 \include{Appendix1/appendix1}
-%\include{Appendix2/appendix2}
-%
 \end{appendices}
-
-% *************************************** Index ********************************
-%\printthesisindex % If index is present
 
 \end{document}
