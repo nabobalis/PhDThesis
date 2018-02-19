@@ -1,7 +1,9 @@
 The identification and analysis of MHD waves in localised solar atmospheric wave guides
 =======================================================================
 
-This is the PhD Thesis of Nabil Freij at the University of Sheffield.
+This is the PhD Thesis of Nabil Freij at the University of Sheffield. 
+
+The final accepted version is found [here.](http://etheses.whiterose.ac.uk/11904/)
 
 Information
 ---------------
